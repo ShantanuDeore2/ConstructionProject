@@ -10,25 +10,28 @@ const mongoose = require("mongoose");
  * @requires mongoose
  * @type {mongoose.Schema}
  */
-const permissionSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    unique: true,
+const permissionSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    description: {
+      type: String,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    updatedAt: {
+      type: Date,
+    },
+    deletedAt: {
+      type: Date,
+    },
   },
-  description: {
-    type: String,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-  },
-  deletedAt: {
-    type: Date,
-  },
-});
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Permission", permissionSchema);
