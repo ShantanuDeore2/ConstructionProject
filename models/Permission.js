@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongooseDelete = require("mongoose-delete");
 
 /**
  * Permission Schema
@@ -8,6 +9,7 @@ const mongoose = require("mongoose");
  * @property {Date} updatedAt - Date of last update
  * @property {Date} deletedAt - Date of deletion
  * @requires mongoose
+ * @requires mongoose-delete
  * @type {mongoose.Schema}
  */
 const permissionSchema = new mongoose.Schema(
@@ -27,11 +29,14 @@ const permissionSchema = new mongoose.Schema(
     updatedAt: {
       type: Date,
     },
-    deletedAt: {
-      type: Date,
-    },
   },
   { timestamps: true }
 );
+
+// Apply the mongoose-delete plugin
+permissionSchema.plugin(mongooseDelete, {
+  overrideMethods: "all",
+  deletedAt: true,
+});
 
 module.exports = mongoose.model("Permission", permissionSchema);
