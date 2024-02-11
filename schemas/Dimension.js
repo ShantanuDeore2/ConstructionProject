@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
+const applyCategoryHook = require("./Hooks/categoryHook");
 
 /**
  * Dimension Schema - Represents a dimension with a type, value, and unit
@@ -27,6 +28,7 @@ dimensionSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// add middleware for error handling
+applyErrorHandlerHooks(dimensionSchema);
 
 module.exports = dimensionSchema;

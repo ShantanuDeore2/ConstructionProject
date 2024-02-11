@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 const Schema = mongoose.Schema;
 
 /**
@@ -38,6 +39,7 @@ purchaseOrderMaterialSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// add middleware for error handling
+applyErrorHandlerHooks(purchaseOrderMaterialSchema);
 
 module.exports = purchaseOrderMaterialSchema;

@@ -3,6 +3,7 @@ const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
 const dimensionSchema = require("./Dimension");
 const applyCategoryHook = require("./Hooks/categoryHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 
 /**
  * Material Schema - Represents a material with a name, unit, and category
@@ -58,6 +59,7 @@ materialSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// Apply error handling middleware
+applyErrorHandlerHooks(materialSchema);
 
 module.exports = mongoose.model("Material", materialSchema);

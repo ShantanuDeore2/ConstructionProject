@@ -2,7 +2,8 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
-const purchaseOrderMaterialSchema = require("./PurchaseOrderMaterial"); // Import the schema
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
+const purchaseOrderMaterialSchema = require("./PurchaseOrderMaterial");
 
 /**
  * Delivery Schema - Represents a delivery with a purchase order, delivered materials, and delivery date
@@ -37,6 +38,7 @@ deliverySchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// add middleware for error handling
+applyErrorHandlerHooks(deliverySchema);
 
 module.exports = mongoose.model("Delivery", deliverySchema);

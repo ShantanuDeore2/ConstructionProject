@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 
 /**
  * User Schema - Represents a user with a full name and associated department
@@ -33,6 +34,7 @@ userSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// add middleware for error handling
+applyErrorHandlerHooks(userSchema);
 
 module.exports = mongoose.model("User", userSchema);

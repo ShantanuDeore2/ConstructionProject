@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 
 /**
  * Department Schema - Represents a department that can have a set of permissions
@@ -35,6 +36,7 @@ departmentSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// add middleware for error handling
+applyErrorHandlerHooks(departmentSchema);
 
 module.exports = mongoose.model("Department", departmentSchema);

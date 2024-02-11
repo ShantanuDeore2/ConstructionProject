@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 
 /**
  * Permission Schema - Represents a permission that can be assigned to a role
@@ -33,6 +34,7 @@ permissionSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// add middleware for error handling
+applyErrorHandlerHooks(permissionSchema);
 
 module.exports = mongoose.model("Permission", permissionSchema);

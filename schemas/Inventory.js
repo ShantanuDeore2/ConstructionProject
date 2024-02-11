@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 const purchaseOrderMaterialSchema = require("./PurchaseOrderMaterial"); // Import the schema
 
 /**
@@ -26,6 +27,7 @@ inventorySchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: add middleware for error handling
+// add middleware for error handling
+applyErrorHandlerHooks(inventorySchema);
 
 module.exports = mongoose.model("Inventory", inventorySchema);

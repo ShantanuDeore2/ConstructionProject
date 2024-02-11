@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 
 /**
  * Transactions Schema - Represents a financial transaction including a reference to a purchase order, vendor name, and transaction amount
@@ -39,6 +40,7 @@ transactionsSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
-// TODO: Consider adding middleware for error handling if needed
+// add middleware for error handling
+applyErrorHandlerHooks(transactionsSchema);
 
 module.exports = mongoose.model("Transaction", transactionsSchema);
