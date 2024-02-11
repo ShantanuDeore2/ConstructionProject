@@ -33,4 +33,6 @@ permissionSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
+// TODO: add middleware for error handling
+
 module.exports = mongoose.model("Permission", permissionSchema);
