@@ -27,4 +27,6 @@ dimensionSchema.plugin(mongooseDelete, {
   deletedAt: true,
 });
 
+// TODO: add middleware for error handling
+
 module.exports = dimensionSchema;
