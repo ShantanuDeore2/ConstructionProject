@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
 const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
-const purchaseOrderMaterialSchema = require("./PurchaseOrderMaterial");
+const materialDetailsSchema = require("./MaterialDetail");
 
 /**
  * Delivery Schema - Represents a delivery with a purchase order, delivered materials, and delivery date
@@ -19,8 +19,8 @@ const deliverySchema = new mongoose.Schema(
       ref: "PurchaseOrder",
       required: true,
     },
-    // Embed the purchaseOrderMaterialSchema directly for each delivery item
-    deliveredMaterial: [purchaseOrderMaterialSchema],
+    // Embed the materialDetailsSchema directly for each delivery item
+    deliveredMaterial: [materialDetailsSchema],
     deliveryDate: {
       type: Date,
       required: true,

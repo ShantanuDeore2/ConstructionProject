@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
 const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
-const purchaseOrderMaterialSchema = require("./PurchaseOrderMaterial");
+const materialDetailsSchema = require("./MaterialDetail");
 const Schema = mongoose.Schema;
 
 /**
@@ -22,7 +22,7 @@ const purchaseOrderSchema = new Schema(
       type: String,
       required: true,
     },
-    materials: [purchaseOrderMaterialSchema], // An array of material purchase details
+    materials: [materialDetailsSchema], // An array of material purchase details
   },
   { timestamps: true }
 );

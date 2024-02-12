@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
 const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
-const purchaseOrderMaterialSchema = require("./PurchaseOrderMaterial"); // Import the schema
+const materialDetailsSchema = require("./MaterialDetail"); // Import the schema
 
 /**
  * Inventory Schema - Represents an inventory with a material detail
@@ -12,8 +12,8 @@ const purchaseOrderMaterialSchema = require("./PurchaseOrderMaterial"); // Impor
  */
 const inventorySchema = new mongoose.Schema(
   {
-    // Embed the purchaseOrderMaterialSchema directly
-    materialDetail: purchaseOrderMaterialSchema,
+    // Embed the materialDetailsSchema directly
+    materialDetail: materialDetailsSchema,
   },
   { timestamps: true }
 );

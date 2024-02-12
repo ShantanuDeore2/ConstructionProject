@@ -11,7 +11,7 @@ const Schema = mongoose.Schema;
  * @property {Number} pricePerUnit - The price per unit of the material
  * @type {mongoose.Schema}
  */
-const purchaseOrderMaterialSchema = new Schema(
+const materialDetailsSchema = new Schema(
   {
     material: {
       type: Schema.Types.ObjectId,
@@ -31,15 +31,15 @@ const purchaseOrderMaterialSchema = new Schema(
 );
 
 // Apply logging hooks to the schema
-applyLoggingHooks(purchaseOrderMaterialSchema);
+applyLoggingHooks(materialDetailsSchema);
 
 // Apply the mongoose-delete plugin
-purchaseOrderMaterialSchema.plugin(mongooseDelete, {
+materialDetailsSchema.plugin(mongooseDelete, {
   overrideMethods: "all",
   deletedAt: true,
 });
 
 // add middleware for error handling
-applyErrorHandlerHooks(purchaseOrderMaterialSchema);
+applyErrorHandlerHooks(materialDetailsSchema);
 
-module.exports = purchaseOrderMaterialSchema;
+module.exports = materialDetailsSchema;
