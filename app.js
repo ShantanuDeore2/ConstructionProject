@@ -1,68 +1,29 @@
-// Description: This file sets up the connection to MongoDB and ....
-require("dotenv").config(); // Load environment variables from .env file
-const mongoose = require("mongoose");
-const Permission = require("./models/Permission");
-const connectDB = require("./db");
+const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
+const morgan = require("morgan");
+const { errors } = require("celebrate");
+const permissionRoutes = require("./api/routes/permissionRoutes");
+const errorHandler = require("./api/middlewares/errorHandler");
+const logger = require("./utils/logger");
 
-// Connect to MongoDB
-connectDB();
+const app = express();
+app.use(express.json());
 
-//Function to create a permission entry
-async function createPermission() {
-  try {
-    // Creating a new permission document
-    const permission = new Permission({
-      name: "create-user",
-      description: "Allows creating a new user account",
-    });
+// Helmet helps secure Express apps by setting HTTP response headers
+app.use(helmet());
 
-    // Saving the permission to the database
-    const savedPermission = await permission.save();
-    console.log("Permission created:", savedPermission);
-  } catch (error) {
-    console.error("Error creating permission:", error);
-  } finally {
-    // Close the MongoDB connection
-    await mongoose.connection.close();
-  }
-}
+// Enable CORS for all requests
+app.use(cors());
+// Setup morgan to use winston for logging
+app.use(
+  morgan("tiny", {
+    stream: { write: (message) => logger.info(message.trim()) },
+  })
+);
 
-//Call the function to create a permission entry
-createPermission();
+app.use("/api/permissions", permissionRoutes);
+app.use(errors());
+app.use(errorHandler);
 
-// async function updatePermission(permissionName, updateData) {
-//   try {
-//     // Update the first document that matches the name
-//     const result = await Permission.updateOne(
-//       { name: permissionName },
-//       { $set: updateData }
-//     );
-//     console.log("Update result:", result);
-//   } catch (error) {
-//     console.error("Error updating permission:", error);
-//   } finally {
-//     // Optionally close the MongoDB connection
-//     // mongoose.connection.close();
-//   }
-// }
-
-// // Example usage:
-// updatePermission("create-user", {
-//   description: "Allows creating and editing a user",
-// });
-
-// async function deletePermission(permissionName) {
-//   try {
-//     // Delete the first document that matches the name
-//     const result = await Permission.delete({ name: permissionName });
-//     console.log("Soft Delete result:", result);
-//   } catch (error) {
-//     console.error("Error deleting permission:", error);
-//   } finally {
-//     // Optionally close the MongoDB connection
-//     // mongoose.connection.close();
-//   }
-// }
-
-// // Example usage:
-// deletePermission("create-user");
+module.exports = app;
