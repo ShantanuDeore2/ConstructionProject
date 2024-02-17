@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
 const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
-const materialDetailsSchema = require("./MaterialDetail"); // Import the schema
+const materialDetailsSchema = require("./MaterialDetail").schema; // Import the schema
 
 /**
  * Inventory Schema - Represents an inventory with a material detail

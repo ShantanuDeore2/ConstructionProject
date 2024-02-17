@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
-const dimensionSchema = require("./Dimension");
-const applyCategoryHook = require("./Hooks/categoryHook");
+const dimensionSchema = require("./Dimension").schema;
+const applyCategoryHook = require("./Hooks/MaterialHook");
 const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 
 /**
@@ -46,7 +46,7 @@ const materialSchema = new mongoose.Schema(
 );
 
 // Apply pre-save middleware for category defaulting
-materialSchema.pre("save", preSaveCategoryMiddleware);
+// materialSchema.pre("save", applyCategoryHook);
 
 // Apply category hook
 applyCategoryHook(materialSchema);

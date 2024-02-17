@@ -11,24 +11,21 @@ const Schema = mongoose.Schema;
  * @property {Number} pricePerUnit - The price per unit of the material
  * @type {mongoose.Schema}
  */
-const materialDetailsSchema = new Schema(
-  {
-    material: {
-      type: Schema.Types.ObjectId,
-      ref: "Material",
-      required: true,
-    },
-    quantity: {
-      type: Number,
-      required: true,
-    },
-    pricePerUnit: {
-      type: Number,
-      required: true,
-    },
+const materialDetailsSchema = new Schema({
+  material: {
+    type: Schema.Types.ObjectId,
+    ref: "Material",
+    required: true,
   },
-  { _id: false }
-);
+  quantity: {
+    type: Number,
+    required: true,
+  },
+  pricePerUnit: {
+    type: Number,
+    required: true,
+  },
+});
 
 // Apply logging hooks to the schema
 applyLoggingHooks(materialDetailsSchema);
@@ -42,4 +39,4 @@ materialDetailsSchema.plugin(mongooseDelete, {
 // add middleware for error handling
 applyErrorHandlerHooks(materialDetailsSchema);
 
-module.exports = materialDetailsSchema;
+module.exports = mongoose.model("MaterialDetail", materialDetailsSchema);

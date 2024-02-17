@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
 const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
-const materialDetailsSchema = require("./MaterialDetail");
+const materialDetailsSchema = require("./MaterialDetail").schema;
 
 /**
  * Delivery Schema - Represents a delivery with a purchase order, delivered materials, and delivery date

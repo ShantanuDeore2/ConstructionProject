@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
 const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
-const materialDetailsSchema = require("./MaterialDetail");
+const materialDetailsSchema = require("./MaterialDetail").schema;
 const Schema = mongoose.Schema;
 
 /**

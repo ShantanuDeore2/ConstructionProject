@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const applyLoggingHooks = require("./Hooks/loggingHook");
-const applyCategoryHook = require("./Hooks/categoryHook");
+const applyErrorHandlerHooks = require("./Hooks/errorHandlerHook");
 
 /**
  * Dimension Schema - Represents a dimension with a type, value, and unit
@@ -10,14 +10,11 @@ const applyCategoryHook = require("./Hooks/categoryHook");
  * @property {String} unit - The unit of the dimension
  * @type {mongoose.Schema}
  */
-const dimensionSchema = new mongoose.Schema(
-  {
-    type: { type: String, required: true, trim: true },
-    value: { type: Number, required: true, trim: true },
-    unit: { type: String, required: true, trim: true },
-  },
-  { _id: false }
-);
+const dimensionSchema = new mongoose.Schema({
+  type: { type: String, required: true, trim: true },
+  value: { type: Number, required: true, trim: true },
+  unit: { type: String, required: true, trim: true },
+});
 
 // Apply logging hooks to the schema
 applyLoggingHooks(dimensionSchema);
@@ -31,4 +28,4 @@ dimensionSchema.plugin(mongooseDelete, {
 // add middleware for error handling
 applyErrorHandlerHooks(dimensionSchema);
 
-module.exports = dimensionSchema;
+module.exports = mongoose.model("Dimension", dimensionSchema);
