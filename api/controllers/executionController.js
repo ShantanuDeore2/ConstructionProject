@@ -1,6 +1,6 @@
-const Permission = require("../../schemas/Permission");
+const Execution = require("../../schemas/Execution");
 const crudHelper = require("./crudHelper");
-const genericController = crudHelper(Permission);
+const genericController = crudHelper(Execution);
 
 // any additional controller logic goes here
 // e.g. overriding the genericController methods
