@@ -3,7 +3,22 @@ const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 const { errors } = require("celebrate");
-const permissionRoutes = require("./api/routes/permissionRoutes");
+const permissionRoutes = require("./api/routes/permissionRouter");
+const departmentRoutes = require("./api/routes/departmentRouter");
+const deliveryRoutes = require("./api/routes/deliveryRouter");
+const userRoutes = require("./api/routes/userRouter");
+const dimensionRoutes = require("./api/routes/dimensionRouter");
+const projectRoutes = require("./api/routes/projectRouter");
+const transactionRoutes = require("./api/routes/transactionRouter");
+const workDoneRoutes = require("./api/routes/workDoneRouter");
+const executionRoutes = require("./api/routes/executionRouter");
+const inventoryRoutes = require("./api/routes/inventoryRouter");
+const materialRoutes = require("./api/routes/materialRouter");
+const materialDetailRoutes = require("./api/routes/materialDetailRouter");
+const planRoutes = require("./api/routes/planRouter");
+const purchaseOrderRoutes = require("./api/routes/purchaseOrderRouter");
+const workItemRoutes = require("./api/routes/workItemRouter");
+const workTypeRoutes = require("./api/routes/workTypeRouter");
 const errorHandler = require("./api/middlewares/errorHandler");
 const logger = require("./utils/logger");
 
@@ -22,7 +37,22 @@ app.use(
   })
 );
 
-app.use("/api/permissions", permissionRoutes);
+app.use("/permissions", permissionRoutes);
+app.use("/departments", departmentRoutes);
+app.use("/deliveries", deliveryRoutes);
+app.use("/users", userRoutes);
+app.use("/dimensions", dimensionRoutes);
+app.use("/projects", projectRoutes);
+app.use("/transactions", transactionRoutes);
+app.use("/workdones", workDoneRoutes);
+app.use("/executions", executionRoutes);
+app.use("/inventories", inventoryRoutes);
+app.use("/materials", materialRoutes);
+app.use("/materialdetails", materialDetailRoutes);
+app.use("/plans", planRoutes);
+app.use("/purchaseorders", purchaseOrderRoutes);
+app.use("/workitems", workItemRoutes);
+app.use("/worktypes", workTypeRoutes);
 app.use(errors());
 app.use(errorHandler);
 
