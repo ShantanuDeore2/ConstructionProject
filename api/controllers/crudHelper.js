@@ -1,82 +1,67 @@
+const MongoRepository = require("../dao/MongoDAO"); // Adjust the path as necessary
 const createError = require("http-errors");
 const logger = require("../../utils/logger");
 
-const genericController = function (Model) {
+const genericController = function (repository) {
+  // decide if mongo or sql
+  // const repository = new MongoRepository(Model);
+
   return {
     createSingleDocument: async (req, res, next) => {
-      console.log(req.body);
       try {
-        const doc = new Model(req.body);
-        await doc.save();
+        console.log(repository);
+        const doc = await repository.create(req.body);
         logger.info(`Model ${doc} created`);
         res.status(201).json(doc);
       } catch (error) {
-        console.dir(error);
-        logger.error("Error creating permission", { error: error.message });
+        logger.error("Error creating document", { error: error.message });
         next(createError(400, error.message));
       }
     },
 
     readAllDocuments: async (req, res, next) => {
       try {
-        const docs = await Model.find({});
+        console.log(repository);
+        const docs = await repository.findAll();
         res.status(200).json(docs);
       } catch (error) {
-        console.dir(error);
-        logger.error(`Error reading all ${Model.modelName}`, {
-          error: error.message,
-        });
+        logger.error("Error reading all documents", { error: error.message });
         next(createError(400, error.message));
       }
     },
 
     readSingleDocument: async (req, res, next) => {
       try {
-        const doc = await Model.findById(req.params.id);
+        const doc = await repository.findById(req.params.id);
         if (!doc) {
-          return next(createError(404, `${Model.modelName} not found`));
+          return next(createError(404, "Document not found"));
         }
         res.status(200).json(doc);
       } catch (error) {
-        console.dir(error);
-        logger.error(`Error reading ${Model.modelName}`, {
-          error: error.message,
-        });
+        logger.error("Error reading document", { error: error.message });
         next(createError(400, error.message));
       }
     },
 
     updateSingleDocument: async (req, res, next) => {
       try {
-        const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
-          new: true,
-          runValidators: true,
-        });
+        const doc = await repository.updateById(req.params.id, req.body);
         if (!doc) {
-          return next(createError(404, `${Model.modelName} not found`));
+          return next(createError(404, "Document not found"));
         }
         res.status(200).json(doc);
       } catch (error) {
-        console.dir(error);
-        logger.error(`Error updating ${Model.modelName}`, {
-          error: error.message,
-        });
+        logger.error("Error updating document", { error: error.message });
         next(createError(400, error.message));
       }
     },
 
     deleteSingleDocument: async (req, res, next) => {
       try {
-        const doc = await Model.findByIdAndDelete(req.params.id);
-        if (!doc) {
-          return next(createError(404, `${Model.modelName} not found`));
-        }
-        res.status(204).json(null);
+        await repository.deleteById(req.params.id);
+        res.status(204).send();
       } catch (error) {
-        console.dir(error);
-        logger.error(`Error deleting ${Model.modelName}`, {
-          error: error.message,
-        });
+        logger.error("Error deleting document", { error: error.message });
         next(createError(400, error.message));
       }
     },
