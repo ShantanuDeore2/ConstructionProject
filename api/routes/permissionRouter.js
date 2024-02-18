@@ -1,6 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const permissionController = require("../controllers/permissionController");
+const {
+  createPermission,
+  findAllPermissions,
+  findPermissionById,
+  updatePermission,
+  deletePermission,
+} = require("../controllers/permissionController");
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
 const {
   validatePermission,
@@ -12,24 +18,14 @@ router.post(
   authenticate,
   authorize(["admin"]),
   validatePermission,
-  permissionController.createSingleDocument
+  createPermission
 );
 
 // get a single permission
-router.get(
-  "/:id",
-  authenticate,
-  authorize(["admin"]),
-  permissionController.readSingleDocument
-);
+router.get("/:id", authenticate, authorize(["admin"]), findPermissionById);
 
 // get all permissions
-router.get(
-  "/",
-  authenticate,
-  authorize(["admin"]),
-  permissionController.readAllDocuments
-);
+router.get("/", authenticate, authorize(["admin"]), findAllPermissions);
 
 // update a permission
 router.patch(
@@ -37,15 +33,10 @@ router.patch(
   authenticate,
   authorize(["admin"]),
   validatePermission,
-  permissionController.updateSingleDocument
+  updatePermission
 );
 
 // delete a permission
-router.delete(
-  "/:id",
-  authenticate,
-  authorize(["admin"]),
-  permissionController.deleteSingleDocument
-);
+router.delete("/:id", authenticate, authorize(["admin"]), deletePermission);
 
 module.exports = router;
