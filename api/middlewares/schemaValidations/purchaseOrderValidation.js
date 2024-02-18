@@ -1,5 +1,10 @@
 const { celebrate, Joi } = require("celebrate");
 const JoiObjectId = require("joi-objectid")(Joi); // Assuming use of Joi-objectid for ObjectId validation within materialDetails
+const validateMaterialDetails = Joi.object({
+  material: JoiObjectId().required(), // Validate material ID as an ObjectId
+  quantity: Joi.number().required(),
+  pricePerUnit: Joi.number().required(),
+});
 
 /**
  * @description Joi schema object for validating purchase order
@@ -11,8 +16,6 @@ exports.validatePurchaseOrder = celebrate({
   body: Joi.object({
     purchaseNumber: Joi.string().required().trim().max(255),
     vendor: Joi.string().required().trim().max(255),
-    materials: Joi.array()
-      .items(Joi.object(validateMaterialDetails))
-      .required(),
+    materials: Joi.array().items(validateMaterialDetails).required(),
   }),
 });

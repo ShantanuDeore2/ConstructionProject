@@ -1,5 +1,9 @@
 const { celebrate, Joi } = require("celebrate");
-const { validateDimension } = require("./dimensionValidation");
+const validateDimension = Joi.object({
+  type: Joi.string().required().trim(),
+  value: Joi.number().required(),
+  unit: Joi.string().required().trim(),
+});
 
 /**
  * @description Joi schema object for validating material
@@ -13,7 +17,7 @@ exports.validateMaterial = celebrate({
   body: Joi.object({
     name: Joi.string().required().trim().max(255),
     unit: Joi.string().required().trim().max(255),
-    dimensions: Joi.array().items(Joi.object(validateDimension)).optional(),
+    dimensions: Joi.array().items(validateDimension).optional(),
     category: Joi.string().required().trim().max(255),
     label: Joi.string().trim().optional(),
   }),
