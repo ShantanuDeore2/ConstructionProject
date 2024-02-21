@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const passport = require("passport");
 
 /**
  * Middleware to authenticate a user
@@ -7,10 +8,7 @@ const jwt = require("jsonwebtoken");
  * @param {NextFunction} next - The next function
  * @returns {void}
  */
-exports.authenticate = (req, res, next) => {
-  // Token verification logic
-  next();
-};
+exports.authenticate = passport.authenticate("jwt", { session: false });
 
 /**
  * Middleware to authorize a user

@@ -9,6 +9,8 @@ const JoiObjectId = require("joi-objectid")(Joi); // Use Joi-objectid to validat
 exports.validateUser = celebrate({
   body: Joi.object({
     fullName: Joi.string().required().trim().max(255),
-    department: JoiObjectId().required(), // Validate department ID as an ObjectId
+    department: JoiObjectId().optional(), // Validate department ID as an ObjectId
+    email: Joi.string().required().email().trim().max(255),
+    password: Joi.string().required().trim().min(6),
   }),
 });

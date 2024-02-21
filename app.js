@@ -3,6 +3,11 @@ const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 const { errors } = require("celebrate");
+const passport = require("./utils/passport-config");
+const bcrypt = require("bcryptjs");
+const User = require("./api/schemas/User");
+const jwt = require("jsonwebtoken");
+
 const permissionRoutes = require("./api/routes/permissionRouter");
 const departmentRoutes = require("./api/routes/departmentRouter");
 const deliveryRoutes = require("./api/routes/deliveryRouter");
@@ -36,6 +41,53 @@ app.use(
     stream: { write: (message) => logger.info(message.trim()) },
   })
 );
+
+app.use(passport.initialize());
+
+app.post("/register", async (req, res) => {
+  try {
+    const { fullName, department, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+    const newUser = await User.create({
+      fullName,
+      department,
+      email,
+      password: hashedPassword,
+    });
+
+    res.status(201).send("User registered successfully");
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// Login
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(401).send("Authentication failed");
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(401).send("Authentication failed");
+    }
+
+    const payload = { id: user._id };
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: "8h",
+    }); // Adjust expiresIn as needed
+
+    res.status(200).json({ token });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
 
 app.use("/permissions", permissionRoutes);
 app.use("/departments", departmentRoutes);
