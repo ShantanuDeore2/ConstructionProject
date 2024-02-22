@@ -32,3 +32,42 @@
 {"level":"info","message":"GET /permissions/ 304 - - 13.970 ms","timestamp":"2024-02-21T06:24:41.252Z"}
 {"level":"info","message":"GET /permissions/ 401 - - 6.681 ms","timestamp":"2024-02-21T06:24:46.379Z"}
 {"level":"info","message":"GET /permissions/ 304 - - 10.162 ms","timestamp":"2024-02-21T06:24:52.448Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 204.395 ms","timestamp":"2024-02-21T06:34:39.430Z"}
+{"level":"info","message":"POST /register 201 28 - 483.512 ms","timestamp":"2024-02-22T04:36:23.027Z"}
+{"level":"info","message":"POST /login 200 183 - 521.945 ms","timestamp":"2024-02-22T04:36:59.912Z"}
+{"level":"info","message":"GET /permissions/ 401 - - 0.897 ms","timestamp":"2024-02-22T04:44:46.892Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 16.008 ms","timestamp":"2024-02-22T04:45:00.367Z"}
+{"level":"info","message":"POST /register 404 148 - 1.938 ms","timestamp":"2024-02-22T04:53:32.087Z"}
+{"level":"info","message":"POST /register 404 148 - 1.238 ms","timestamp":"2024-02-22T04:53:37.309Z"}
+{"level":"info","message":"POST /register 404 148 - 4.412 ms","timestamp":"2024-02-22T04:53:41.389Z"}
+{"error":"Illegal arguments: undefined, number","level":"error","message":"Error creating user","timestamp":"2024-02-22T04:54:07.539Z"}
+{"level":"error","message":"Error Custom: Illegal arguments: undefined, number","timestamp":"2024-02-22T04:54:07.541Z"}
+{"level":"info","message":"POST /register 500 48 - 3.625 ms","timestamp":"2024-02-22T04:54:07.542Z"}
+{"level":"info","message":"POST /login 401 21 - 30.695 ms","timestamp":"2024-02-22T04:54:38.426Z"}
+{"level":"info","message":"POST /login 401 21 - 5.389 ms","timestamp":"2024-02-22T04:54:57.158Z"}
+{"error":"Illegal arguments: undefined, number","level":"error","message":"Error creating user","timestamp":"2024-02-22T04:55:00.258Z"}
+{"level":"error","message":"Error Custom: Illegal arguments: undefined, number","timestamp":"2024-02-22T04:55:00.259Z"}
+{"level":"info","message":"POST /register 500 48 - 3.189 ms","timestamp":"2024-02-22T04:55:00.261Z"}
+{"error":"Illegal arguments: undefined, number","level":"error","message":"Error creating user","timestamp":"2024-02-22T04:55:32.350Z"}
+{"level":"error","message":"Error Custom: Illegal arguments: undefined, number","timestamp":"2024-02-22T04:55:32.352Z"}
+{"level":"info","message":"POST /register 500 48 - 9.074 ms","timestamp":"2024-02-22T04:55:32.353Z"}
+{"level":"info","message":"User 65d6d411a919a289865a26d8 created","timestamp":"2024-02-22T04:56:49.695Z"}
+{"level":"info","message":"POST /register 201 272 - 613.301 ms","timestamp":"2024-02-22T04:56:49.699Z"}
+{"level":"info","message":"POST /login 401 21 - 8.100 ms","timestamp":"2024-02-22T04:57:06.933Z"}
+{"level":"info","message":"POST /login 401 21 - 6.881 ms","timestamp":"2024-02-22T04:58:00.410Z"}
+{"level":"info","message":"POST /login 401 21 - 6.875 ms","timestamp":"2024-02-22T04:58:21.880Z"}
+{"error":"bcrypt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T04:59:04.419Z"}
+{"level":"error","message":"Error Custom: bcrypt is not defined","timestamp":"2024-02-22T04:59:04.422Z"}
+{"level":"info","message":"POST /login 500 33 - 14.190 ms","timestamp":"2024-02-22T04:59:04.424Z"}
+{"error":"bcrypt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T04:59:44.769Z"}
+{"level":"error","message":"Error Custom: bcrypt is not defined","timestamp":"2024-02-22T04:59:44.771Z"}
+{"level":"info","message":"POST /login 500 33 - 10.327 ms","timestamp":"2024-02-22T04:59:44.772Z"}
+{"error":"bcrypt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T05:00:30.843Z"}
+{"level":"error","message":"Error Custom: bcrypt is not defined","timestamp":"2024-02-22T05:00:30.845Z"}
+{"level":"info","message":"POST /login 500 33 - 9.838 ms","timestamp":"2024-02-22T05:00:30.846Z"}
+{"error":"jwt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T05:00:38.191Z"}
+{"level":"error","message":"Error Custom: jwt is not defined","timestamp":"2024-02-22T05:00:38.193Z"}
+{"level":"info","message":"POST /login 500 30 - 503.979 ms","timestamp":"2024-02-22T05:00:38.195Z"}
+{"level":"info","message":"POST /login 200 183 - 494.528 ms","timestamp":"2024-02-22T05:01:18.687Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 22.965 ms","timestamp":"2024-02-22T05:01:30.879Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 39.207 ms","timestamp":"2024-02-22T05:02:51.573Z"}

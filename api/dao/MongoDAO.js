@@ -19,6 +19,10 @@ module.exports = class MongoDAO extends DAO {
     return this.model.findById(id);
   }
 
+  async findByQueryCriteria(criteria) {
+    return this.model.findOne(criteria);
+  }
+
   async updateById(id, update, options = { new: true, runValidators: true }) {
     return this.model.findByIdAndUpdate(id, update, options);
   }

@@ -16,6 +16,9 @@ exports.authenticate = passport.authenticate("jwt", { session: false });
  * @returns {Function} - The middleware function
  */
 exports.authorize = (roles) => (req, res, next) => {
+  console.log("inside authorize");
+  console.log(req.user);
+  console.log(roles);
   // Role-based access control logic
   next();
 };
