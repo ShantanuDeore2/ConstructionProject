@@ -5,26 +5,28 @@ const morgan = require("morgan");
 const { errors } = require("celebrate");
 const passport = require("./utils/passport-config");
 
-const permissionRoutes = require("./api/routes/permissionRouter");
-const departmentRoutes = require("./api/routes/departmentRouter");
-const deliveryRoutes = require("./api/routes/deliveryRouter");
-const userRoutes = require("./api/routes/userRouter");
-const dimensionRoutes = require("./api/routes/dimensionRouter");
-const projectRoutes = require("./api/routes/projectRouter");
-const transactionRoutes = require("./api/routes/transactionRouter");
-const workDoneRoutes = require("./api/routes/workDoneRouter");
-const executionRoutes = require("./api/routes/executionRouter");
-const inventoryRoutes = require("./api/routes/inventoryRouter");
-const materialRoutes = require("./api/routes/materialRouter");
-const materialDetailRoutes = require("./api/routes/materialDetailRouter");
-const planRoutes = require("./api/routes/planRouter");
-const purchaseOrderRoutes = require("./api/routes/purchaseOrderRouter");
-const workItemRoutes = require("./api/routes/workItemRouter");
-const workTypeRoutes = require("./api/routes/workTypeRouter");
-const loginRoutes = require("./api/routes/loginRouter");
-const registerRoutes = require("./api/routes/registerRouter");
+const {
+  permissionRoutes,
+  departmentRoutes,
+  deliveryRoutes,
+  userRoutes,
+  dimensionRoutes,
+  projectRoutes,
+  transactionRoutes,
+  workDoneRoutes,
+  executionRoutes,
+  inventoryRoutes,
+  materialRoutes,
+  materialDetailRoutes,
+  planRoutes,
+  purchaseOrderRoutes,
+  workItemRoutes,
+  workTypeRoutes,
+  loginRoutes,
+  registerRoutes,
+} = require("./api/routes");
 
-const errorHandler = require("./api/middlewares/errorHandler");
+const { errorHandlerMiddleware } = require("./api/middlewares/errorHandler");
 const logger = require("./utils/logger");
 
 const app = express();
@@ -62,7 +64,7 @@ app.use("/plans", planRoutes);
 app.use("/purchaseorders", purchaseOrderRoutes);
 app.use("/workitems", workItemRoutes);
 app.use("/worktypes", workTypeRoutes);
-app.use(errors());
-app.use(errorHandler);
+// app.use(errors());
+app.use(errorHandlerMiddleware);
 
 module.exports = app;

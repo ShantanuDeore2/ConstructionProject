@@ -7,36 +7,55 @@ const {
   updateInventory,
   deleteInventory,
 } = require("../controllers/inventoryController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateInventory,
 } = require("../middlewares/schemaValidations/inventoryValidation");
 
-// Create a new inventory
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new inventory
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateInventory,
-  createInventory
+  asyncErrorWrapper(createInventory)
 );
 
-// Get a single inventory
-router.get("/:id", authenticate, authorize(["admin"]), findInventoryById);
+// get a single inventory
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findInventoryById)
+);
 
-// Get all inventorys
-router.get("/", authenticate, authorize(["admin"]), findAllInventorys);
+// get all inventorys
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllInventorys)
+);
 
-// Update a inventory
+// update a inventory
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateInventory,
-  updateInventory
+  asyncErrorWrapper(updateInventory)
 );
 
-// Delete a inventory
-router.delete("/:id", authenticate, authorize(["admin"]), deleteInventory);
+// delete a inventory
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteInventory)
+);
 
 module.exports = router;

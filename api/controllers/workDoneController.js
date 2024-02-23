@@ -1,65 +1,36 @@
-const WorkDoneService = require("../services/WorkDoneService");
+const WorkDoneService = require("../services/workDoneService");
 const logger = require("../../utils/logger");
-const workDoneService = new WorkDoneService();
+const workdoneService = new WorkDoneService();
 
-// Create a new workDone
+// Create a new workdone
 exports.createWorkDone = async (req, res, next) => {
-  try {
-    const doc = await workDoneService.create(req.body);
-    logger.info(`WorkDone ${doc._id} created`);
-    res.status(201).json(doc);
-  } catch (error) {
-    logger.error("Error creating workDone", { error: error.message });
-    next(error);
-  }
+  const doc = await workdoneService.create(req.body);
+  logger.info(`WorkDone ${doc._id} created`);
+  res.status(201).json(doc);
 };
 
-// Get a single workDone
+// Get a single workdone
 exports.findWorkDoneById = async (req, res, next) => {
-  try {
-    const doc = await workDoneService.findById(req.params.id);
-    if (!doc) {
-      return next(error);
-    }
-    res.status(200).json(doc);
-  } catch (error) {
-    logger.error("Error reading workDone", { error: error.message });
-    next(error);
-  }
+  const doc = await workdoneService.findById(req.params.id);
+  res.status(200).json(doc);
 };
 
-// Get all workDones
+// Get all workdones
 exports.findAllWorkDones = async (req, res, next) => {
-  try {
-    const docs = await workDoneService.findAll();
-    res.status(200).json(docs);
-  } catch (error) {
-    logger.error("Error finding all workDones", { error: error.message });
-    next(error);
-  }
+  const docs = await workdoneService.findAll();
+  res.status(200).json(docs);
 };
 
-// Update a workDone
+// Update a workdone
 exports.updateWorkDone = async (req, res, next) => {
-  try {
-    const doc = await workDoneService.updateById(req.params.id, req.body);
-    if (!doc) {
-      return next(error);
-    }
-    res.status(200).json(doc);
-  } catch (error) {
-    logger.error("Error updating workDone", { error: error.message });
-    next(error);
-  }
+  const doc = await workdoneService.updateById(req.params.id, req.body);
+  logger.info(`WorkDone ${doc._id} updated`);
+  res.status(200).json(doc);
 };
 
-// Delete a workDone
+// Delete a workdone
 exports.deleteWorkDone = async (req, res, next) => {
-  try {
-    await workDoneService.deleteById(req.params.id);
-    res.status(204).send();
-  } catch (error) {
-    logger.error("Error deleting workDone", { error: error.message });
-    next(error);
-  }
+  await workdoneService.deleteById(req.params.id);
+  logger.info(`WorkDone ${req.params.id} deleted`);
+  res.status(204).send();
 };

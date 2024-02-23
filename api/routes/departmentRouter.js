@@ -7,36 +7,55 @@ const {
   updateDepartment,
   deleteDepartment,
 } = require("../controllers/departmentController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateDepartment,
 } = require("../middlewares/schemaValidations/departmentValidation");
 
-// Create a new department
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new department
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateDepartment,
-  createDepartment
+  asyncErrorWrapper(createDepartment)
 );
 
-// Get a single department
-router.get("/:id", authenticate, authorize(["admin"]), findDepartmentById);
+// get a single department
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findDepartmentById)
+);
 
-// Get all departments
-router.get("/", authenticate, authorize(["admin"]), findAllDepartments);
+// get all departments
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllDepartments)
+);
 
-// Update a department
+// update a department
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateDepartment,
-  updateDepartment
+  asyncErrorWrapper(updateDepartment)
 );
 
-// Delete a department
-router.delete("/:id", authenticate, authorize(["admin"]), deleteDepartment);
+// delete a department
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteDepartment)
+);
 
 module.exports = router;

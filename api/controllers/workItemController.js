@@ -1,65 +1,36 @@
-const WorkItemService = require("../services/WorkItemService");
+const WorkItemService = require("../services/workItemService");
 const logger = require("../../utils/logger");
-const workItemService = new WorkItemService();
+const workitemService = new WorkItemService();
 
-// Create a new workItem
+// Create a new workitem
 exports.createWorkItem = async (req, res, next) => {
-  try {
-    const doc = await workItemService.create(req.body);
-    logger.info(`WorkItem ${doc._id} created`);
-    res.status(201).json(doc);
-  } catch (error) {
-    logger.error("Error creating workItem", { error: error.message });
-    next(error);
-  }
+  const doc = await workitemService.create(req.body);
+  logger.info(`WorkItem ${doc._id} created`);
+  res.status(201).json(doc);
 };
 
-// Get a single workItem
+// Get a single workitem
 exports.findWorkItemById = async (req, res, next) => {
-  try {
-    const doc = await workItemService.findById(req.params.id);
-    if (!doc) {
-      return next(error);
-    }
-    res.status(200).json(doc);
-  } catch (error) {
-    logger.error("Error reading workItem", { error: error.message });
-    next(error);
-  }
+  const doc = await workitemService.findById(req.params.id);
+  res.status(200).json(doc);
 };
 
-// Get all workItems
+// Get all workitems
 exports.findAllWorkItems = async (req, res, next) => {
-  try {
-    const docs = await workItemService.findAll();
-    res.status(200).json(docs);
-  } catch (error) {
-    logger.error("Error finding all workItems", { error: error.message });
-    next(error);
-  }
+  const docs = await workitemService.findAll();
+  res.status(200).json(docs);
 };
 
-// Update a workItem
+// Update a workitem
 exports.updateWorkItem = async (req, res, next) => {
-  try {
-    const doc = await workItemService.updateById(req.params.id, req.body);
-    if (!doc) {
-      return next(error);
-    }
-    res.status(200).json(doc);
-  } catch (error) {
-    logger.error("Error updating workItem", { error: error.message });
-    next(error);
-  }
+  const doc = await workitemService.updateById(req.params.id, req.body);
+  logger.info(`WorkItem ${doc._id} updated`);
+  res.status(200).json(doc);
 };
 
-// Delete a workItem
+// Delete a workitem
 exports.deleteWorkItem = async (req, res, next) => {
-  try {
-    await workItemService.deleteById(req.params.id);
-    res.status(204).send();
-  } catch (error) {
-    logger.error("Error deleting workItem", { error: error.message });
-    next(error);
-  }
+  await workitemService.deleteById(req.params.id);
+  logger.info(`WorkItem ${req.params.id} deleted`);
+  res.status(204).send();
 };

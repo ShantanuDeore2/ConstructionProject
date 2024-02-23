@@ -7,36 +7,55 @@ const {
   updateTransaction,
   deleteTransaction,
 } = require("../controllers/transactionController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateTransaction,
 } = require("../middlewares/schemaValidations/transactionValidation");
 
-// Create a new transaction
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new transaction
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateTransaction,
-  createTransaction
+  asyncErrorWrapper(createTransaction)
 );
 
-// Get a single transaction
-router.get("/:id", authenticate, authorize(["admin"]), findTransactionById);
+// get a single transaction
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findTransactionById)
+);
 
-// Get all transactions
-router.get("/", authenticate, authorize(["admin"]), findAllTransactions);
+// get all transactions
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllTransactions)
+);
 
-// Update a transaction
+// update a transaction
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateTransaction,
-  updateTransaction
+  asyncErrorWrapper(updateTransaction)
 );
 
-// Delete a transaction
-router.delete("/:id", authenticate, authorize(["admin"]), deleteTransaction);
+// delete a transaction
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteTransaction)
+);
 
 module.exports = router;

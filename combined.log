@@ -1,73 +1,51 @@
-{"level":"info","message":"POST /users 400 167 - 4.854 ms","timestamp":"2024-02-21T05:39:05.937Z"}
-{"level":"info","message":"POST /register 500 21 - 1.459 ms","timestamp":"2024-02-21T05:49:32.526Z"}
-{"level":"info","message":"POST /register 500 36 - 2.547 ms","timestamp":"2024-02-21T05:49:57.930Z"}
-{"level":"info","message":"POST /register 500 113 - 711.074 ms","timestamp":"2024-02-21T05:51:11.887Z"}
-{"level":"info","message":"POST /register 500 113 - 492.408 ms","timestamp":"2024-02-21T05:51:18.852Z"}
-{"level":"error","message":"Error Custom: Unexpected token \" in JSON at position 0","timestamp":"2024-02-21T05:51:25.147Z"}
-{"level":"info","message":"POST /register 500 113 - 492.267 ms","timestamp":"2024-02-21T05:51:41.468Z"}
-{"level":"info","message":"POST /register 500 113 - 574.588 ms","timestamp":"2024-02-21T05:52:42.931Z"}
-{"level":"info","message":"POST /register 201 28 - 503.544 ms","timestamp":"2024-02-21T05:52:51.539Z"}
-{"level":"info","message":"GET /users 200 467 - 14.879 ms","timestamp":"2024-02-21T05:53:31.594Z"}
-{"level":"info","message":"POST /login 500 18 - 517.507 ms","timestamp":"2024-02-21T05:54:27.646Z"}
-{"level":"info","message":"POST /login 200 184 - 541.429 ms","timestamp":"2024-02-21T05:54:50.750Z"}
-{"level":"info","message":"POST /login 401 21 - 3.370 ms","timestamp":"2024-02-21T05:55:07.035Z"}
-{"level":"info","message":"POST /login 200 184 - 513.825 ms","timestamp":"2024-02-21T05:55:12.063Z"}
-{"level":"info","message":"POST /login 401 21 - 517.091 ms","timestamp":"2024-02-21T05:55:17.528Z"}
-{"level":"info","message":"POST /login 200 184 - 632.885 ms","timestamp":"2024-02-21T05:55:21.840Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 1.942 ms","timestamp":"2024-02-21T06:17:27.637Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 0.469 ms","timestamp":"2024-02-21T06:17:34.664Z"}
-{"level":"info","message":"POST /login 200 184 - 1044.554 ms","timestamp":"2024-02-21T06:17:42.649Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 17.396 ms","timestamp":"2024-02-21T06:18:49.390Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 0.500 ms","timestamp":"2024-02-21T06:19:04.874Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 0.883 ms","timestamp":"2024-02-21T06:19:12.349Z"}
-{"level":"info","message":"GET /permissions/ 200 1219 - 17.247 ms","timestamp":"2024-02-21T06:19:29.317Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 2.598 ms","timestamp":"2024-02-21T06:19:51.562Z"}
-{"level":"info","message":"POST /login 200 184 - 1045.780 ms","timestamp":"2024-02-21T06:21:53.536Z"}
-{"level":"info","message":"POST /login 200 184 - 1138.233 ms","timestamp":"2024-02-21T06:22:00.322Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 23.314 ms","timestamp":"2024-02-21T06:22:20.464Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 17.438 ms","timestamp":"2024-02-21T06:22:58.047Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 17.795 ms","timestamp":"2024-02-21T06:23:13.721Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 18.315 ms","timestamp":"2024-02-21T06:23:25.172Z"}
-{"level":"info","message":"POST /login 200 183 - 1384.818 ms","timestamp":"2024-02-21T06:24:32.661Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 13.970 ms","timestamp":"2024-02-21T06:24:41.252Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 6.681 ms","timestamp":"2024-02-21T06:24:46.379Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 10.162 ms","timestamp":"2024-02-21T06:24:52.448Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 204.395 ms","timestamp":"2024-02-21T06:34:39.430Z"}
-{"level":"info","message":"POST /register 201 28 - 483.512 ms","timestamp":"2024-02-22T04:36:23.027Z"}
-{"level":"info","message":"POST /login 200 183 - 521.945 ms","timestamp":"2024-02-22T04:36:59.912Z"}
-{"level":"info","message":"GET /permissions/ 401 - - 0.897 ms","timestamp":"2024-02-22T04:44:46.892Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 16.008 ms","timestamp":"2024-02-22T04:45:00.367Z"}
-{"level":"info","message":"POST /register 404 148 - 1.938 ms","timestamp":"2024-02-22T04:53:32.087Z"}
-{"level":"info","message":"POST /register 404 148 - 1.238 ms","timestamp":"2024-02-22T04:53:37.309Z"}
-{"level":"info","message":"POST /register 404 148 - 4.412 ms","timestamp":"2024-02-22T04:53:41.389Z"}
-{"error":"Illegal arguments: undefined, number","level":"error","message":"Error creating user","timestamp":"2024-02-22T04:54:07.539Z"}
-{"level":"error","message":"Error Custom: Illegal arguments: undefined, number","timestamp":"2024-02-22T04:54:07.541Z"}
-{"level":"info","message":"POST /register 500 48 - 3.625 ms","timestamp":"2024-02-22T04:54:07.542Z"}
-{"level":"info","message":"POST /login 401 21 - 30.695 ms","timestamp":"2024-02-22T04:54:38.426Z"}
-{"level":"info","message":"POST /login 401 21 - 5.389 ms","timestamp":"2024-02-22T04:54:57.158Z"}
-{"error":"Illegal arguments: undefined, number","level":"error","message":"Error creating user","timestamp":"2024-02-22T04:55:00.258Z"}
-{"level":"error","message":"Error Custom: Illegal arguments: undefined, number","timestamp":"2024-02-22T04:55:00.259Z"}
-{"level":"info","message":"POST /register 500 48 - 3.189 ms","timestamp":"2024-02-22T04:55:00.261Z"}
-{"error":"Illegal arguments: undefined, number","level":"error","message":"Error creating user","timestamp":"2024-02-22T04:55:32.350Z"}
-{"level":"error","message":"Error Custom: Illegal arguments: undefined, number","timestamp":"2024-02-22T04:55:32.352Z"}
-{"level":"info","message":"POST /register 500 48 - 9.074 ms","timestamp":"2024-02-22T04:55:32.353Z"}
-{"level":"info","message":"User 65d6d411a919a289865a26d8 created","timestamp":"2024-02-22T04:56:49.695Z"}
-{"level":"info","message":"POST /register 201 272 - 613.301 ms","timestamp":"2024-02-22T04:56:49.699Z"}
-{"level":"info","message":"POST /login 401 21 - 8.100 ms","timestamp":"2024-02-22T04:57:06.933Z"}
-{"level":"info","message":"POST /login 401 21 - 6.881 ms","timestamp":"2024-02-22T04:58:00.410Z"}
-{"level":"info","message":"POST /login 401 21 - 6.875 ms","timestamp":"2024-02-22T04:58:21.880Z"}
-{"error":"bcrypt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T04:59:04.419Z"}
-{"level":"error","message":"Error Custom: bcrypt is not defined","timestamp":"2024-02-22T04:59:04.422Z"}
-{"level":"info","message":"POST /login 500 33 - 14.190 ms","timestamp":"2024-02-22T04:59:04.424Z"}
-{"error":"bcrypt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T04:59:44.769Z"}
-{"level":"error","message":"Error Custom: bcrypt is not defined","timestamp":"2024-02-22T04:59:44.771Z"}
-{"level":"info","message":"POST /login 500 33 - 10.327 ms","timestamp":"2024-02-22T04:59:44.772Z"}
-{"error":"bcrypt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T05:00:30.843Z"}
-{"level":"error","message":"Error Custom: bcrypt is not defined","timestamp":"2024-02-22T05:00:30.845Z"}
-{"level":"info","message":"POST /login 500 33 - 9.838 ms","timestamp":"2024-02-22T05:00:30.846Z"}
-{"error":"jwt is not defined","level":"error","message":"Error logging in","timestamp":"2024-02-22T05:00:38.191Z"}
-{"level":"error","message":"Error Custom: jwt is not defined","timestamp":"2024-02-22T05:00:38.193Z"}
-{"level":"info","message":"POST /login 500 30 - 503.979 ms","timestamp":"2024-02-22T05:00:38.195Z"}
-{"level":"info","message":"POST /login 200 183 - 494.528 ms","timestamp":"2024-02-22T05:01:18.687Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 22.965 ms","timestamp":"2024-02-22T05:01:30.879Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 39.207 ms","timestamp":"2024-02-22T05:02:51.573Z"}
+{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T05:47:46.130Z"}
+{"level":"info","message":"POST /permissions 500 105 - 12.780 ms","timestamp":"2024-02-23T05:47:46.132Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 11.452 ms","timestamp":"2024-02-23T05:51:10.737Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 401 - - 0.967 ms","timestamp":"2024-02-23T05:51:18.139Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 200 174 - 9.198 ms","timestamp":"2024-02-23T05:51:31.011Z"}
+{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T05:51:35.110Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 7.834 ms","timestamp":"2024-02-23T05:51:35.111Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 5.216 ms","timestamp":"2024-02-23T05:51:48.109Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 10.459 ms","timestamp":"2024-02-23T05:54:02.505Z"}
+{"error":"Permission not found","level":"error","message":"Error reading permission","timestamp":"2024-02-23T05:54:09.634Z"}
+{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T05:54:09.635Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 9.025 ms","timestamp":"2024-02-23T05:54:09.636Z"}
+{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T05:56:31.001Z"}
+{"level":"info","message":"POST /permissions 500 105 - 11.042 ms","timestamp":"2024-02-23T05:56:31.004Z"}
+{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:56:39.618Z"}
+{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:56:39.619Z"}
+{"level":"info","message":"POST /permissions 500 94 - 20.457 ms","timestamp":"2024-02-23T05:56:39.619Z"}
+{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:57:42.070Z"}
+{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:57:42.072Z"}
+{"level":"info","message":"POST /permissions 500 94 - 18.134 ms","timestamp":"2024-02-23T05:57:42.073Z"}
+{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:58:27.553Z"}
+{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:58:27.556Z"}
+{"level":"info","message":"POST /permissions 500 94 - 19.719 ms","timestamp":"2024-02-23T05:58:27.558Z"}
+{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:59:34.324Z"}
+{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:59:34.326Z"}
+{"level":"info","message":"POST /permissions 500 94 - 21.485 ms","timestamp":"2024-02-23T05:59:34.328Z"}
+{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T06:02:59.399Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 11.011 ms","timestamp":"2024-02-23T06:02:59.401Z"}
+{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T06:07:02.342Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 12.740 ms","timestamp":"2024-02-23T06:07:02.344Z"}
+{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T06:24:45.818Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 10.479 ms","timestamp":"2024-02-23T06:24:45.821Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 10.245 ms","timestamp":"2024-02-23T06:24:48.468Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 8.970 ms","timestamp":"2024-02-23T06:24:49.314Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 7.391 ms","timestamp":"2024-02-23T06:24:55.238Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 9.318 ms","timestamp":"2024-02-23T06:28:01.788Z"}
+{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 8.612 ms","timestamp":"2024-02-23T06:28:02.589Z"}
+{"level":"error","message":"Error Custom: Validation Error: Path `name` is required.","timestamp":"2024-02-23T06:41:15.086Z"}
+{"level":"info","message":"POST /permissions 500 117 - 17.075 ms","timestamp":"2024-02-23T06:41:15.089Z"}
+{"level":"error","message":"Error Custom: Validation Error: Path `name` is required.","timestamp":"2024-02-23T06:41:37.701Z"}
+{"level":"info","message":"POST /permissions 500 117 - 16.826 ms","timestamp":"2024-02-23T06:41:37.704Z"}
+{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T06:41:51.273Z"}
+{"level":"info","message":"POST /permissions 500 105 - 11.217 ms","timestamp":"2024-02-23T06:41:51.276Z"}
+{"level":"error","message":"Error Custom: Validation Error: Path `name` is required.","timestamp":"2024-02-23T06:42:04.178Z"}
+{"level":"info","message":"POST /permissions 500 117 - 15.204 ms","timestamp":"2024-02-23T06:42:04.181Z"}
+{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T06:42:11.842Z"}
+{"level":"info","message":"POST /permissions 500 105 - 11.641 ms","timestamp":"2024-02-23T06:42:11.844Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 11.186 ms","timestamp":"2024-02-23T07:27:40.718Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 9.607 ms","timestamp":"2024-02-23T07:27:42.198Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 5.706 ms","timestamp":"2024-02-23T07:27:43.055Z"}
+{"level":"info","message":"GET /permissions/ 304 - - 5.384 ms","timestamp":"2024-02-23T07:27:43.061Z"}

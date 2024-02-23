@@ -1,42 +1,58 @@
+const { NotFoundError } = require("../middlewares/errorHandler");
 /**
  * DimensionService
- * @description :: Business logic and services for Dimension
+ * @description :: Business logic and services for dimensions
  */
 module.exports = class DimensionService {
   constructor() {
-    let Dimension = require("../schemas/Dimension");
-    let MongoDao = require("../dao/MongoDAO");
-    this.dimensionDao = new MongoDao(Dimension);
+    let Dimension;
+    let DAO;
+
+    if (process.env.DATABASE === "mongodb") {
+      Dimension = require("../schemas/Dimension");
+      DAO = require("../dao/MongoDAO");
+    } else {
+      Dimension = require("../schemas/Dimension");
+      DAO = require("../dao/MongoDAO");
+    }
+
+    this.dimensionDao = new DAO(Dimension);
   }
 
-  // Create a new dimension
+  // Create a new product
   async create(dimensionData) {
     const dimension = await this.dimensionDao.create(dimensionData);
     return dimension;
   }
 
-  // Get all Dimensions
+  // Get all dimensions
   async findAll() {
     const dimensions = await this.dimensionDao.findAll();
     return dimensions;
   }
 
-  // Get a single dimension
+  // Get a single product
   async findById(dimensionId) {
     const dimension = await this.dimensionDao.findById(dimensionId);
+    if (!dimension) {
+      throw new NotFoundError("Dimension not found");
+    }
     return dimension;
   }
 
-  // Update a single dimension
+  // Update a single product
   async updateById(dimensionId, dimensionData) {
     const dimension = await this.dimensionDao.updateById(
       dimensionId,
       dimensionData
     );
+    if (!dimension) {
+      throw NotFoundError("Dimension not found");
+    }
     return dimension;
   }
 
-  // Delete a single dimension
+  // Delete a single product
   async deleteById(dimensionId) {
     await this.dimensionDao.deleteById(dimensionId);
   }

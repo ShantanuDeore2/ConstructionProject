@@ -7,36 +7,55 @@ const {
   updateWorkType,
   deleteWorkType,
 } = require("../controllers/workTypeController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateWorkType,
 } = require("../middlewares/schemaValidations/workTypeValidation");
 
-// Create a new workType
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new worktype
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateWorkType,
-  createWorkType
+  asyncErrorWrapper(createWorkType)
 );
 
-// Get a single workType
-router.get("/:id", authenticate, authorize(["admin"]), findWorkTypeById);
+// get a single worktype
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findWorkTypeById)
+);
 
-// Get all workTypes
-router.get("/", authenticate, authorize(["admin"]), findAllWorkTypes);
+// get all worktypes
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllWorkTypes)
+);
 
-// Update a workType
+// update a worktype
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateWorkType,
-  updateWorkType
+  asyncErrorWrapper(updateWorkType)
 );
 
-// Delete a workType
-router.delete("/:id", authenticate, authorize(["admin"]), deleteWorkType);
+// delete a worktype
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteWorkType)
+);
 
 module.exports = router;

@@ -1,44 +1,60 @@
+const { NotFoundError } = require("../middlewares/errorHandler");
 /**
  * WorkItemService
- * @description :: Business logic and services for WorkItem
+ * @description :: Business logic and services for workitems
  */
 module.exports = class WorkItemService {
   constructor() {
-    let WorkItem = require("../schemas/WorkItem");
-    let MongoDao = require("../dao/MongoDAO");
-    this.workItemDao = new MongoDao(WorkItem);
+    let WorkItem;
+    let DAO;
+
+    if (process.env.DATABASE === "mongodb") {
+      WorkItem = require("../schemas/WorkItem");
+      DAO = require("../dao/MongoDAO");
+    } else {
+      WorkItem = require("../schemas/WorkItem");
+      DAO = require("../dao/MongoDAO");
+    }
+
+    this.workitemDao = new DAO(WorkItem);
   }
 
-  // Create a new workItem
-  async create(workItemData) {
-    const workItem = await this.workItemDao.create(workItemData);
-    return workItem;
+  // Create a new product
+  async create(workitemData) {
+    const workitem = await this.workitemDao.create(workitemData);
+    return workitem;
   }
 
-  // Get all WorkItems
+  // Get all workitems
   async findAll() {
-    const workItems = await this.workItemDao.findAll();
-    return workItems;
+    const workitems = await this.workitemDao.findAll();
+    return workitems;
   }
 
-  // Get a single workItem
-  async findById(workItemId) {
-    const workItem = await this.workItemDao.findById(workItemId);
-    return workItem;
+  // Get a single product
+  async findById(workitemId) {
+    const workitem = await this.workitemDao.findById(workitemId);
+    if (!workitem) {
+      throw new NotFoundError("WorkItem not found");
+    }
+    return workitem;
   }
 
-  // Update a single workItem
-  async updateById(workItemId, workItemData) {
-    const workItem = await this.workItemDao.updateById(
-      workItemId,
-      workItemData
+  // Update a single product
+  async updateById(workitemId, workitemData) {
+    const workitem = await this.workitemDao.updateById(
+      workitemId,
+      workitemData
     );
-    return workItem;
+    if (!workitem) {
+      throw NotFoundError("WorkItem not found");
+    }
+    return workitem;
   }
 
-  // Delete a single workItem
-  async deleteById(workItemId) {
-    await this.workItemDao.deleteById(workItemId);
+  // Delete a single product
+  async deleteById(workitemId) {
+    await this.workitemDao.deleteById(workitemId);
   }
 
   // Other complex business logics

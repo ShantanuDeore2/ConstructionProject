@@ -1,44 +1,60 @@
+const { NotFoundError } = require("../middlewares/errorHandler");
 /**
  * PurchaseOrderService
- * @description :: Business logic and services for PurchaseOrder
+ * @description :: Business logic and services for purchaseorders
  */
 module.exports = class PurchaseOrderService {
   constructor() {
-    let PurchaseOrder = require("../schemas/PurchaseOrder");
-    let MongoDao = require("../dao/MongoDAO");
-    this.purchaseOrderDao = new MongoDao(PurchaseOrder);
+    let PurchaseOrder;
+    let DAO;
+
+    if (process.env.DATABASE === "mongodb") {
+      PurchaseOrder = require("../schemas/PurchaseOrder");
+      DAO = require("../dao/MongoDAO");
+    } else {
+      PurchaseOrder = require("../schemas/PurchaseOrder");
+      DAO = require("../dao/MongoDAO");
+    }
+
+    this.purchaseorderDao = new DAO(PurchaseOrder);
   }
 
-  // Create a new purchaseOrder
-  async create(purchaseOrderData) {
-    const purchaseOrder = await this.purchaseOrderDao.create(purchaseOrderData);
-    return purchaseOrder;
+  // Create a new product
+  async create(purchaseorderData) {
+    const purchaseorder = await this.purchaseorderDao.create(purchaseorderData);
+    return purchaseorder;
   }
 
-  // Get all PurchaseOrders
+  // Get all purchaseorders
   async findAll() {
-    const purchaseOrders = await this.purchaseOrderDao.findAll();
-    return purchaseOrders;
+    const purchaseorders = await this.purchaseorderDao.findAll();
+    return purchaseorders;
   }
 
-  // Get a single purchaseOrder
-  async findById(purchaseOrderId) {
-    const purchaseOrder = await this.purchaseOrderDao.findById(purchaseOrderId);
-    return purchaseOrder;
+  // Get a single product
+  async findById(purchaseorderId) {
+    const purchaseorder = await this.purchaseorderDao.findById(purchaseorderId);
+    if (!purchaseorder) {
+      throw new NotFoundError("PurchaseOrder not found");
+    }
+    return purchaseorder;
   }
 
-  // Update a single purchaseOrder
-  async updateById(purchaseOrderId, purchaseOrderData) {
-    const purchaseOrder = await this.purchaseOrderDao.updateById(
-      purchaseOrderId,
-      purchaseOrderData
+  // Update a single product
+  async updateById(purchaseorderId, purchaseorderData) {
+    const purchaseorder = await this.purchaseorderDao.updateById(
+      purchaseorderId,
+      purchaseorderData
     );
-    return purchaseOrder;
+    if (!purchaseorder) {
+      throw NotFoundError("PurchaseOrder not found");
+    }
+    return purchaseorder;
   }
 
-  // Delete a single purchaseOrder
-  async deleteById(purchaseOrderId) {
-    await this.purchaseOrderDao.deleteById(purchaseOrderId);
+  // Delete a single product
+  async deleteById(purchaseorderId) {
+    await this.purchaseorderDao.deleteById(purchaseorderId);
   }
 
   // Other complex business logics

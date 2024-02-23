@@ -5,7 +5,7 @@ const JoiObjectId = require("joi-objectid")(Joi); // Assuming use of Joi-objecti
 // Since validateMaterial is for a complete material object, and here we only need the material ID,
 // we create a new Joi validation for the purchase order material details.
 
-exports.validateMaterialDetails = celebrate({
+exports.validateMaterialDetail = celebrate({
   body: Joi.object({
     material: JoiObjectId().required(), // Validate material ID as an ObjectId
     quantity: Joi.number().required(),

@@ -7,36 +7,55 @@ const {
   updatePlan,
   deletePlan,
 } = require("../controllers/planController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validatePlan,
 } = require("../middlewares/schemaValidations/planValidation");
 
-// Create a new plan
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new plan
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validatePlan,
-  createPlan
+  asyncErrorWrapper(createPlan)
 );
 
-// Get a single plan
-router.get("/:id", authenticate, authorize(["admin"]), findPlanById);
+// get a single plan
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findPlanById)
+);
 
-// Get all plans
-router.get("/", authenticate, authorize(["admin"]), findAllPlans);
+// get all plans
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllPlans)
+);
 
-// Update a plan
+// update a plan
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validatePlan,
-  updatePlan
+  asyncErrorWrapper(updatePlan)
 );
 
-// Delete a plan
-router.delete("/:id", authenticate, authorize(["admin"]), deletePlan);
+// delete a plan
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deletePlan)
+);
 
 module.exports = router;

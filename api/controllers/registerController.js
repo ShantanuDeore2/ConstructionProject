@@ -4,7 +4,6 @@ const registerService = new RegisterService();
 
 module.exports.register = async (req, res, next) => {
   try {
-    console.log(req);
     const user = await registerService.register(req.body);
     logger.info(`User ${user._id} created`);
     res.status(201).json(user);

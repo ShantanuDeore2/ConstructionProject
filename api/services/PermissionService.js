@@ -1,12 +1,22 @@
+const { NotFoundError } = require("../middlewares/errorHandler");
 /**
  * PermissionService
  * @description :: Business logic and services for permissions
  */
 module.exports = class PermissionService {
   constructor() {
-    let Permission = require("../schemas/Permission");
-    let MongoDao = require("../dao/MongoDAO");
-    this.permissionDao = new MongoDao(Permission);
+    let Permission;
+    let DAO;
+
+    if (process.env.DATABASE === "mongodb") {
+      Permission = require("../schemas/Permission");
+      DAO = require("../dao/MongoDAO");
+    } else {
+      Permission = require("../schemas/Permission");
+      DAO = require("../dao/MongoDAO");
+    }
+
+    this.permissionDao = new DAO(Permission);
   }
 
   // Create a new product
@@ -24,6 +34,9 @@ module.exports = class PermissionService {
   // Get a single product
   async findById(permissionId) {
     const permission = await this.permissionDao.findById(permissionId);
+    if (!permission) {
+      throw new NotFoundError("Permission not found");
+    }
     return permission;
   }
 
@@ -33,6 +46,9 @@ module.exports = class PermissionService {
       permissionId,
       permissionData
     );
+    if (!permission) {
+      throw new NotFoundError("Permission not found");
+    }
     return permission;
   }
 

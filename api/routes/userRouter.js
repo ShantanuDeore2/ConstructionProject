@@ -7,36 +7,55 @@ const {
   updateUser,
   deleteUser,
 } = require("../controllers/userController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateUser,
 } = require("../middlewares/schemaValidations/userValidation");
 
-// Create a new user
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new user
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateUser,
-  createUser
+  asyncErrorWrapper(createUser)
 );
 
-// Get a single user
-router.get("/:id", authenticate, authorize(["admin"]), findUserById);
+// get a single user
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findUserById)
+);
 
-// Get all users
-router.get("/", authenticate, authorize(["admin"]), findAllUsers);
+// get all users
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllUsers)
+);
 
-// Update a user
+// update a user
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateUser,
-  updateUser
+  asyncErrorWrapper(updateUser)
 );
 
-// Delete a user
-router.delete("/:id", authenticate, authorize(["admin"]), deleteUser);
+// delete a user
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteUser)
+);
 
 module.exports = router;

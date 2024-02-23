@@ -7,36 +7,55 @@ const {
   updateMaterial,
   deleteMaterial,
 } = require("../controllers/materialController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateMaterial,
 } = require("../middlewares/schemaValidations/materialValidation");
 
-// Create a new material
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new material
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateMaterial,
-  createMaterial
+  asyncErrorWrapper(createMaterial)
 );
 
-// Get a single material
-router.get("/:id", authenticate, authorize(["admin"]), findMaterialById);
+// get a single material
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findMaterialById)
+);
 
-// Get all materials
-router.get("/", authenticate, authorize(["admin"]), findAllMaterials);
+// get all materials
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllMaterials)
+);
 
-// Update a material
+// update a material
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateMaterial,
-  updateMaterial
+  asyncErrorWrapper(updateMaterial)
 );
 
-// Delete a material
-router.delete("/:id", authenticate, authorize(["admin"]), deleteMaterial);
+// delete a material
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteMaterial)
+);
 
 module.exports = router;

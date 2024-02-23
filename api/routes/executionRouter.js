@@ -7,36 +7,55 @@ const {
   updateExecution,
   deleteExecution,
 } = require("../controllers/executionController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateExecution,
 } = require("../middlewares/schemaValidations/executionValidation");
 
-// Create a new execution
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new execution
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateExecution,
-  createExecution
+  asyncErrorWrapper(createExecution)
 );
 
-// Get a single execution
-router.get("/:id", authenticate, authorize(["admin"]), findExecutionById);
+// get a single execution
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findExecutionById)
+);
 
-// Get all executions
-router.get("/", authenticate, authorize(["admin"]), findAllExecutions);
+// get all executions
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllExecutions)
+);
 
-// Update a execution
+// update a execution
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateExecution,
-  updateExecution
+  asyncErrorWrapper(updateExecution)
 );
 
-// Delete a execution
-router.delete("/:id", authenticate, authorize(["admin"]), deleteExecution);
+// delete a execution
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteExecution)
+);
 
 module.exports = router;

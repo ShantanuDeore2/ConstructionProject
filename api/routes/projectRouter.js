@@ -7,36 +7,55 @@ const {
   updateProject,
   deleteProject,
 } = require("../controllers/projectController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateProject,
 } = require("../middlewares/schemaValidations/projectValidation");
 
-// Create a new project
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new project
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateProject,
-  createProject
+  asyncErrorWrapper(createProject)
 );
 
-// Get a single project
-router.get("/:id", authenticate, authorize(["admin"]), findProjectById);
+// get a single project
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findProjectById)
+);
 
-// Get all projects
-router.get("/", authenticate, authorize(["admin"]), findAllProjects);
+// get all projects
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllProjects)
+);
 
-// Update a project
+// update a project
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateProject,
-  updateProject
+  asyncErrorWrapper(updateProject)
 );
 
-// Delete a project
-router.delete("/:id", authenticate, authorize(["admin"]), deleteProject);
+// delete a project
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteProject)
+);
 
 module.exports = router;

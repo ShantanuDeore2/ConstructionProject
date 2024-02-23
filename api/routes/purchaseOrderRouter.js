@@ -7,36 +7,55 @@ const {
   updatePurchaseOrder,
   deletePurchaseOrder,
 } = require("../controllers/purchaseOrderController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validatePurchaseOrder,
 } = require("../middlewares/schemaValidations/purchaseOrderValidation");
 
-// Create a new purchaseOrder
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new purchaseorder
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validatePurchaseOrder,
-  createPurchaseOrder
+  asyncErrorWrapper(createPurchaseOrder)
 );
 
-// Get a single purchaseOrder
-router.get("/:id", authenticate, authorize(["admin"]), findPurchaseOrderById);
+// get a single purchaseorder
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findPurchaseOrderById)
+);
 
-// Get all purchaseOrders
-router.get("/", authenticate, authorize(["admin"]), findAllPurchaseOrders);
+// get all purchaseorders
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllPurchaseOrders)
+);
 
-// Update a purchaseOrder
+// update a purchaseorder
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validatePurchaseOrder,
-  updatePurchaseOrder
+  asyncErrorWrapper(updatePurchaseOrder)
 );
 
-// Delete a purchaseOrder
-router.delete("/:id", authenticate, authorize(["admin"]), deletePurchaseOrder);
+// delete a purchaseorder
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deletePurchaseOrder)
+);
 
 module.exports = router;

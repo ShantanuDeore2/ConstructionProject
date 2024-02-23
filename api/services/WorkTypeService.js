@@ -1,44 +1,60 @@
+const { NotFoundError } = require("../middlewares/errorHandler");
 /**
  * WorkTypeService
- * @description :: Business logic and services for WorkType
+ * @description :: Business logic and services for worktypes
  */
 module.exports = class WorkTypeService {
   constructor() {
-    let WorkType = require("../schemas/WorkType");
-    let MongoDao = require("../dao/MongoDAO");
-    this.workTypeDao = new MongoDao(WorkType);
+    let WorkType;
+    let DAO;
+
+    if (process.env.DATABASE === "mongodb") {
+      WorkType = require("../schemas/WorkType");
+      DAO = require("../dao/MongoDAO");
+    } else {
+      WorkType = require("../schemas/WorkType");
+      DAO = require("../dao/MongoDAO");
+    }
+
+    this.worktypeDao = new DAO(WorkType);
   }
 
-  // Create a new workType
-  async create(workTypeData) {
-    const workType = await this.workTypeDao.create(workTypeData);
-    return workType;
+  // Create a new product
+  async create(worktypeData) {
+    const worktype = await this.worktypeDao.create(worktypeData);
+    return worktype;
   }
 
-  // Get all WorkTypes
+  // Get all worktypes
   async findAll() {
-    const workTypes = await this.workTypeDao.findAll();
-    return workTypes;
+    const worktypes = await this.worktypeDao.findAll();
+    return worktypes;
   }
 
-  // Get a single workType
-  async findById(workTypeId) {
-    const workType = await this.workTypeDao.findById(workTypeId);
-    return workType;
+  // Get a single product
+  async findById(worktypeId) {
+    const worktype = await this.worktypeDao.findById(worktypeId);
+    if (!worktype) {
+      throw new NotFoundError("WorkType not found");
+    }
+    return worktype;
   }
 
-  // Update a single workType
-  async updateById(workTypeId, workTypeData) {
-    const workType = await this.workTypeDao.updateById(
-      workTypeId,
-      workTypeData
+  // Update a single product
+  async updateById(worktypeId, worktypeData) {
+    const worktype = await this.worktypeDao.updateById(
+      worktypeId,
+      worktypeData
     );
-    return workType;
+    if (!worktype) {
+      throw NotFoundError("WorkType not found");
+    }
+    return worktype;
   }
 
-  // Delete a single workType
-  async deleteById(workTypeId) {
-    await this.workTypeDao.deleteById(workTypeId);
+  // Delete a single product
+  async deleteById(worktypeId) {
+    await this.worktypeDao.deleteById(worktypeId);
   }
 
   // Other complex business logics

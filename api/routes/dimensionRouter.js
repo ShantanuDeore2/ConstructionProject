@@ -7,36 +7,55 @@ const {
   updateDimension,
   deleteDimension,
 } = require("../controllers/dimensionController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateDimension,
 } = require("../middlewares/schemaValidations/dimensionValidation");
 
-// Create a new dimension
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new dimension
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateDimension,
-  createDimension
+  asyncErrorWrapper(createDimension)
 );
 
-// Get a single dimension
-router.get("/:id", authenticate, authorize(["admin"]), findDimensionById);
+// get a single dimension
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findDimensionById)
+);
 
-// Get all dimensions
-router.get("/", authenticate, authorize(["admin"]), findAllDimensions);
+// get all dimensions
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllDimensions)
+);
 
-// Update a dimension
+// update a dimension
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateDimension,
-  updateDimension
+  asyncErrorWrapper(updateDimension)
 );
 
-// Delete a dimension
-router.delete("/:id", authenticate, authorize(["admin"]), deleteDimension);
+// delete a dimension
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteDimension)
+);
 
 module.exports = router;

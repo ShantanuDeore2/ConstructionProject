@@ -7,36 +7,55 @@ const {
   updateDelivery,
   deleteDelivery,
 } = require("../controllers/deliveryController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateDelivery,
 } = require("../middlewares/schemaValidations/deliveryValidation");
 
-// Create a new delivery
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new delivery
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateDelivery,
-  createDelivery
+  asyncErrorWrapper(createDelivery)
 );
 
-// Get a single delivery
-router.get("/:id", authenticate, authorize(["admin"]), findDeliveryById);
+// get a single delivery
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findDeliveryById)
+);
 
-// Get all deliverys
-router.get("/", authenticate, authorize(["admin"]), findAllDeliverys);
+// get all deliverys
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllDeliverys)
+);
 
-// Update a delivery
+// update a delivery
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateDelivery,
-  updateDelivery
+  asyncErrorWrapper(updateDelivery)
 );
 
-// Delete a delivery
-router.delete("/:id", authenticate, authorize(["admin"]), deleteDelivery);
+// delete a delivery
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteDelivery)
+);
 
 module.exports = router;

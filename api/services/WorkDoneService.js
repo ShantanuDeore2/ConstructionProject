@@ -1,44 +1,60 @@
+const { NotFoundError } = require("../middlewares/errorHandler");
 /**
  * WorkDoneService
- * @description :: Business logic and services for WorkDone
+ * @description :: Business logic and services for workdones
  */
 module.exports = class WorkDoneService {
   constructor() {
-    let WorkDone = require("../schemas/WorkDone");
-    let MongoDao = require("../dao/MongoDAO");
-    this.workDoneDao = new MongoDao(WorkDone);
+    let WorkDone;
+    let DAO;
+
+    if (process.env.DATABASE === "mongodb") {
+      WorkDone = require("../schemas/WorkDone");
+      DAO = require("../dao/MongoDAO");
+    } else {
+      WorkDone = require("../schemas/WorkDone");
+      DAO = require("../dao/MongoDAO");
+    }
+
+    this.workdoneDao = new DAO(WorkDone);
   }
 
-  // Create a new workDone
-  async create(workDoneData) {
-    const workDone = await this.workDoneDao.create(workDoneData);
-    return workDone;
+  // Create a new product
+  async create(workdoneData) {
+    const workdone = await this.workdoneDao.create(workdoneData);
+    return workdone;
   }
 
-  // Get all WorkDones
+  // Get all workdones
   async findAll() {
-    const workDones = await this.workDoneDao.findAll();
-    return workDones;
+    const workdones = await this.workdoneDao.findAll();
+    return workdones;
   }
 
-  // Get a single workDone
-  async findById(workDoneId) {
-    const workDone = await this.workDoneDao.findById(workDoneId);
-    return workDone;
+  // Get a single product
+  async findById(workdoneId) {
+    const workdone = await this.workdoneDao.findById(workdoneId);
+    if (!workdone) {
+      throw new NotFoundError("WorkDone not found");
+    }
+    return workdone;
   }
 
-  // Update a single workDone
-  async updateById(workDoneId, workDoneData) {
-    const workDone = await this.workDoneDao.updateById(
-      workDoneId,
-      workDoneData
+  // Update a single product
+  async updateById(workdoneId, workdoneData) {
+    const workdone = await this.workdoneDao.updateById(
+      workdoneId,
+      workdoneData
     );
-    return workDone;
+    if (!workdone) {
+      throw NotFoundError("WorkDone not found");
+    }
+    return workdone;
   }
 
-  // Delete a single workDone
-  async deleteById(workDoneId) {
-    await this.workDoneDao.deleteById(workDoneId);
+  // Delete a single product
+  async deleteById(workdoneId) {
+    await this.workdoneDao.deleteById(workdoneId);
   }
 
   // Other complex business logics

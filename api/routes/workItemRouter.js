@@ -7,36 +7,55 @@ const {
   updateWorkItem,
   deleteWorkItem,
 } = require("../controllers/workItemController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateWorkItem,
 } = require("../middlewares/schemaValidations/workItemValidation");
 
-// Create a new workItem
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new workitem
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateWorkItem,
-  createWorkItem
+  asyncErrorWrapper(createWorkItem)
 );
 
-// Get a single workItem
-router.get("/:id", authenticate, authorize(["admin"]), findWorkItemById);
+// get a single workitem
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findWorkItemById)
+);
 
-// Get all workItems
-router.get("/", authenticate, authorize(["admin"]), findAllWorkItems);
+// get all workitems
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllWorkItems)
+);
 
-// Update a workItem
+// update a workitem
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateWorkItem,
-  updateWorkItem
+  asyncErrorWrapper(updateWorkItem)
 );
 
-// Delete a workItem
-router.delete("/:id", authenticate, authorize(["admin"]), deleteWorkItem);
+// delete a workitem
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteWorkItem)
+);
 
 module.exports = router;

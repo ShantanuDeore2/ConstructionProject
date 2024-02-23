@@ -7,36 +7,55 @@ const {
   updateWorkDone,
   deleteWorkDone,
 } = require("../controllers/workDoneController");
+
 const { authenticate, authorize } = require("../middlewares/authMiddleware");
+
 const {
   validateWorkDone,
 } = require("../middlewares/schemaValidations/workDoneValidation");
 
-// Create a new workDone
+const { asyncErrorWrapper } = require("../middlewares/errorHandler");
+
+// create a new workdone
 router.post(
   "/",
   authenticate,
   authorize(["admin"]),
   validateWorkDone,
-  createWorkDone
+  asyncErrorWrapper(createWorkDone)
 );
 
-// Get a single workDone
-router.get("/:id", authenticate, authorize(["admin"]), findWorkDoneById);
+// get a single workdone
+router.get(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findWorkDoneById)
+);
 
-// Get all workDones
-router.get("/", authenticate, authorize(["admin"]), findAllWorkDones);
+// get all workdones
+router.get(
+  "/",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(findAllWorkDones)
+);
 
-// Update a workDone
+// update a workdone
 router.patch(
   "/:id",
   authenticate,
   authorize(["admin"]),
   validateWorkDone,
-  updateWorkDone
+  asyncErrorWrapper(updateWorkDone)
 );
 
-// Delete a workDone
-router.delete("/:id", authenticate, authorize(["admin"]), deleteWorkDone);
+// delete a workdone
+router.delete(
+  "/:id",
+  authenticate,
+  authorize(["admin"]),
+  asyncErrorWrapper(deleteWorkDone)
+);
 
 module.exports = router;
