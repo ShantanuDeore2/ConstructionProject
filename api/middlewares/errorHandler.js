@@ -23,6 +23,12 @@ class BadRequestError extends AppError {
   }
 }
 
+class AuthenticationError extends AppError {
+  constructor(message = "Authentication Error") {
+    super(message, 401);
+  }
+}
+
 class DuplicateRecordError extends AppError {
   constructor(message = "Bad Request") {
     super(message, 400);
@@ -66,6 +72,7 @@ module.exports = {
   NotFoundError,
   BadRequestError,
   asyncErrorWrapper,
+  AuthenticationError,
   DuplicateRecordError,
   errorHandlerMiddleware,
 };
