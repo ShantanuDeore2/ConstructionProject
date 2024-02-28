@@ -3,7 +3,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 const { errors } = require("celebrate");
-const passport = require("./utils/passport-config");
+const cookieParser = require("cookie-parser");
 
 const {
   permissionRoutes,
@@ -31,6 +31,7 @@ const logger = require("./utils/logger");
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 // Helmet helps secure Express apps by setting HTTP response headers
 app.use(helmet());
@@ -44,9 +45,7 @@ app.use(
   })
 );
 
-app.use(passport.initialize());
-
-app.use("/login", loginRoutes);
+app.use("/auth", loginRoutes);
 app.use("/register", registerRoutes);
 app.use("/permissions", permissionRoutes);
 app.use("/departments", departmentRoutes);

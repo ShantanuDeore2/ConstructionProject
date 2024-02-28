@@ -1,7 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { login } = require("../controllers/loginController");
+const { login, refresh, logout } = require("../controllers/loginController");
 const { asyncErrorWrapper } = require("../middlewares/errorHandler");
 // Login
-router.post("/", asyncErrorWrapper(login));
+router.post("/login", asyncErrorWrapper(login));
+// Refresh token
+router.get("/refresh", asyncErrorWrapper(refresh));
+// Logout
+router.post("/logout", asyncErrorWrapper(logout));
+
 module.exports = router;

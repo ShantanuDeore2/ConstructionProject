@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const passport = require("passport");
+const { AuthenticationError } = require("./errorHandler");
 
 /**
  * Middleware to authenticate a user
@@ -8,7 +8,21 @@ const passport = require("passport");
  * @param {NextFunction} next - The next function
  * @returns {void}
  */
-exports.authenticate = passport.authenticate("jwt", { session: false });
+exports.authenticate = (req, res, next) => {
+  const authHeader = req.headers.authorization || req.headers.Authorization;
+  if (!authHeader?.startsWith("Bearer ")) {
+    throw new AuthenticationError("Invalid token");
+  }
+  const token = authHeader.split(" ")[1];
+  jwt.verify(token, process.env.JWT_ACCESS_SECRET, (err, user) => {
+    if (err) {
+      throw new AuthenticationError("Invalid token");
+    }
+    console.log("inside authenticate", user);
+    req.user = user;
+    next();
+  });
+};
 
 /**
  * Middleware to authorize a user

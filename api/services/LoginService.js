@@ -26,13 +26,51 @@ module.exports = class LoginService {
       throw new AuthenticationError("Invalid email or password");
     }
 
-    const payload = { id: user._id };
-    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+    let payload = { id: user._id, email: user.email };
+
+    const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
+      expiresIn: "10s",
+    }); // Adjust expiresIn as needed
+
+    payload = { email: user.email };
+    const refreshToken = jwt.sign(payload, process.env.JWT_REFRESH_SECRET, {
       expiresIn: "8h",
     }); // Adjust expiresIn as needed
 
-    return token;
+    return { accessToken, refreshToken };
   }
 
+  async tryRefresh(req) {
+    const cookie = req.cookies;
+    if (!cookie.jwt) {
+      throw new AuthenticationError("No refresh token provided");
+    }
+    const refreshToken = cookie.jwt;
+    jwt.verify(
+      refreshToken,
+      process.env.JWT_REFRESH_SECRET,
+      async (err, user) => {
+        if (err) {
+          throw new AuthenticationError("Invalid refresh token");
+        }
+
+        const foundUser = await this.userDao.findByQueryCriteria({
+          email: user.email,
+        });
+
+        if (!foundUser) {
+          throw new AuthenticationError("Invalid refresh token");
+        }
+
+        const payload = { id: user._id, email: user.email };
+
+        const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
+          expiresIn: "10s",
+        }); // Adjust expiresIn as needed
+
+        return accessToken;
+      }
+    );
+  }
   // Other complex business logics
 };
