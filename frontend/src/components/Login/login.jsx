@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import { TextField, Button, Typography, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LogoAppName from "../LogoAppName/logoappname";
+import { setCredentials } from "../../store/authSlice";
+import { useDispatch } from "react-redux";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogin = async (event) => {
     setError("");
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,8 +28,9 @@ const Login = () => {
       }
 
       const data = await response.json();
-      navigate("/signup");
-      // Handle successful login here (e.g., redirect, store token)
+      const { accessToken } = data; // Extract token from response
+      dispatch(setCredentials({ accessToken })); // Dispatch action to store token
+      navigate("/dashboard");
     } catch (err) {
       console.error(err);
       setError("Failed to login. Please try again."); // Update error state

@@ -1,19 +1,7 @@
 import React, { useState } from "react";
-import {
-  Container,
-  TextField,
-  Button,
-  Box,
-  Stack,
-  Typography,
-  CssBaseline,
-  Alert,
-  Grid,
-} from "@mui/material";
-import Navbar from "../Navbar/navbar";
+import { TextField, Button, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LogoAppName from "../LogoAppName/logoappname";
-import Footer from "../Footer/footer";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 const darkTheme = createTheme({
@@ -50,9 +38,7 @@ const SignUp = () => {
       }
 
       const data = await response.json();
-      console.log(data);
       navigate("/login");
-      // Handle successful login here (e.g., redirect, store token)
     } catch (err) {
       console.error(err);
       setError("Failed to login. Please try again."); // Update error state
