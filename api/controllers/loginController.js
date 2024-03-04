@@ -10,13 +10,12 @@ exports.login = async (req, res, next) => {
     httpOnly: true,
     secure: true,
     sameSite: "none", // cross-site cookies
-    maxAge: 7 * 60 * 60 * 24 * 30, // 7 days
+    maxAge: 7 * 60 * 60 * 24 * 1000, // 7 days
   });
   res.status(200).json({ accessToken });
 };
 
 exports.refresh = async (req, res, next) => {
-  console.log("refresh");
   const accessToken = await loginService.tryRefresh(req);
   res.status(200).json({ accessToken });
 };

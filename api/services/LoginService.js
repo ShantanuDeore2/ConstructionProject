@@ -29,7 +29,7 @@ module.exports = class LoginService {
     let payload = { id: user._id, email: user.email };
 
     const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
-      expiresIn: "10s",
+      expiresIn: "1d",
     }); // Adjust expiresIn as needed
 
     payload = { email: user.email };
@@ -46,7 +46,10 @@ module.exports = class LoginService {
       throw new AuthenticationError("No refresh token provided");
     }
     const refreshToken = cookie.jwt;
-    jwt.verify(
+
+    let accessToken;
+
+    accessToken = jwt.verify(
       refreshToken,
       process.env.JWT_REFRESH_SECRET,
       async (err, user) => {
@@ -64,13 +67,13 @@ module.exports = class LoginService {
 
         const payload = { id: user._id, email: user.email };
 
-        const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
-          expiresIn: "10s",
+        return jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
+          expiresIn: "1d",
         }); // Adjust expiresIn as needed
-
-        return accessToken;
       }
     );
+
+    return accessToken;
   }
   // Other complex business logics
 };
