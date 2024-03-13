@@ -1,11 +1,11 @@
-const LoginService = require("../services/LoginService");
+const AuthSevice = require("../services/authService");
 const logger = require("../../utils/logger");
 const { AuthenticationError } = require("../middlewares/errorHandler");
-const loginService = new LoginService();
+const authService = new AuthSevice();
 
 // Create a new inventory
 exports.login = async (req, res, next) => {
-  const { accessToken, refreshToken } = await loginService.tryLogin(req);
+  const { accessToken, refreshToken } = await authService.tryLogin(req);
   res.cookie("jwt", refreshToken, {
     httpOnly: true,
     secure: true,
@@ -16,7 +16,7 @@ exports.login = async (req, res, next) => {
 };
 
 exports.refresh = async (req, res, next) => {
-  const accessToken = await loginService.tryRefresh(req);
+  const accessToken = await authService.tryRefresh(req);
   res.status(200).json({ accessToken });
 };
 

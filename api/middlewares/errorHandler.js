@@ -58,10 +58,9 @@ const errorHandlerMiddleware = (err, req, res, next) => {
       });
     } else {
       // For non-operational, unknown, or programming errors, don't leak details
-      console.error("ERROR 💥", err);
       res.status(500).json({
         status: "error",
-        message: "Something went very wrong!",
+        message: "Something went wrong!",
       });
     }
   }

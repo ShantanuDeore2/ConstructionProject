@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { login, refresh, logout } = require("../controllers/loginController");
+const { login, refresh, logout } = require("../controllers/authController");
 const { asyncErrorWrapper } = require("../middlewares/errorHandler");
 // Login
 router.post("/login", asyncErrorWrapper(login));

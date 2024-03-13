@@ -2,10 +2,10 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { AuthenticationError } = require("../middlewares/errorHandler");
 /**
- * LoginService
+ * AuthService
  * @description :: Business logic and services for Login
  */
-module.exports = class LoginService {
+module.exports = class AuthService {
   constructor() {
     let User = require("../schemas/User");
     let MongoDao = require("../dao/MongoDAO");
@@ -29,12 +29,12 @@ module.exports = class LoginService {
     let payload = { id: user._id, email: user.email };
 
     const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
-      expiresIn: "1d",
+      expiresIn: "5s",
     }); // Adjust expiresIn as needed
 
     payload = { email: user.email };
     const refreshToken = jwt.sign(payload, process.env.JWT_REFRESH_SECRET, {
-      expiresIn: "8h",
+      expiresIn: "10d",
     }); // Adjust expiresIn as needed
 
     return { accessToken, refreshToken };
@@ -47,13 +47,12 @@ module.exports = class LoginService {
     }
     const refreshToken = cookie.jwt;
 
-    let accessToken;
-
-    accessToken = jwt.verify(
+    let accessToken = jwt.verify(
       refreshToken,
       process.env.JWT_REFRESH_SECRET,
       async (err, user) => {
         if (err) {
+          console.log(err);
           throw new AuthenticationError("Invalid refresh token");
         }
 
@@ -62,13 +61,14 @@ module.exports = class LoginService {
         });
 
         if (!foundUser) {
+          console.log("User not found");
           throw new AuthenticationError("Invalid refresh token");
         }
 
         const payload = { id: user._id, email: user.email };
 
         return jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
-          expiresIn: "1d",
+          expiresIn: "5s",
         }); // Adjust expiresIn as needed
       }
     );

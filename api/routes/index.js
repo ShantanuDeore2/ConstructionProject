@@ -1,5 +1,5 @@
 const inventoryRoutes = require("./inventoryRouter");
-const loginRoutes = require("./loginRouter");
+const authRoutes = require("./authRouter");
 const registerRoutes = require("./registerRouter");
 const permissionRoutes = require("./permissionRouter");
 const departmentRoutes = require("./departmentRouter");
@@ -19,7 +19,7 @@ const workTypeRoutes = require("./workTypeRouter");
 
 module.exports = {
   inventoryRoutes,
-  loginRoutes,
+  authRoutes,
   registerRoutes,
   permissionRoutes,
   departmentRoutes,
