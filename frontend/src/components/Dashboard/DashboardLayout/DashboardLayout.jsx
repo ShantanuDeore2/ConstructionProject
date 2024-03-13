@@ -1,10 +1,48 @@
 import React from "react";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import { useGetUsersQuery, selectAllUsers } from "../../../store/userSlice";
+import { useSelector } from "react-redux";
+import { usePerformLogoutMutation } from "../../../store/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const DashboardLayout = () => {
+  let { error, isLoading, isSuccess, isError } = useGetUsersQuery(undefined, {
+    pollingInterval: 1000,
+  });
+
+  const data = useSelector(selectAllUsers);
+  const navigate = useNavigate();
+  const [logout] = usePerformLogoutMutation();
+
+  useEffect(() => {
+    const performLogout = async () => {
+      await logout();
+      navigate("/login");
+    };
+
+    if (isError && error?.status === 401) {
+      performLogout();
+    }
+  }, [isError, error, logout, navigate]);
+
   return (
     <div>
-      <h1>Dashboard Layout</h1>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : isError ? (
+        <div>Error</div>
+      ) : isSuccess ? (
+        data.map((user) => (
+          <div key={user._id}>
+            <h1>{user.fullName}</h1>
+            <p>{user._id}</p>
+            <p>{user.email}</p>
+            <p>{user.password}</p>
+          </div>
+        ))
+      ) : null}
+
       <Outlet />
     </div>
   );

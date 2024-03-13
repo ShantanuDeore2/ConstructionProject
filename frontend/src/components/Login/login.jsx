@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import LogoAppName from "../LogoAppName/logoappname";
 import { setCredentials } from "../../store/authSlice";
 import { useDispatch } from "react-redux";
+import { usePerformLoginMutation } from "../../store/authSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -11,30 +12,18 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [performLogin] = usePerformLoginMutation();
 
   const handleLogin = async (event) => {
     setError("");
-    try {
-      const response = await fetch("http://localhost:3000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`); // Throw error for bad response
-      }
-
-      const data = await response.json();
-      const { accessToken } = data; // Extract token from response
-      dispatch(setCredentials({ accessToken })); // Dispatch action to store token
-      navigate("/dashboard");
-    } catch (err) {
-      console.error(err);
-      setError("Failed to login. Please try again."); // Update error state
+    const { data, error } = await performLogin({ email, password });
+    if (error) {
+      setError("Failed to login. Please try again.");
+      return;
     }
+    const { accessToken } = data;
+    dispatch(setCredentials({ accessToken }));
+    navigate("/dashboard");
   };
 
   return (

@@ -1,51 +1,1072 @@
-{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T05:47:46.130Z"}
-{"level":"info","message":"POST /permissions 500 105 - 12.780 ms","timestamp":"2024-02-23T05:47:46.132Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 11.452 ms","timestamp":"2024-02-23T05:51:10.737Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 401 - - 0.967 ms","timestamp":"2024-02-23T05:51:18.139Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 200 174 - 9.198 ms","timestamp":"2024-02-23T05:51:31.011Z"}
-{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T05:51:35.110Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 7.834 ms","timestamp":"2024-02-23T05:51:35.111Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 5.216 ms","timestamp":"2024-02-23T05:51:48.109Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 10.459 ms","timestamp":"2024-02-23T05:54:02.505Z"}
-{"error":"Permission not found","level":"error","message":"Error reading permission","timestamp":"2024-02-23T05:54:09.634Z"}
-{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T05:54:09.635Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 9.025 ms","timestamp":"2024-02-23T05:54:09.636Z"}
-{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T05:56:31.001Z"}
-{"level":"info","message":"POST /permissions 500 105 - 11.042 ms","timestamp":"2024-02-23T05:56:31.004Z"}
-{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:56:39.618Z"}
-{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:56:39.619Z"}
-{"level":"info","message":"POST /permissions 500 94 - 20.457 ms","timestamp":"2024-02-23T05:56:39.619Z"}
-{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:57:42.070Z"}
-{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:57:42.072Z"}
-{"level":"info","message":"POST /permissions 500 94 - 18.134 ms","timestamp":"2024-02-23T05:57:42.073Z"}
-{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:58:27.553Z"}
-{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:58:27.556Z"}
-{"level":"info","message":"POST /permissions 500 94 - 19.719 ms","timestamp":"2024-02-23T05:58:27.558Z"}
-{"error":"Duplicate key error","level":"error","message":"Error creating permission","timestamp":"2024-02-23T05:59:34.324Z"}
-{"level":"error","message":"Error Custom: Duplicate key error","timestamp":"2024-02-23T05:59:34.326Z"}
-{"level":"info","message":"POST /permissions 500 94 - 21.485 ms","timestamp":"2024-02-23T05:59:34.328Z"}
-{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T06:02:59.399Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 11.011 ms","timestamp":"2024-02-23T06:02:59.401Z"}
-{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T06:07:02.342Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 12.740 ms","timestamp":"2024-02-23T06:07:02.344Z"}
-{"level":"error","message":"Error Custom: Permission not found","timestamp":"2024-02-23T06:24:45.818Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfce 404 114 - 10.479 ms","timestamp":"2024-02-23T06:24:45.821Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 10.245 ms","timestamp":"2024-02-23T06:24:48.468Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 8.970 ms","timestamp":"2024-02-23T06:24:49.314Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 7.391 ms","timestamp":"2024-02-23T06:24:55.238Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 9.318 ms","timestamp":"2024-02-23T06:28:01.788Z"}
-{"level":"info","message":"GET /permissions/65d02167a480b34f9e5cdfcd 304 - - 8.612 ms","timestamp":"2024-02-23T06:28:02.589Z"}
-{"level":"error","message":"Error Custom: Validation Error: Path `name` is required.","timestamp":"2024-02-23T06:41:15.086Z"}
-{"level":"info","message":"POST /permissions 500 117 - 17.075 ms","timestamp":"2024-02-23T06:41:15.089Z"}
-{"level":"error","message":"Error Custom: Validation Error: Path `name` is required.","timestamp":"2024-02-23T06:41:37.701Z"}
-{"level":"info","message":"POST /permissions 500 117 - 16.826 ms","timestamp":"2024-02-23T06:41:37.704Z"}
-{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T06:41:51.273Z"}
-{"level":"info","message":"POST /permissions 500 105 - 11.217 ms","timestamp":"2024-02-23T06:41:51.276Z"}
-{"level":"error","message":"Error Custom: Validation Error: Path `name` is required.","timestamp":"2024-02-23T06:42:04.178Z"}
-{"level":"info","message":"POST /permissions 500 117 - 15.204 ms","timestamp":"2024-02-23T06:42:04.181Z"}
-{"level":"error","message":"Error Custom: Validation failed","timestamp":"2024-02-23T06:42:11.842Z"}
-{"level":"info","message":"POST /permissions 500 105 - 11.641 ms","timestamp":"2024-02-23T06:42:11.844Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 11.186 ms","timestamp":"2024-02-23T07:27:40.718Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 9.607 ms","timestamp":"2024-02-23T07:27:42.198Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 5.706 ms","timestamp":"2024-02-23T07:27:43.055Z"}
-{"level":"info","message":"GET /permissions/ 304 - - 5.384 ms","timestamp":"2024-02-23T07:27:43.061Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 429.120 ms","timestamp":"2024-03-13T02:44:21.968Z"}
+{"level":"info","message":"GET /users 304 - - 71.289 ms","timestamp":"2024-03-13T02:44:22.102Z"}
+{"level":"info","message":"GET /users 304 - - 7.630 ms","timestamp":"2024-03-13T02:44:23.115Z"}
+{"level":"info","message":"GET /users 304 - - 5.669 ms","timestamp":"2024-03-13T02:44:24.129Z"}
+{"level":"info","message":"GET /users 304 - - 9.152 ms","timestamp":"2024-03-13T02:44:25.150Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T02:44:26.158Z"}
+{"level":"info","message":"GET /users 401 107 - 1.881 ms","timestamp":"2024-03-13T02:44:26.159Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 4.079 ms","timestamp":"2024-03-13T02:44:26.168Z"}
+{"level":"info","message":"GET /users 304 - - 3.928 ms","timestamp":"2024-03-13T02:44:26.178Z"}
+{"level":"info","message":"GET /users 304 - - 5.182 ms","timestamp":"2024-03-13T02:44:27.192Z"}
+{"level":"info","message":"GET /users 304 - - 5.180 ms","timestamp":"2024-03-13T02:44:28.203Z"}
+{"level":"info","message":"GET /users 304 - - 7.653 ms","timestamp":"2024-03-13T02:44:29.217Z"}
+{"level":"info","message":"GET /users 304 - - 6.396 ms","timestamp":"2024-03-13T02:44:30.231Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T02:44:31.238Z"}
+{"level":"info","message":"GET /users 401 107 - 1.712 ms","timestamp":"2024-03-13T02:44:31.239Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.429 ms","timestamp":"2024-03-13T02:44:31.247Z"}
+{"level":"info","message":"GET /users 304 - - 6.391 ms","timestamp":"2024-03-13T02:44:31.260Z"}
+{"level":"info","message":"GET /users 304 - - 14.206 ms","timestamp":"2024-03-13T02:44:32.293Z"}
+{"level":"info","message":"GET /users 304 - - 4.743 ms","timestamp":"2024-03-13T02:44:33.304Z"}
+{"level":"info","message":"GET /users 304 - - 6.644 ms","timestamp":"2024-03-13T02:44:34.320Z"}
+{"level":"info","message":"GET /users 304 - - 7.958 ms","timestamp":"2024-03-13T02:44:35.341Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T02:44:36.344Z"}
+{"level":"info","message":"GET /users 401 107 - 0.878 ms","timestamp":"2024-03-13T02:44:36.345Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 2.747 ms","timestamp":"2024-03-13T02:44:36.353Z"}
+{"level":"info","message":"GET /users 304 - - 18.819 ms","timestamp":"2024-03-13T02:44:36.384Z"}
+{"level":"info","message":"GET /users 304 - - 42.230 ms","timestamp":"2024-03-13T02:44:37.432Z"}
+{"level":"info","message":"GET /users 304 - - 3.900 ms","timestamp":"2024-03-13T02:44:38.443Z"}
+{"level":"info","message":"GET /users 304 - - 5.749 ms","timestamp":"2024-03-13T02:44:39.458Z"}
+{"level":"info","message":"GET /users 304 - - 9.429 ms","timestamp":"2024-03-13T02:44:40.479Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T02:44:41.484Z"}
+{"level":"info","message":"GET /users 401 107 - 1.397 ms","timestamp":"2024-03-13T02:44:41.485Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.319 ms","timestamp":"2024-03-13T02:44:41.496Z"}
+{"level":"info","message":"GET /users 304 - - 3.709 ms","timestamp":"2024-03-13T02:44:41.506Z"}
+{"level":"info","message":"GET /users 304 - - 5.830 ms","timestamp":"2024-03-13T02:44:42.519Z"}
+{"level":"info","message":"GET /users 304 - - 5.034 ms","timestamp":"2024-03-13T02:44:43.533Z"}
+{"level":"info","message":"GET /users 304 - - 3.799 ms","timestamp":"2024-03-13T02:44:44.542Z"}
+{"level":"info","message":"GET /users 304 - - 8.771 ms","timestamp":"2024-03-13T02:44:45.560Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T02:44:46.574Z"}
+{"level":"info","message":"GET /users 401 107 - 1.306 ms","timestamp":"2024-03-13T02:44:46.575Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.093 ms","timestamp":"2024-03-13T02:44:46.584Z"}
+{"level":"info","message":"GET /users 304 - - 3.478 ms","timestamp":"2024-03-13T02:44:46.598Z"}
+{"level":"info","message":"GET /users 304 - - 3.544 ms","timestamp":"2024-03-13T02:44:47.610Z"}
+{"level":"info","message":"GET /users 304 - - 5.308 ms","timestamp":"2024-03-13T02:44:48.629Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 437.755 ms","timestamp":"2024-03-13T03:00:34.403Z"}
+{"level":"info","message":"GET /users 200 3003 - 71.624 ms","timestamp":"2024-03-13T03:00:34.538Z"}
+{"level":"info","message":"GET /users 304 - - 13.088 ms","timestamp":"2024-03-13T03:00:35.565Z"}
+{"level":"info","message":"GET /users 304 - - 5.474 ms","timestamp":"2024-03-13T03:00:36.578Z"}
+{"level":"info","message":"GET /users 304 - - 12.769 ms","timestamp":"2024-03-13T03:00:37.597Z"}
+{"level":"info","message":"GET /users 304 - - 6.295 ms","timestamp":"2024-03-13T03:00:38.610Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.875 ms","timestamp":"2024-03-13T03:00:39.372Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 488.267 ms","timestamp":"2024-03-13T03:01:12.995Z"}
+{"level":"info","message":"GET /users 304 - - 23.986 ms","timestamp":"2024-03-13T03:01:13.277Z"}
+{"level":"info","message":"GET /users 304 - - 13.775 ms","timestamp":"2024-03-13T03:01:14.301Z"}
+{"level":"info","message":"GET /users 304 - - 8.518 ms","timestamp":"2024-03-13T03:01:15.322Z"}
+{"level":"info","message":"GET /users 304 - - 18.231 ms","timestamp":"2024-03-13T03:01:16.351Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:01:17.360Z"}
+{"level":"info","message":"GET /users 401 107 - 1.958 ms","timestamp":"2024-03-13T03:01:17.362Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 2.459 ms","timestamp":"2024-03-13T03:01:17.370Z"}
+{"level":"info","message":"GET /users 304 - - 3.331 ms","timestamp":"2024-03-13T03:01:17.380Z"}
+{"level":"info","message":"GET /users 304 - - 23.381 ms","timestamp":"2024-03-13T03:01:18.418Z"}
+{"level":"info","message":"GET /users 304 - - 9.399 ms","timestamp":"2024-03-13T03:01:19.435Z"}
+{"level":"info","message":"GET /users 304 - - 8.721 ms","timestamp":"2024-03-13T03:01:20.452Z"}
+{"level":"info","message":"GET /users 304 - - 6.231 ms","timestamp":"2024-03-13T03:01:21.466Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:01:22.473Z"}
+{"level":"info","message":"GET /users 401 107 - 1.828 ms","timestamp":"2024-03-13T03:01:22.474Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.787 ms","timestamp":"2024-03-13T03:01:22.481Z"}
+{"level":"info","message":"GET /users 304 - - 4.075 ms","timestamp":"2024-03-13T03:01:22.492Z"}
+{"level":"info","message":"GET /users 304 - - 10.646 ms","timestamp":"2024-03-13T03:01:23.521Z"}
+{"level":"info","message":"GET /users 304 - - 3.822 ms","timestamp":"2024-03-13T03:01:24.531Z"}
+{"level":"info","message":"GET /users 304 - - 9.547 ms","timestamp":"2024-03-13T03:01:25.552Z"}
+{"level":"info","message":"GET /users 304 - - 13.998 ms","timestamp":"2024-03-13T03:01:26.579Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:01:27.583Z"}
+{"level":"info","message":"GET /users 401 107 - 0.884 ms","timestamp":"2024-03-13T03:01:27.583Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 2.868 ms","timestamp":"2024-03-13T03:01:27.593Z"}
+{"level":"info","message":"GET /users 304 - - 23.776 ms","timestamp":"2024-03-13T03:01:27.626Z"}
+{"level":"info","message":"GET /users 304 - - 3.673 ms","timestamp":"2024-03-13T03:01:28.639Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.264 ms","timestamp":"2024-03-13T03:01:28.702Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 432.754 ms","timestamp":"2024-03-13T03:02:19.246Z"}
+{"level":"info","message":"GET /users 304 - - 23.514 ms","timestamp":"2024-03-13T03:02:19.390Z"}
+{"level":"info","message":"GET /users 304 - - 10.437 ms","timestamp":"2024-03-13T03:02:20.407Z"}
+{"level":"info","message":"GET /users 304 - - 7.475 ms","timestamp":"2024-03-13T03:02:21.424Z"}
+{"level":"info","message":"GET /users 304 - - 7.205 ms","timestamp":"2024-03-13T03:02:22.438Z"}
+{"level":"info","message":"GET /users 304 - - 6.166 ms","timestamp":"2024-03-13T03:02:23.450Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:02:24.459Z"}
+{"level":"info","message":"GET /users 401 107 - 1.799 ms","timestamp":"2024-03-13T03:02:24.460Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.406 ms","timestamp":"2024-03-13T03:02:24.468Z"}
+{"level":"info","message":"GET /users 304 - - 5.242 ms","timestamp":"2024-03-13T03:02:24.481Z"}
+{"level":"info","message":"GET /users 304 - - 6.193 ms","timestamp":"2024-03-13T03:02:25.493Z"}
+{"level":"info","message":"GET /users 304 - - 9.590 ms","timestamp":"2024-03-13T03:02:26.516Z"}
+{"level":"info","message":"GET /users 304 - - 6.281 ms","timestamp":"2024-03-13T03:02:27.527Z"}
+{"level":"info","message":"GET /users 304 - - 6.104 ms","timestamp":"2024-03-13T03:02:28.539Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:02:29.547Z"}
+{"level":"info","message":"GET /users 401 107 - 1.668 ms","timestamp":"2024-03-13T03:02:29.548Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.466 ms","timestamp":"2024-03-13T03:02:29.557Z"}
+{"level":"info","message":"GET /users 304 - - 27.625 ms","timestamp":"2024-03-13T03:02:29.593Z"}
+{"level":"info","message":"GET /users 304 - - 5.853 ms","timestamp":"2024-03-13T03:02:30.608Z"}
+{"level":"info","message":"GET /users 304 - - 5.635 ms","timestamp":"2024-03-13T03:02:31.628Z"}
+{"level":"info","message":"GET /users 304 - - 8.364 ms","timestamp":"2024-03-13T03:02:32.648Z"}
+{"level":"info","message":"GET /users 304 - - 10.566 ms","timestamp":"2024-03-13T03:02:33.665Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:02:34.673Z"}
+{"level":"info","message":"GET /users 401 107 - 1.659 ms","timestamp":"2024-03-13T03:02:34.675Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.375 ms","timestamp":"2024-03-13T03:02:34.683Z"}
+{"level":"info","message":"GET /users 304 - - 2.749 ms","timestamp":"2024-03-13T03:02:34.692Z"}
+{"level":"info","message":"GET /users 304 - - 11.750 ms","timestamp":"2024-03-13T03:02:35.711Z"}
+{"level":"info","message":"GET /users 304 - - 6.168 ms","timestamp":"2024-03-13T03:02:36.722Z"}
+{"level":"info","message":"GET /users 304 - - 3.723 ms","timestamp":"2024-03-13T03:02:37.732Z"}
+{"level":"info","message":"GET /users 304 - - 6.907 ms","timestamp":"2024-03-13T03:02:38.745Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:02:39.763Z"}
+{"level":"info","message":"GET /users 401 107 - 1.158 ms","timestamp":"2024-03-13T03:02:39.764Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:02:39.790Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 17.496 ms","timestamp":"2024-03-13T03:02:39.791Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 410.435 ms","timestamp":"2024-03-13T03:03:54.077Z"}
+{"level":"info","message":"GET /users 304 - - 32.458 ms","timestamp":"2024-03-13T03:03:54.183Z"}
+{"level":"info","message":"GET /users 304 - - 9.904 ms","timestamp":"2024-03-13T03:03:55.206Z"}
+{"level":"info","message":"GET /users 304 - - 19.998 ms","timestamp":"2024-03-13T03:03:56.237Z"}
+{"level":"info","message":"GET /users 304 - - 11.501 ms","timestamp":"2024-03-13T03:03:57.263Z"}
+{"level":"info","message":"GET /users 304 - - 39.305 ms","timestamp":"2024-03-13T03:03:58.305Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:03:59.316Z"}
+{"level":"info","message":"GET /users 401 107 - 1.878 ms","timestamp":"2024-03-13T03:03:59.317Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 15.275 ms","timestamp":"2024-03-13T03:03:59.337Z"}
+{"level":"info","message":"GET /users 304 - - 57.999 ms","timestamp":"2024-03-13T03:03:59.408Z"}
+{"level":"info","message":"GET /users 304 - - 17.762 ms","timestamp":"2024-03-13T03:04:00.441Z"}
+{"level":"info","message":"GET /users 304 - - 7.555 ms","timestamp":"2024-03-13T03:04:01.455Z"}
+{"level":"info","message":"GET /users 304 - - 7.712 ms","timestamp":"2024-03-13T03:04:02.476Z"}
+{"level":"info","message":"GET /users 304 - - 5.077 ms","timestamp":"2024-03-13T03:04:03.486Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:04:04.498Z"}
+{"level":"info","message":"GET /users 401 107 - 2.963 ms","timestamp":"2024-03-13T03:04:04.502Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:04:04.513Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 2.907 ms","timestamp":"2024-03-13T03:04:04.514Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 514.729 ms","timestamp":"2024-03-13T03:04:52.946Z"}
+{"level":"info","message":"GET /users 304 - - 53.457 ms","timestamp":"2024-03-13T03:04:53.094Z"}
+{"level":"info","message":"GET /users 304 - - 7.957 ms","timestamp":"2024-03-13T03:04:54.110Z"}
+{"level":"info","message":"GET /users 304 - - 4.772 ms","timestamp":"2024-03-13T03:04:55.126Z"}
+{"level":"info","message":"GET /users 304 - - 34.967 ms","timestamp":"2024-03-13T03:04:56.173Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:04:57.182Z"}
+{"level":"info","message":"GET /users 401 107 - 1.660 ms","timestamp":"2024-03-13T03:04:57.182Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.601 ms","timestamp":"2024-03-13T03:04:57.191Z"}
+{"level":"info","message":"GET /users 304 - - 2.927 ms","timestamp":"2024-03-13T03:04:57.202Z"}
+{"level":"info","message":"GET /users 304 - - 4.873 ms","timestamp":"2024-03-13T03:04:58.217Z"}
+{"level":"info","message":"GET /users 304 - - 4.515 ms","timestamp":"2024-03-13T03:04:59.231Z"}
+{"level":"info","message":"GET /users 304 - - 22.777 ms","timestamp":"2024-03-13T03:05:00.261Z"}
+{"level":"info","message":"GET /users 304 - - 5.816 ms","timestamp":"2024-03-13T03:05:01.273Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:05:02.282Z"}
+{"level":"info","message":"GET /users 401 107 - 4.847 ms","timestamp":"2024-03-13T03:05:02.285Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:05:02.319Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 15.060 ms","timestamp":"2024-03-13T03:05:02.319Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.746 ms","timestamp":"2024-03-13T03:07:20.804Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 439.921 ms","timestamp":"2024-03-13T03:07:27.263Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.381 ms","timestamp":"2024-03-13T03:07:42.518Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 428.202 ms","timestamp":"2024-03-13T03:07:48.347Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.901 ms","timestamp":"2024-03-13T03:08:07.578Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 430.952 ms","timestamp":"2024-03-13T03:08:15.119Z"}
+{"level":"info","message":"GET /users 304 - - 82.391 ms","timestamp":"2024-03-13T03:08:15.250Z"}
+{"level":"info","message":"GET /users 304 - - 4.349 ms","timestamp":"2024-03-13T03:08:16.263Z"}
+{"level":"info","message":"GET /users 304 - - 3.983 ms","timestamp":"2024-03-13T03:08:17.273Z"}
+{"level":"info","message":"GET /users 304 - - 13.066 ms","timestamp":"2024-03-13T03:08:18.293Z"}
+{"level":"info","message":"GET /users 304 - - 3.625 ms","timestamp":"2024-03-13T03:08:19.304Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:08:20.313Z"}
+{"level":"info","message":"GET /users 401 107 - 1.137 ms","timestamp":"2024-03-13T03:08:20.315Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.273 ms","timestamp":"2024-03-13T03:08:20.325Z"}
+{"level":"info","message":"GET /users 304 - - 4.143 ms","timestamp":"2024-03-13T03:08:20.339Z"}
+{"level":"info","message":"GET /users 304 - - 5.258 ms","timestamp":"2024-03-13T03:08:21.350Z"}
+{"level":"info","message":"GET /users 304 - - 3.534 ms","timestamp":"2024-03-13T03:08:22.363Z"}
+{"level":"info","message":"GET /users 304 - - 4.143 ms","timestamp":"2024-03-13T03:08:23.374Z"}
+{"level":"info","message":"GET /users 304 - - 4.722 ms","timestamp":"2024-03-13T03:08:24.385Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:08:25.396Z"}
+{"level":"info","message":"GET /users 401 107 - 0.801 ms","timestamp":"2024-03-13T03:08:25.397Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:08:25.408Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.385 ms","timestamp":"2024-03-13T03:08:25.409Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.355 ms","timestamp":"2024-03-13T03:08:53.785Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 400.362 ms","timestamp":"2024-03-13T03:08:59.221Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.173 ms","timestamp":"2024-03-13T03:09:33.229Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 410.611 ms","timestamp":"2024-03-13T03:09:38.406Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.344 ms","timestamp":"2024-03-13T03:10:10.467Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 446.976 ms","timestamp":"2024-03-13T03:10:14.957Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.479 ms","timestamp":"2024-03-13T03:10:26.296Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 449.608 ms","timestamp":"2024-03-13T03:10:38.067Z"}
+{"level":"info","message":"GET /users 304 - - 8.532 ms","timestamp":"2024-03-13T03:10:38.128Z"}
+{"level":"info","message":"GET /users 304 - - 5.416 ms","timestamp":"2024-03-13T03:10:39.142Z"}
+{"level":"info","message":"GET /users 304 - - 7.810 ms","timestamp":"2024-03-13T03:10:40.162Z"}
+{"level":"info","message":"GET /users 304 - - 15.246 ms","timestamp":"2024-03-13T03:10:41.185Z"}
+{"level":"info","message":"GET /users 304 - - 8.795 ms","timestamp":"2024-03-13T03:10:42.200Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:10:43.224Z"}
+{"level":"info","message":"GET /users 401 107 - 1.885 ms","timestamp":"2024-03-13T03:10:43.226Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 40.697 ms","timestamp":"2024-03-13T03:10:43.300Z"}
+{"level":"info","message":"GET /users 304 - - 21.126 ms","timestamp":"2024-03-13T03:10:43.340Z"}
+{"level":"info","message":"GET /users 304 - - 4.883 ms","timestamp":"2024-03-13T03:10:44.360Z"}
+{"level":"info","message":"GET /users 304 - - 3.533 ms","timestamp":"2024-03-13T03:10:45.370Z"}
+{"level":"info","message":"GET /users 304 - - 3.227 ms","timestamp":"2024-03-13T03:10:46.379Z"}
+{"level":"info","message":"GET /users 304 - - 3.143 ms","timestamp":"2024-03-13T03:10:47.387Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:10:48.394Z"}
+{"level":"info","message":"GET /users 401 107 - 0.720 ms","timestamp":"2024-03-13T03:10:48.395Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:10:48.399Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 2.201 ms","timestamp":"2024-03-13T03:10:48.401Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 468.765 ms","timestamp":"2024-03-13T03:13:54.310Z"}
+{"level":"info","message":"GET /users 304 - - 89.198 ms","timestamp":"2024-03-13T03:13:54.463Z"}
+{"level":"info","message":"GET /users 304 - - 4.079 ms","timestamp":"2024-03-13T03:13:55.477Z"}
+{"level":"info","message":"GET /users 304 - - 5.724 ms","timestamp":"2024-03-13T03:13:56.491Z"}
+{"level":"info","message":"GET /users 304 - - 12.152 ms","timestamp":"2024-03-13T03:13:57.510Z"}
+{"level":"info","message":"GET /users 304 - - 4.330 ms","timestamp":"2024-03-13T03:13:58.521Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:13:59.531Z"}
+{"level":"info","message":"GET /users 401 107 - 1.472 ms","timestamp":"2024-03-13T03:13:59.532Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 35.303 ms","timestamp":"2024-03-13T03:13:59.573Z"}
+{"level":"info","message":"GET /users 304 - - 4.762 ms","timestamp":"2024-03-13T03:13:59.590Z"}
+{"level":"info","message":"GET /users 304 - - 4.772 ms","timestamp":"2024-03-13T03:14:00.601Z"}
+{"level":"info","message":"GET /users 304 - - 26.702 ms","timestamp":"2024-03-13T03:14:01.638Z"}
+{"level":"info","message":"GET /users 304 - - 6.563 ms","timestamp":"2024-03-13T03:14:02.651Z"}
+{"level":"info","message":"GET /users 304 - - 10.918 ms","timestamp":"2024-03-13T03:14:03.681Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:14:04.690Z"}
+{"level":"info","message":"GET /users 401 107 - 1.811 ms","timestamp":"2024-03-13T03:14:04.691Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:14:04.698Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 3.378 ms","timestamp":"2024-03-13T03:14:04.699Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.819 ms","timestamp":"2024-03-13T03:14:53.870Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 449.538 ms","timestamp":"2024-03-13T03:15:00.283Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.767 ms","timestamp":"2024-03-13T03:18:16.812Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 437.535 ms","timestamp":"2024-03-13T03:18:22.789Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 438.989 ms","timestamp":"2024-03-13T03:18:40.200Z"}
+{"level":"info","message":"GET /users 200 3003 - 8.701 ms","timestamp":"2024-03-13T03:18:40.244Z"}
+{"level":"info","message":"GET /users 304 - - 2.941 ms","timestamp":"2024-03-13T03:18:41.254Z"}
+{"level":"info","message":"GET /users 304 - - 7.278 ms","timestamp":"2024-03-13T03:18:42.270Z"}
+{"level":"info","message":"GET /users 304 - - 4.223 ms","timestamp":"2024-03-13T03:18:43.282Z"}
+{"level":"info","message":"GET /users 304 - - 5.154 ms","timestamp":"2024-03-13T03:18:44.295Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:18:45.304Z"}
+{"level":"info","message":"GET /users 401 107 - 0.851 ms","timestamp":"2024-03-13T03:18:45.304Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 2.853 ms","timestamp":"2024-03-13T03:18:45.313Z"}
+{"level":"info","message":"GET /users 304 - - 4.259 ms","timestamp":"2024-03-13T03:18:45.324Z"}
+{"level":"info","message":"GET /users 304 - - 5.775 ms","timestamp":"2024-03-13T03:18:46.338Z"}
+{"level":"info","message":"GET /users 304 - - 4.735 ms","timestamp":"2024-03-13T03:18:47.349Z"}
+{"level":"info","message":"GET /users 304 - - 14.476 ms","timestamp":"2024-03-13T03:18:48.375Z"}
+{"level":"info","message":"GET /users 304 - - 5.095 ms","timestamp":"2024-03-13T03:18:49.391Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:18:50.400Z"}
+{"level":"info","message":"GET /users 401 107 - 0.948 ms","timestamp":"2024-03-13T03:18:50.400Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:18:50.409Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.540 ms","timestamp":"2024-03-13T03:18:50.409Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.234 ms","timestamp":"2024-03-13T03:19:35.765Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 446.853 ms","timestamp":"2024-03-13T03:19:43.398Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 416.500 ms","timestamp":"2024-03-13T03:19:57.961Z"}
+{"level":"info","message":"GET /users 200 3003 - 18.507 ms","timestamp":"2024-03-13T03:19:58.055Z"}
+{"level":"info","message":"GET /users 304 - - 1.856 ms","timestamp":"2024-03-13T03:19:59.069Z"}
+{"level":"info","message":"GET /users 304 - - 8.929 ms","timestamp":"2024-03-13T03:20:00.085Z"}
+{"level":"info","message":"GET /users 304 - - 19.365 ms","timestamp":"2024-03-13T03:20:01.114Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:20:02.128Z"}
+{"level":"info","message":"GET /users 401 107 - 6.252 ms","timestamp":"2024-03-13T03:20:02.131Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 2.822 ms","timestamp":"2024-03-13T03:20:02.149Z"}
+{"level":"info","message":"GET /users 304 - - 2.001 ms","timestamp":"2024-03-13T03:20:02.157Z"}
+{"level":"info","message":"GET /users 304 - - 3.936 ms","timestamp":"2024-03-13T03:20:03.169Z"}
+{"level":"info","message":"GET /users 304 - - 3.392 ms","timestamp":"2024-03-13T03:20:04.179Z"}
+{"level":"info","message":"GET /users 304 - - 9.634 ms","timestamp":"2024-03-13T03:20:05.195Z"}
+{"level":"info","message":"GET /users 304 - - 9.019 ms","timestamp":"2024-03-13T03:20:06.215Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:20:07.226Z"}
+{"level":"info","message":"GET /users 401 107 - 0.798 ms","timestamp":"2024-03-13T03:20:07.227Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:20:07.233Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.449 ms","timestamp":"2024-03-13T03:20:07.234Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.370 ms","timestamp":"2024-03-13T03:24:08.417Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 441.976 ms","timestamp":"2024-03-13T03:24:20.437Z"}
+{"level":"info","message":"GET /users 200 3003 - 27.272 ms","timestamp":"2024-03-13T03:24:21.256Z"}
+{"level":"info","message":"GET /users 304 - - 5.825 ms","timestamp":"2024-03-13T03:24:22.269Z"}
+{"level":"info","message":"GET /users 304 - - 3.644 ms","timestamp":"2024-03-13T03:24:23.280Z"}
+{"level":"info","message":"GET /users 304 - - 3.928 ms","timestamp":"2024-03-13T03:24:24.290Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:24:25.297Z"}
+{"level":"info","message":"GET /users 401 107 - 0.926 ms","timestamp":"2024-03-13T03:24:25.297Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.389 ms","timestamp":"2024-03-13T03:24:25.306Z"}
+{"level":"info","message":"GET /users 304 - - 4.697 ms","timestamp":"2024-03-13T03:24:25.934Z"}
+{"level":"info","message":"GET /users 304 - - 3.252 ms","timestamp":"2024-03-13T03:24:26.940Z"}
+{"level":"info","message":"GET /users 304 - - 20.647 ms","timestamp":"2024-03-13T03:24:27.993Z"}
+{"level":"info","message":"GET /users 304 - - 8.091 ms","timestamp":"2024-03-13T03:24:29.009Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:24:30.024Z"}
+{"level":"info","message":"GET /users 401 107 - 2.672 ms","timestamp":"2024-03-13T03:24:30.027Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:24:30.037Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 7.318 ms","timestamp":"2024-03-13T03:24:30.038Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 571.822 ms","timestamp":"2024-03-13T03:26:56.564Z"}
+{"level":"info","message":"GET /users 304 - - 59.563 ms","timestamp":"2024-03-13T03:26:57.051Z"}
+{"level":"info","message":"GET /users 304 - - 34.311 ms","timestamp":"2024-03-13T03:26:58.790Z"}
+{"level":"info","message":"GET /users 304 - - 10.305 ms","timestamp":"2024-03-13T03:27:00.766Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:27:02.753Z"}
+{"level":"info","message":"GET /users 401 107 - 3.345 ms","timestamp":"2024-03-13T03:27:02.758Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 27.748 ms","timestamp":"2024-03-13T03:27:02.859Z"}
+{"level":"info","message":"GET /users 304 - - 15.688 ms","timestamp":"2024-03-13T03:27:02.905Z"}
+{"level":"info","message":"GET /users 304 - - 4.037 ms","timestamp":"2024-03-13T03:27:04.756Z"}
+{"level":"info","message":"GET /users 304 - - 13.550 ms","timestamp":"2024-03-13T03:27:06.775Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:27:08.761Z"}
+{"level":"info","message":"GET /users 401 107 - 5.994 ms","timestamp":"2024-03-13T03:27:08.765Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:27:08.775Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 6.231 ms","timestamp":"2024-03-13T03:27:08.776Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 481.523 ms","timestamp":"2024-03-13T03:27:26.905Z"}
+{"level":"info","message":"GET /users 304 - - 9.555 ms","timestamp":"2024-03-13T03:27:26.954Z"}
+{"level":"info","message":"GET /users 304 - - 15.463 ms","timestamp":"2024-03-13T03:27:28.767Z"}
+{"level":"info","message":"GET /users 304 - - 7.066 ms","timestamp":"2024-03-13T03:27:30.758Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:27:32.760Z"}
+{"level":"info","message":"GET /users 401 107 - 2.024 ms","timestamp":"2024-03-13T03:27:32.762Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 4.095 ms","timestamp":"2024-03-13T03:27:32.770Z"}
+{"level":"info","message":"GET /users 304 - - 5.726 ms","timestamp":"2024-03-13T03:27:32.784Z"}
+{"level":"info","message":"GET /users 304 - - 4.279 ms","timestamp":"2024-03-13T03:27:34.756Z"}
+{"level":"info","message":"GET /users 304 - - 5.779 ms","timestamp":"2024-03-13T03:27:36.756Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:27:38.768Z"}
+{"level":"info","message":"GET /users 401 107 - 1.803 ms","timestamp":"2024-03-13T03:27:38.776Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:27:38.781Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.994 ms","timestamp":"2024-03-13T03:27:38.781Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 461.925 ms","timestamp":"2024-03-13T03:28:35.151Z"}
+{"level":"info","message":"GET /users 304 - - 127.529 ms","timestamp":"2024-03-13T03:28:35.331Z"}
+{"level":"info","message":"GET /users 304 - - 7.906 ms","timestamp":"2024-03-13T03:28:36.770Z"}
+{"level":"info","message":"GET /users 304 - - 15.711 ms","timestamp":"2024-03-13T03:28:38.766Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:28:40.752Z"}
+{"level":"info","message":"GET /users 401 107 - 2.106 ms","timestamp":"2024-03-13T03:28:40.753Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.917 ms","timestamp":"2024-03-13T03:28:40.763Z"}
+{"level":"info","message":"GET /users 304 - - 34.366 ms","timestamp":"2024-03-13T03:28:40.805Z"}
+{"level":"info","message":"GET /users 304 - - 8.442 ms","timestamp":"2024-03-13T03:28:42.860Z"}
+{"level":"info","message":"GET /users 304 - - 9.120 ms","timestamp":"2024-03-13T03:28:44.762Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:28:46.754Z"}
+{"level":"info","message":"GET /users 401 107 - 1.883 ms","timestamp":"2024-03-13T03:28:46.755Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:28:46.762Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 3.224 ms","timestamp":"2024-03-13T03:28:46.763Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 453.798 ms","timestamp":"2024-03-13T03:29:56.708Z"}
+{"level":"info","message":"GET /users 304 - - 86.546 ms","timestamp":"2024-03-13T03:29:56.888Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:29:58.750Z"}
+{"level":"info","message":"GET /users 401 107 - 2.195 ms","timestamp":"2024-03-13T03:29:58.751Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.187 ms","timestamp":"2024-03-13T03:29:58.759Z"}
+{"level":"info","message":"GET /users 304 - - 2.898 ms","timestamp":"2024-03-13T03:29:58.771Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:30:00.749Z"}
+{"level":"info","message":"GET /users 401 107 - 2.361 ms","timestamp":"2024-03-13T03:30:00.750Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:30:00.756Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 4.162 ms","timestamp":"2024-03-13T03:30:00.757Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.307 ms","timestamp":"2024-03-13T03:31:53.056Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 449.019 ms","timestamp":"2024-03-13T03:32:00.144Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.219 ms","timestamp":"2024-03-13T03:32:18.936Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 415.104 ms","timestamp":"2024-03-13T03:32:27.343Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 437.415 ms","timestamp":"2024-03-13T03:32:45.540Z"}
+{"level":"info","message":"GET /users 200 3003 - 31.878 ms","timestamp":"2024-03-13T03:32:45.633Z"}
+{"level":"info","message":"GET /users 304 - - 11.592 ms","timestamp":"2024-03-13T03:32:46.758Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:32:48.744Z"}
+{"level":"info","message":"GET /users 401 107 - 1.356 ms","timestamp":"2024-03-13T03:32:48.745Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.418 ms","timestamp":"2024-03-13T03:32:48.753Z"}
+{"level":"info","message":"GET /users 304 - - 4.066 ms","timestamp":"2024-03-13T03:32:48.764Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:32:50.750Z"}
+{"level":"info","message":"GET /users 401 107 - 1.024 ms","timestamp":"2024-03-13T03:32:50.751Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:32:50.754Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.423 ms","timestamp":"2024-03-13T03:32:50.755Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.321 ms","timestamp":"2024-03-13T03:33:47.945Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 438.987 ms","timestamp":"2024-03-13T03:33:58.266Z"}
+{"level":"info","message":"GET /users 200 3003 - 61.457 ms","timestamp":"2024-03-13T03:33:58.370Z"}
+{"level":"info","message":"GET /users 304 - - 4.305 ms","timestamp":"2024-03-13T03:33:59.750Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:34:01.743Z"}
+{"level":"info","message":"GET /users 401 107 - 0.975 ms","timestamp":"2024-03-13T03:34:01.744Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 2.859 ms","timestamp":"2024-03-13T03:34:01.752Z"}
+{"level":"info","message":"GET /users 304 - - 4.295 ms","timestamp":"2024-03-13T03:34:01.763Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:34:03.744Z"}
+{"level":"info","message":"GET /users 401 107 - 1.015 ms","timestamp":"2024-03-13T03:34:03.745Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:34:03.750Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.527 ms","timestamp":"2024-03-13T03:34:03.750Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 7.697 ms","timestamp":"2024-03-13T03:43:26.066Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 427.850 ms","timestamp":"2024-03-13T03:43:35.228Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 428.736 ms","timestamp":"2024-03-13T03:43:48.672Z"}
+{"level":"info","message":"GET /users 200 3003 - 89.593 ms","timestamp":"2024-03-13T03:43:48.798Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:43:50.733Z"}
+{"level":"info","message":"GET /users 401 107 - 2.302 ms","timestamp":"2024-03-13T03:43:50.734Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.658 ms","timestamp":"2024-03-13T03:43:50.744Z"}
+{"level":"info","message":"GET /users 304 - - 2.906 ms","timestamp":"2024-03-13T03:43:50.753Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:43:52.732Z"}
+{"level":"info","message":"GET /users 401 107 - 2.012 ms","timestamp":"2024-03-13T03:43:52.733Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:43:52.739Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 3.572 ms","timestamp":"2024-03-13T03:43:52.740Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.987 ms","timestamp":"2024-03-13T03:45:14.686Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 426.264 ms","timestamp":"2024-03-13T03:45:22.982Z"}
+{"level":"info","message":"GET /users 200 3003 - 63.072 ms","timestamp":"2024-03-13T03:45:23.099Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:45:24.732Z"}
+{"level":"info","message":"GET /users 401 107 - 2.828 ms","timestamp":"2024-03-13T03:45:24.734Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.029 ms","timestamp":"2024-03-13T03:45:24.744Z"}
+{"level":"info","message":"GET /users 304 - - 3.530 ms","timestamp":"2024-03-13T03:45:24.756Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:45:26.732Z"}
+{"level":"info","message":"GET /users 401 107 - 0.906 ms","timestamp":"2024-03-13T03:45:26.733Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:45:26.737Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.349 ms","timestamp":"2024-03-13T03:45:26.738Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.310 ms","timestamp":"2024-03-13T03:45:55.361Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 428.863 ms","timestamp":"2024-03-13T03:46:03.129Z"}
+{"level":"info","message":"GET /users 200 3003 - 169.996 ms","timestamp":"2024-03-13T03:46:03.346Z"}
+{"level":"info","message":"GET /users 304 - - 4.310 ms","timestamp":"2024-03-13T03:46:04.735Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:46:06.728Z"}
+{"level":"info","message":"GET /users 401 107 - 0.828 ms","timestamp":"2024-03-13T03:46:06.729Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.084 ms","timestamp":"2024-03-13T03:46:06.736Z"}
+{"level":"info","message":"GET /users 304 - - 5.070 ms","timestamp":"2024-03-13T03:46:06.749Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:46:08.729Z"}
+{"level":"info","message":"GET /users 401 107 - 0.801 ms","timestamp":"2024-03-13T03:46:08.730Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:46:08.733Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.844 ms","timestamp":"2024-03-13T03:46:08.734Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 435.998 ms","timestamp":"2024-03-13T03:46:52.365Z"}
+{"level":"info","message":"GET /users 200 3003 - 55.827 ms","timestamp":"2024-03-13T03:46:52.472Z"}
+{"level":"info","message":"GET /users 304 - - 7.286 ms","timestamp":"2024-03-13T03:46:53.737Z"}
+{"level":"info","message":"GET /users 304 - - 5.376 ms","timestamp":"2024-03-13T03:46:55.735Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:46:57.733Z"}
+{"level":"info","message":"GET /users 401 107 - 2.189 ms","timestamp":"2024-03-13T03:46:57.734Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.707 ms","timestamp":"2024-03-13T03:46:57.745Z"}
+{"level":"info","message":"GET /users 304 - - 4.135 ms","timestamp":"2024-03-13T03:46:57.757Z"}
+{"level":"info","message":"GET /users 304 - - 3.986 ms","timestamp":"2024-03-13T03:46:59.732Z"}
+{"level":"info","message":"GET /users 304 - - 4.687 ms","timestamp":"2024-03-13T03:47:01.733Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:47:03.734Z"}
+{"level":"info","message":"GET /users 401 107 - 3.969 ms","timestamp":"2024-03-13T03:47:03.743Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:47:03.759Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 9.668 ms","timestamp":"2024-03-13T03:47:03.761Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.064 ms","timestamp":"2024-03-13T03:47:46.560Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 434.592 ms","timestamp":"2024-03-13T03:47:54.504Z"}
+{"level":"info","message":"GET /users 200 3003 - 92.316 ms","timestamp":"2024-03-13T03:47:54.691Z"}
+{"level":"info","message":"GET /users 304 - - 5.959 ms","timestamp":"2024-03-13T03:47:55.735Z"}
+{"level":"info","message":"GET /users 304 - - 7.195 ms","timestamp":"2024-03-13T03:47:57.733Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:47:59.728Z"}
+{"level":"info","message":"GET /users 401 107 - 1.038 ms","timestamp":"2024-03-13T03:47:59.729Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.669 ms","timestamp":"2024-03-13T03:47:59.739Z"}
+{"level":"info","message":"GET /users 304 - - 57.995 ms","timestamp":"2024-03-13T03:47:59.816Z"}
+{"level":"info","message":"GET /users 304 - - 4.502 ms","timestamp":"2024-03-13T03:48:01.740Z"}
+{"level":"info","message":"GET /users 304 - - 4.211 ms","timestamp":"2024-03-13T03:48:03.730Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:48:05.728Z"}
+{"level":"info","message":"GET /users 401 107 - 0.835 ms","timestamp":"2024-03-13T03:48:05.729Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:48:05.736Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 2.039 ms","timestamp":"2024-03-13T03:48:05.737Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 418.513 ms","timestamp":"2024-03-13T03:48:51.903Z"}
+{"level":"info","message":"GET /users 200 3003 - 67.001 ms","timestamp":"2024-03-13T03:48:52.027Z"}
+{"level":"info","message":"GET /users 304 - - 15.514 ms","timestamp":"2024-03-13T03:48:53.743Z"}
+{"level":"info","message":"GET /users 304 - - 22.831 ms","timestamp":"2024-03-13T03:48:55.749Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:48:57.726Z"}
+{"level":"info","message":"GET /users 401 107 - 0.828 ms","timestamp":"2024-03-13T03:48:57.727Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.452 ms","timestamp":"2024-03-13T03:48:57.734Z"}
+{"level":"info","message":"GET /users 304 - - 20.078 ms","timestamp":"2024-03-13T03:48:57.762Z"}
+{"level":"info","message":"GET /users 304 - - 6.967 ms","timestamp":"2024-03-13T03:48:59.733Z"}
+{"level":"info","message":"GET /users 304 - - 4.162 ms","timestamp":"2024-03-13T03:49:01.728Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:49:03.733Z"}
+{"level":"info","message":"GET /users 401 107 - 0.846 ms","timestamp":"2024-03-13T03:49:03.733Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:49:03.740Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 2.790 ms","timestamp":"2024-03-13T03:49:03.741Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.419 ms","timestamp":"2024-03-13T03:51:32.257Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 454.058 ms","timestamp":"2024-03-13T03:51:40.005Z"}
+{"level":"info","message":"GET /users 200 3003 - 97.342 ms","timestamp":"2024-03-13T03:51:40.158Z"}
+{"level":"info","message":"GET /users 304 - - 46.515 ms","timestamp":"2024-03-13T03:51:41.770Z"}
+{"level":"info","message":"GET /users 304 - - 29.054 ms","timestamp":"2024-03-13T03:51:43.752Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:51:45.728Z"}
+{"level":"info","message":"GET /users 401 107 - 5.347 ms","timestamp":"2024-03-13T03:51:45.732Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 15.483 ms","timestamp":"2024-03-13T03:51:45.765Z"}
+{"level":"info","message":"GET /users 304 - - 9.143 ms","timestamp":"2024-03-13T03:51:45.785Z"}
+{"level":"info","message":"GET /users 304 - - 4.665 ms","timestamp":"2024-03-13T03:51:47.726Z"}
+{"level":"info","message":"GET /users 304 - - 9.138 ms","timestamp":"2024-03-13T03:51:49.731Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:51:51.734Z"}
+{"level":"info","message":"GET /users 401 107 - 5.205 ms","timestamp":"2024-03-13T03:51:51.735Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:51:51.746Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 3.181 ms","timestamp":"2024-03-13T03:51:51.746Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.387 ms","timestamp":"2024-03-13T03:52:29.756Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 432.969 ms","timestamp":"2024-03-13T03:52:58.006Z"}
+{"level":"info","message":"GET /users 200 3003 - 41.684 ms","timestamp":"2024-03-13T03:52:58.142Z"}
+{"level":"info","message":"GET /users 304 - - 7.309 ms","timestamp":"2024-03-13T03:52:59.731Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:01.733Z"}
+{"level":"info","message":"GET /users 401 107 - 8.314 ms","timestamp":"2024-03-13T03:53:01.743Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.321 ms","timestamp":"2024-03-13T03:53:01.750Z"}
+{"level":"info","message":"GET /users 304 - - 3.192 ms","timestamp":"2024-03-13T03:53:01.764Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:03.749Z"}
+{"level":"info","message":"GET /users 401 107 - 18.015 ms","timestamp":"2024-03-13T03:53:03.864Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:03.868Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 3.072 ms","timestamp":"2024-03-13T03:53:03.869Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:05.721Z"}
+{"level":"info","message":"GET /users 401 107 - 1.689 ms","timestamp":"2024-03-13T03:53:05.725Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:05.751Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 9.707 ms","timestamp":"2024-03-13T03:53:05.757Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:07.720Z"}
+{"level":"info","message":"GET /users 401 107 - 1.140 ms","timestamp":"2024-03-13T03:53:07.721Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:07.735Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 2.239 ms","timestamp":"2024-03-13T03:53:07.736Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:09.727Z"}
+{"level":"info","message":"GET /users 401 107 - 1.202 ms","timestamp":"2024-03-13T03:53:09.728Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:09.734Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.730 ms","timestamp":"2024-03-13T03:53:09.735Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:11.720Z"}
+{"level":"info","message":"GET /users 401 107 - 0.986 ms","timestamp":"2024-03-13T03:53:11.720Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:11.733Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.598 ms","timestamp":"2024-03-13T03:53:11.733Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:13.721Z"}
+{"level":"info","message":"GET /users 401 107 - 0.846 ms","timestamp":"2024-03-13T03:53:13.721Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:13.735Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.534 ms","timestamp":"2024-03-13T03:53:13.736Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:15.727Z"}
+{"level":"info","message":"GET /users 401 107 - 1.249 ms","timestamp":"2024-03-13T03:53:15.729Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:15.743Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 3.888 ms","timestamp":"2024-03-13T03:53:15.743Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:17.720Z"}
+{"level":"info","message":"GET /users 401 107 - 0.808 ms","timestamp":"2024-03-13T03:53:17.720Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:17.733Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.395 ms","timestamp":"2024-03-13T03:53:17.734Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:19.719Z"}
+{"level":"info","message":"GET /users 401 107 - 0.809 ms","timestamp":"2024-03-13T03:53:19.720Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:19.733Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.297 ms","timestamp":"2024-03-13T03:53:19.733Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:53:21.721Z"}
+{"level":"info","message":"GET /users 401 107 - 1.484 ms","timestamp":"2024-03-13T03:53:21.722Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:53:21.732Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.345 ms","timestamp":"2024-03-13T03:53:21.733Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.610 ms","timestamp":"2024-03-13T03:53:22.581Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 402.887 ms","timestamp":"2024-03-13T03:56:15.269Z"}
+{"level":"info","message":"GET /users 304 - - 36.565 ms","timestamp":"2024-03-13T03:56:15.419Z"}
+{"level":"info","message":"GET /users 304 - - 3.683 ms","timestamp":"2024-03-13T03:56:16.722Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:56:18.719Z"}
+{"level":"info","message":"GET /users 401 107 - 4.792 ms","timestamp":"2024-03-13T03:56:18.723Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 7.253 ms","timestamp":"2024-03-13T03:56:18.753Z"}
+{"level":"info","message":"GET /users 304 - - 3.116 ms","timestamp":"2024-03-13T03:56:18.768Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:56:20.717Z"}
+{"level":"info","message":"GET /users 401 107 - 0.786 ms","timestamp":"2024-03-13T03:56:20.718Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:20.721Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.213 ms","timestamp":"2024-03-13T03:56:20.722Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.300 ms","timestamp":"2024-03-13T03:56:20.806Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.426 ms","timestamp":"2024-03-13T03:56:20.810Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.104 ms","timestamp":"2024-03-13T03:56:20.814Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.469 ms","timestamp":"2024-03-13T03:56:20.819Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.547 ms","timestamp":"2024-03-13T03:56:20.821Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.377 ms","timestamp":"2024-03-13T03:56:20.825Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.345 ms","timestamp":"2024-03-13T03:56:20.829Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.071 ms","timestamp":"2024-03-13T03:56:20.845Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 54.603 ms","timestamp":"2024-03-13T03:56:20.909Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 36.947 ms","timestamp":"2024-03-13T03:56:21.002Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.519 ms","timestamp":"2024-03-13T03:56:21.033Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.341 ms","timestamp":"2024-03-13T03:56:21.037Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.317 ms","timestamp":"2024-03-13T03:56:21.048Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.268 ms","timestamp":"2024-03-13T03:56:21.051Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.335 ms","timestamp":"2024-03-13T03:56:21.052Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 4.646 ms","timestamp":"2024-03-13T03:56:21.063Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 4.220 ms","timestamp":"2024-03-13T03:56:21.085Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.155 ms","timestamp":"2024-03-13T03:56:21.086Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.285 ms","timestamp":"2024-03-13T03:56:21.089Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.140 ms","timestamp":"2024-03-13T03:56:21.092Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.574 ms","timestamp":"2024-03-13T03:56:21.096Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.124 ms","timestamp":"2024-03-13T03:56:21.096Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.150 ms","timestamp":"2024-03-13T03:56:21.107Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.127 ms","timestamp":"2024-03-13T03:56:21.108Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.631 ms","timestamp":"2024-03-13T03:56:21.110Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.075 ms","timestamp":"2024-03-13T03:56:21.190Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.764 ms","timestamp":"2024-03-13T03:56:21.232Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.485 ms","timestamp":"2024-03-13T03:56:21.235Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.108 ms","timestamp":"2024-03-13T03:56:21.235Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.264 ms","timestamp":"2024-03-13T03:56:21.237Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.608 ms","timestamp":"2024-03-13T03:56:21.240Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.157 ms","timestamp":"2024-03-13T03:56:21.248Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.075 ms","timestamp":"2024-03-13T03:56:21.248Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.181 ms","timestamp":"2024-03-13T03:56:21.260Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.443 ms","timestamp":"2024-03-13T03:56:21.287Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.179 ms","timestamp":"2024-03-13T03:56:21.413Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 12.801 ms","timestamp":"2024-03-13T03:56:21.427Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.857 ms","timestamp":"2024-03-13T03:56:21.552Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.119 ms","timestamp":"2024-03-13T03:56:21.582Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.385 ms","timestamp":"2024-03-13T03:56:21.585Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.719 ms","timestamp":"2024-03-13T03:56:21.589Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.848 ms","timestamp":"2024-03-13T03:56:21.595Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.387 ms","timestamp":"2024-03-13T03:56:21.600Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.170 ms","timestamp":"2024-03-13T03:56:21.603Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.323 ms","timestamp":"2024-03-13T03:56:21.605Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.343 ms","timestamp":"2024-03-13T03:56:21.608Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.306 ms","timestamp":"2024-03-13T03:56:21.610Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 31.832 ms","timestamp":"2024-03-13T03:56:21.643Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.174 ms","timestamp":"2024-03-13T03:56:21.709Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.286 ms","timestamp":"2024-03-13T03:56:21.779Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.377 ms","timestamp":"2024-03-13T03:56:21.804Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.400 ms","timestamp":"2024-03-13T03:56:21.874Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.439 ms","timestamp":"2024-03-13T03:56:21.877Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.315 ms","timestamp":"2024-03-13T03:56:21.879Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.730 ms","timestamp":"2024-03-13T03:56:21.888Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.270 ms","timestamp":"2024-03-13T03:56:21.890Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.388 ms","timestamp":"2024-03-13T03:56:21.892Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.090 ms","timestamp":"2024-03-13T03:56:21.893Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.078 ms","timestamp":"2024-03-13T03:56:21.893Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.239 ms","timestamp":"2024-03-13T03:56:21.895Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.755 ms","timestamp":"2024-03-13T03:56:21.900Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.434 ms","timestamp":"2024-03-13T03:56:21.903Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.291 ms","timestamp":"2024-03-13T03:56:21.906Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.206 ms","timestamp":"2024-03-13T03:56:21.914Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.312 ms","timestamp":"2024-03-13T03:56:21.914Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.430 ms","timestamp":"2024-03-13T03:56:21.935Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.386 ms","timestamp":"2024-03-13T03:56:21.937Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.290 ms","timestamp":"2024-03-13T03:56:21.938Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.094 ms","timestamp":"2024-03-13T03:56:21.939Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.077 ms","timestamp":"2024-03-13T03:56:21.939Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.606 ms","timestamp":"2024-03-13T03:56:21.948Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.824 ms","timestamp":"2024-03-13T03:56:21.957Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.272 ms","timestamp":"2024-03-13T03:56:21.958Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.664 ms","timestamp":"2024-03-13T03:56:21.964Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.928 ms","timestamp":"2024-03-13T03:56:22.073Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.285 ms","timestamp":"2024-03-13T03:56:22.074Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.185 ms","timestamp":"2024-03-13T03:56:22.094Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.094Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 19.482 ms","timestamp":"2024-03-13T03:56:22.095Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.095Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 19.218 ms","timestamp":"2024-03-13T03:56:22.095Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.095Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 19.308 ms","timestamp":"2024-03-13T03:56:22.096Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.096Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 19.606 ms","timestamp":"2024-03-13T03:56:22.096Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.097Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 0.422 ms","timestamp":"2024-03-13T03:56:22.097Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.142Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.575 ms","timestamp":"2024-03-13T03:56:22.144Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.147Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.388 ms","timestamp":"2024-03-13T03:56:22.148Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.149Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.321 ms","timestamp":"2024-03-13T03:56:22.151Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.151Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.943 ms","timestamp":"2024-03-13T03:56:22.151Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.151Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.816 ms","timestamp":"2024-03-13T03:56:22.151Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.151Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.586 ms","timestamp":"2024-03-13T03:56:22.151Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.164Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 6.114 ms","timestamp":"2024-03-13T03:56:22.165Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.166Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 8.054 ms","timestamp":"2024-03-13T03:56:22.167Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.167Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 5.456 ms","timestamp":"2024-03-13T03:56:22.169Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.170Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 7.007 ms","timestamp":"2024-03-13T03:56:22.171Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.173Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 9.596 ms","timestamp":"2024-03-13T03:56:22.173Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.173Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 10.026 ms","timestamp":"2024-03-13T03:56:22.174Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.177Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.150 ms","timestamp":"2024-03-13T03:56:22.177Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.177Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.024 ms","timestamp":"2024-03-13T03:56:22.178Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.178Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.918 ms","timestamp":"2024-03-13T03:56:22.179Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.179Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.415 ms","timestamp":"2024-03-13T03:56:22.180Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.181Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.832 ms","timestamp":"2024-03-13T03:56:22.181Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.185Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.278 ms","timestamp":"2024-03-13T03:56:22.185Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.186Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.559 ms","timestamp":"2024-03-13T03:56:22.187Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.187Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.090 ms","timestamp":"2024-03-13T03:56:22.188Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.188Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.670 ms","timestamp":"2024-03-13T03:56:22.189Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.189Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.679 ms","timestamp":"2024-03-13T03:56:22.189Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:56:22.189Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.909 ms","timestamp":"2024-03-13T03:56:22.190Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.196Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 3.506 ms","timestamp":"2024-03-13T03:56:22.197Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.207Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 2.738 ms","timestamp":"2024-03-13T03:56:22.208Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.213Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.317 ms","timestamp":"2024-03-13T03:56:22.213Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.246Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 11.260 ms","timestamp":"2024-03-13T03:56:22.253Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.309Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.382 ms","timestamp":"2024-03-13T03:56:22.309Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.312Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.625 ms","timestamp":"2024-03-13T03:56:22.314Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.317Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.418 ms","timestamp":"2024-03-13T03:56:22.318Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.321Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.331 ms","timestamp":"2024-03-13T03:56:22.322Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.327Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.785 ms","timestamp":"2024-03-13T03:56:22.328Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.341Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.535 ms","timestamp":"2024-03-13T03:56:22.343Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.351Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.372 ms","timestamp":"2024-03-13T03:56:22.351Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.355Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.529 ms","timestamp":"2024-03-13T03:56:22.355Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.365Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.976 ms","timestamp":"2024-03-13T03:56:22.367Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.379Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.788 ms","timestamp":"2024-03-13T03:56:22.380Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.388Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.342 ms","timestamp":"2024-03-13T03:56:22.389Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.398Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.763 ms","timestamp":"2024-03-13T03:56:22.399Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.404Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.733 ms","timestamp":"2024-03-13T03:56:22.405Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.416Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.765 ms","timestamp":"2024-03-13T03:56:22.417Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.424Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.362 ms","timestamp":"2024-03-13T03:56:22.424Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.478Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 39.475 ms","timestamp":"2024-03-13T03:56:22.479Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.481Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.031 ms","timestamp":"2024-03-13T03:56:22.482Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.488Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.938 ms","timestamp":"2024-03-13T03:56:22.489Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.518Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.368 ms","timestamp":"2024-03-13T03:56:22.519Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.539Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 17.436 ms","timestamp":"2024-03-13T03:56:22.545Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.552Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.981 ms","timestamp":"2024-03-13T03:56:22.553Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:56:22.568Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.659 ms","timestamp":"2024-03-13T03:56:22.570Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 421.914 ms","timestamp":"2024-03-13T03:59:51.674Z"}
+{"level":"info","message":"GET /users 304 - - 32.002 ms","timestamp":"2024-03-13T03:59:51.820Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:59:53.098Z"}
+{"level":"info","message":"GET /users 401 107 - 0.926 ms","timestamp":"2024-03-13T03:59:53.099Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.430 ms","timestamp":"2024-03-13T03:59:53.108Z"}
+{"level":"info","message":"GET /users 304 - - 4.588 ms","timestamp":"2024-03-13T03:59:53.122Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T03:59:55.090Z"}
+{"level":"info","message":"GET /users 401 107 - 0.834 ms","timestamp":"2024-03-13T03:59:55.090Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:55.094Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.429 ms","timestamp":"2024-03-13T03:59:55.095Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.579 ms","timestamp":"2024-03-13T03:59:55.191Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.563 ms","timestamp":"2024-03-13T03:59:55.194Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.478 ms","timestamp":"2024-03-13T03:59:55.195Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.715 ms","timestamp":"2024-03-13T03:59:55.197Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.439 ms","timestamp":"2024-03-13T03:59:55.200Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.173 ms","timestamp":"2024-03-13T03:59:55.201Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.283 ms","timestamp":"2024-03-13T03:59:55.205Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.214 ms","timestamp":"2024-03-13T03:59:55.206Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.158 ms","timestamp":"2024-03-13T03:59:55.208Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.259 ms","timestamp":"2024-03-13T03:59:55.213Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.308 ms","timestamp":"2024-03-13T03:59:55.215Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.192 ms","timestamp":"2024-03-13T03:59:55.217Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.171 ms","timestamp":"2024-03-13T03:59:55.218Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.579 ms","timestamp":"2024-03-13T03:59:55.219Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.163 ms","timestamp":"2024-03-13T03:59:55.220Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 2.111 ms","timestamp":"2024-03-13T03:59:55.226Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.135 ms","timestamp":"2024-03-13T03:59:55.227Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.268 ms","timestamp":"2024-03-13T03:59:55.248Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.304 ms","timestamp":"2024-03-13T03:59:55.250Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.307 ms","timestamp":"2024-03-13T03:59:55.253Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.248 ms","timestamp":"2024-03-13T03:59:55.254Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.170 ms","timestamp":"2024-03-13T03:59:55.257Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.078 ms","timestamp":"2024-03-13T03:59:55.258Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.066 ms","timestamp":"2024-03-13T03:59:55.258Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 5.042 ms","timestamp":"2024-03-13T03:59:55.287Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.384 ms","timestamp":"2024-03-13T03:59:55.291Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.560 ms","timestamp":"2024-03-13T03:59:55.294Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 51.090 ms","timestamp":"2024-03-13T03:59:55.364Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.230 ms","timestamp":"2024-03-13T03:59:55.366Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.253 ms","timestamp":"2024-03-13T03:59:55.380Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.146 ms","timestamp":"2024-03-13T03:59:55.382Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.392 ms","timestamp":"2024-03-13T03:59:55.395Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.266 ms","timestamp":"2024-03-13T03:59:55.396Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.663 ms","timestamp":"2024-03-13T03:59:55.408Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.554 ms","timestamp":"2024-03-13T03:59:55.412Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.291 ms","timestamp":"2024-03-13T03:59:55.416Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.232 ms","timestamp":"2024-03-13T03:59:55.418Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.333 ms","timestamp":"2024-03-13T03:59:55.420Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.380 ms","timestamp":"2024-03-13T03:59:55.423Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 3.039 ms","timestamp":"2024-03-13T03:59:55.427Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.390 ms","timestamp":"2024-03-13T03:59:55.429Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.222 ms","timestamp":"2024-03-13T03:59:55.430Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.192 ms","timestamp":"2024-03-13T03:59:55.433Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.265 ms","timestamp":"2024-03-13T03:59:55.437Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.302 ms","timestamp":"2024-03-13T03:59:55.439Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.306 ms","timestamp":"2024-03-13T03:59:55.446Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.322 ms","timestamp":"2024-03-13T03:59:55.448Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.434 ms","timestamp":"2024-03-13T03:59:55.451Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.362 ms","timestamp":"2024-03-13T03:59:55.452Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.193 ms","timestamp":"2024-03-13T03:59:55.453Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.212 ms","timestamp":"2024-03-13T03:59:55.454Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.255 ms","timestamp":"2024-03-13T03:59:55.457Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.365 ms","timestamp":"2024-03-13T03:59:55.463Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.138 ms","timestamp":"2024-03-13T03:59:55.474Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.336 ms","timestamp":"2024-03-13T03:59:55.480Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.080 ms","timestamp":"2024-03-13T03:59:55.481Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.067 ms","timestamp":"2024-03-13T03:59:55.481Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.137 ms","timestamp":"2024-03-13T03:59:55.489Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.076 ms","timestamp":"2024-03-13T03:59:55.489Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.507 ms","timestamp":"2024-03-13T03:59:55.540Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.186 ms","timestamp":"2024-03-13T03:59:55.543Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.132 ms","timestamp":"2024-03-13T03:59:55.544Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.387 ms","timestamp":"2024-03-13T03:59:55.545Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.069 ms","timestamp":"2024-03-13T03:59:55.545Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.101 ms","timestamp":"2024-03-13T03:59:55.559Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.189 ms","timestamp":"2024-03-13T03:59:55.605Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.085 ms","timestamp":"2024-03-13T03:59:55.605Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.084 ms","timestamp":"2024-03-13T03:59:55.606Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.072 ms","timestamp":"2024-03-13T03:59:55.613Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.362 ms","timestamp":"2024-03-13T03:59:55.615Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.378 ms","timestamp":"2024-03-13T03:59:55.617Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.666 ms","timestamp":"2024-03-13T03:59:55.621Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.281 ms","timestamp":"2024-03-13T03:59:55.632Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.388 ms","timestamp":"2024-03-13T03:59:55.635Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.289 ms","timestamp":"2024-03-13T03:59:55.636Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.291 ms","timestamp":"2024-03-13T03:59:55.639Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 9.711 ms","timestamp":"2024-03-13T03:59:55.650Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.291 ms","timestamp":"2024-03-13T03:59:55.652Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.243 ms","timestamp":"2024-03-13T03:59:55.655Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.230 ms","timestamp":"2024-03-13T03:59:55.657Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.302 ms","timestamp":"2024-03-13T03:59:55.666Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.514 ms","timestamp":"2024-03-13T03:59:55.668Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.508 ms","timestamp":"2024-03-13T03:59:55.679Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.758 ms","timestamp":"2024-03-13T03:59:55.733Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.591 ms","timestamp":"2024-03-13T03:59:55.736Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.551 ms","timestamp":"2024-03-13T03:59:55.739Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.657 ms","timestamp":"2024-03-13T03:59:55.742Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.374 ms","timestamp":"2024-03-13T03:59:55.744Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.935 ms","timestamp":"2024-03-13T03:59:55.747Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.441 ms","timestamp":"2024-03-13T03:59:55.750Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 2.633 ms","timestamp":"2024-03-13T03:59:55.795Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.196 ms","timestamp":"2024-03-13T03:59:55.884Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.489 ms","timestamp":"2024-03-13T03:59:55.887Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.262 ms","timestamp":"2024-03-13T03:59:55.936Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.787 ms","timestamp":"2024-03-13T03:59:55.951Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.061Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 50.144 ms","timestamp":"2024-03-13T03:59:56.062Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.066Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 5.082 ms","timestamp":"2024-03-13T03:59:56.066Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.071Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.625 ms","timestamp":"2024-03-13T03:59:56.094Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.094Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 27.108 ms","timestamp":"2024-03-13T03:59:56.139Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.165Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 97.228 ms","timestamp":"2024-03-13T03:59:56.165Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.165Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 96.811 ms","timestamp":"2024-03-13T03:59:56.166Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.166Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 95.038 ms","timestamp":"2024-03-13T03:59:56.166Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.238Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.400 ms","timestamp":"2024-03-13T03:59:56.251Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.253Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 67.235 ms","timestamp":"2024-03-13T03:59:56.254Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T03:59:56.254Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.932 ms","timestamp":"2024-03-13T03:59:56.256Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.322Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.357 ms","timestamp":"2024-03-13T03:59:56.322Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.394Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 24.330 ms","timestamp":"2024-03-13T03:59:56.403Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.477Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.720 ms","timestamp":"2024-03-13T03:59:56.485Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.521Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 53.618 ms","timestamp":"2024-03-13T03:59:56.575Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.585Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 2.546 ms","timestamp":"2024-03-13T03:59:56.587Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.640Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.586 ms","timestamp":"2024-03-13T03:59:56.642Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.661Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.320 ms","timestamp":"2024-03-13T03:59:56.661Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T03:59:56.669Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.667 ms","timestamp":"2024-03-13T03:59:56.672Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 449.341 ms","timestamp":"2024-03-13T04:01:10.110Z"}
+{"level":"info","message":"GET /users 304 - - 120.637 ms","timestamp":"2024-03-13T04:01:10.303Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T04:01:12.097Z"}
+{"level":"info","message":"GET /users 401 107 - 2.365 ms","timestamp":"2024-03-13T04:01:12.105Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 2.936 ms","timestamp":"2024-03-13T04:01:12.119Z"}
+{"level":"info","message":"GET /users 304 - - 2.993 ms","timestamp":"2024-03-13T04:01:12.134Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T04:01:14.093Z"}
+{"level":"info","message":"GET /users 401 107 - 5.889 ms","timestamp":"2024-03-13T04:01:14.096Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:14.105Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 11.654 ms","timestamp":"2024-03-13T04:01:14.117Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.425 ms","timestamp":"2024-03-13T04:01:14.252Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.509 ms","timestamp":"2024-03-13T04:01:14.265Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.104 ms","timestamp":"2024-03-13T04:01:14.265Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.068 ms","timestamp":"2024-03-13T04:01:14.265Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.067 ms","timestamp":"2024-03-13T04:01:14.266Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.169 ms","timestamp":"2024-03-13T04:01:14.268Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 22.483 ms","timestamp":"2024-03-13T04:01:14.296Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.173 ms","timestamp":"2024-03-13T04:01:14.329Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 5.091 ms","timestamp":"2024-03-13T04:01:14.336Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.119 ms","timestamp":"2024-03-13T04:01:14.336Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.131 ms","timestamp":"2024-03-13T04:01:14.364Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.268 ms","timestamp":"2024-03-13T04:01:14.402Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.144 ms","timestamp":"2024-03-13T04:01:14.426Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.084 ms","timestamp":"2024-03-13T04:01:14.426Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.083 ms","timestamp":"2024-03-13T04:01:14.427Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.144 ms","timestamp":"2024-03-13T04:01:14.428Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.231 ms","timestamp":"2024-03-13T04:01:14.443Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 9.314 ms","timestamp":"2024-03-13T04:01:14.465Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.243 ms","timestamp":"2024-03-13T04:01:14.515Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 12.669 ms","timestamp":"2024-03-13T04:01:14.543Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.521 ms","timestamp":"2024-03-13T04:01:14.549Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.132 ms","timestamp":"2024-03-13T04:01:14.549Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.072 ms","timestamp":"2024-03-13T04:01:14.550Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.155 ms","timestamp":"2024-03-13T04:01:14.553Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.117 ms","timestamp":"2024-03-13T04:01:14.554Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.361 ms","timestamp":"2024-03-13T04:01:14.554Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.288 ms","timestamp":"2024-03-13T04:01:14.570Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.211 ms","timestamp":"2024-03-13T04:01:14.572Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.098 ms","timestamp":"2024-03-13T04:01:14.572Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.067 ms","timestamp":"2024-03-13T04:01:14.573Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 8.145 ms","timestamp":"2024-03-13T04:01:14.583Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.192 ms","timestamp":"2024-03-13T04:01:14.585Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.151 ms","timestamp":"2024-03-13T04:01:14.588Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.102 ms","timestamp":"2024-03-13T04:01:14.588Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.061 ms","timestamp":"2024-03-13T04:01:14.588Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.057 ms","timestamp":"2024-03-13T04:01:14.589Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.129 ms","timestamp":"2024-03-13T04:01:14.594Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.067 ms","timestamp":"2024-03-13T04:01:14.595Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.153 ms","timestamp":"2024-03-13T04:01:14.608Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.145 ms","timestamp":"2024-03-13T04:01:14.613Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.090 ms","timestamp":"2024-03-13T04:01:14.613Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.066 ms","timestamp":"2024-03-13T04:01:14.614Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 3.899 ms","timestamp":"2024-03-13T04:01:14.620Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.277 ms","timestamp":"2024-03-13T04:01:14.623Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 5.752 ms","timestamp":"2024-03-13T04:01:14.635Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.158 ms","timestamp":"2024-03-13T04:01:14.710Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.093 ms","timestamp":"2024-03-13T04:01:14.710Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.999 ms","timestamp":"2024-03-13T04:01:14.719Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.131 ms","timestamp":"2024-03-13T04:01:14.719Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.068 ms","timestamp":"2024-03-13T04:01:14.720Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.062 ms","timestamp":"2024-03-13T04:01:14.720Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.159 ms","timestamp":"2024-03-13T04:01:14.724Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.078 ms","timestamp":"2024-03-13T04:01:14.724Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.417 ms","timestamp":"2024-03-13T04:01:14.730Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.148 ms","timestamp":"2024-03-13T04:01:14.731Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.653 ms","timestamp":"2024-03-13T04:01:14.743Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.126 ms","timestamp":"2024-03-13T04:01:14.744Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.153 ms","timestamp":"2024-03-13T04:01:14.747Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.157 ms","timestamp":"2024-03-13T04:01:14.751Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.095 ms","timestamp":"2024-03-13T04:01:14.752Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.214 ms","timestamp":"2024-03-13T04:01:14.766Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 35.083 ms","timestamp":"2024-03-13T04:01:14.844Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.641 ms","timestamp":"2024-03-13T04:01:14.846Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 21.841 ms","timestamp":"2024-03-13T04:01:14.869Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.335 ms","timestamp":"2024-03-13T04:01:14.966Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.877 ms","timestamp":"2024-03-13T04:01:14.985Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 1.013 ms","timestamp":"2024-03-13T04:01:14.988Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.099 ms","timestamp":"2024-03-13T04:01:14.991Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:14.993Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 23.306 ms","timestamp":"2024-03-13T04:01:15.031Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.032Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 49.849 ms","timestamp":"2024-03-13T04:01:15.053Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.054Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 61.968 ms","timestamp":"2024-03-13T04:01:15.055Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.056Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 62.587 ms","timestamp":"2024-03-13T04:01:15.056Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.079Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 9.673 ms","timestamp":"2024-03-13T04:01:15.087Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.087Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 17.797 ms","timestamp":"2024-03-13T04:01:15.095Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.100Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 30.052 ms","timestamp":"2024-03-13T04:01:15.101Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.102Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 32.744 ms","timestamp":"2024-03-13T04:01:15.103Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.106Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 36.064 ms","timestamp":"2024-03-13T04:01:15.107Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.107Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 28.228 ms","timestamp":"2024-03-13T04:01:15.107Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.128Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.873 ms","timestamp":"2024-03-13T04:01:15.129Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.130Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.596 ms","timestamp":"2024-03-13T04:01:15.133Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.134Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 6.705 ms","timestamp":"2024-03-13T04:01:15.135Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.135Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 7.052 ms","timestamp":"2024-03-13T04:01:15.136Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.140Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 2.411 ms","timestamp":"2024-03-13T04:01:15.141Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.141Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 2.550 ms","timestamp":"2024-03-13T04:01:15.143Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.143Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 5.247 ms","timestamp":"2024-03-13T04:01:15.144Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.144Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 5.395 ms","timestamp":"2024-03-13T04:01:15.146Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.146Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 6.551 ms","timestamp":"2024-03-13T04:01:15.148Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.148Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 10.168 ms","timestamp":"2024-03-13T04:01:15.151Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.154Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 2.498 ms","timestamp":"2024-03-13T04:01:15.155Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.155Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 2.912 ms","timestamp":"2024-03-13T04:01:15.156Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.157Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.845 ms","timestamp":"2024-03-13T04:01:15.157Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.158Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 4.316 ms","timestamp":"2024-03-13T04:01:15.158Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.159Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 5.203 ms","timestamp":"2024-03-13T04:01:15.160Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.161Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.273 ms","timestamp":"2024-03-13T04:01:15.162Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.162Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.606 ms","timestamp":"2024-03-13T04:01:15.163Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.163Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 2.342 ms","timestamp":"2024-03-13T04:01:15.163Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.164Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 2.822 ms","timestamp":"2024-03-13T04:01:15.164Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.165Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.831 ms","timestamp":"2024-03-13T04:01:15.166Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.169Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.600 ms","timestamp":"2024-03-13T04:01:15.169Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.169Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 1.834 ms","timestamp":"2024-03-13T04:01:15.170Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.170Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 2.113 ms","timestamp":"2024-03-13T04:01:15.170Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.171Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.114 ms","timestamp":"2024-03-13T04:01:15.172Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.172Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 3.942 ms","timestamp":"2024-03-13T04:01:15.173Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.174Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.675 ms","timestamp":"2024-03-13T04:01:15.174Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:01:15.175Z"}
+{"level":"info","message":"POST /auth/logout 401 115 - 0.787 ms","timestamp":"2024-03-13T04:01:15.176Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.177Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.499 ms","timestamp":"2024-03-13T04:01:15.177Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.183Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.770 ms","timestamp":"2024-03-13T04:01:15.184Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.189Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.598 ms","timestamp":"2024-03-13T04:01:15.190Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.192Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.537 ms","timestamp":"2024-03-13T04:01:15.193Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.200Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.595 ms","timestamp":"2024-03-13T04:01:15.201Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.208Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.333 ms","timestamp":"2024-03-13T04:01:15.208Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.213Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.290 ms","timestamp":"2024-03-13T04:01:15.215Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.220Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.996 ms","timestamp":"2024-03-13T04:01:15.222Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.229Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.657 ms","timestamp":"2024-03-13T04:01:15.230Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.240Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.600 ms","timestamp":"2024-03-13T04:01:15.240Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.250Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.391 ms","timestamp":"2024-03-13T04:01:15.251Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.277Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.560 ms","timestamp":"2024-03-13T04:01:15.278Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.332Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 2.870 ms","timestamp":"2024-03-13T04:01:15.336Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.349Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.715 ms","timestamp":"2024-03-13T04:01:15.350Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.355Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.395 ms","timestamp":"2024-03-13T04:01:15.356Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.375Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.068 ms","timestamp":"2024-03-13T04:01:15.376Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.381Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 24.620 ms","timestamp":"2024-03-13T04:01:15.417Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.425Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 2.197 ms","timestamp":"2024-03-13T04:01:15.428Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.430Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.348 ms","timestamp":"2024-03-13T04:01:15.432Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.442Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.445 ms","timestamp":"2024-03-13T04:01:15.443Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.446Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.531 ms","timestamp":"2024-03-13T04:01:15.454Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.456Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.120 ms","timestamp":"2024-03-13T04:01:15.457Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.500Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 10.883 ms","timestamp":"2024-03-13T04:01:15.503Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.510Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.357 ms","timestamp":"2024-03-13T04:01:15.525Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.527Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.309 ms","timestamp":"2024-03-13T04:01:15.527Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.539Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 2.284 ms","timestamp":"2024-03-13T04:01:15.542Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.550Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.750 ms","timestamp":"2024-03-13T04:01:15.550Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.564Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 4.859 ms","timestamp":"2024-03-13T04:01:15.570Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.576Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 4.230 ms","timestamp":"2024-03-13T04:01:15.578Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.582Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 1.207 ms","timestamp":"2024-03-13T04:01:15.582Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.590Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 6.106 ms","timestamp":"2024-03-13T04:01:15.594Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.595Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.315 ms","timestamp":"2024-03-13T04:01:15.596Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.656Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 55.518 ms","timestamp":"2024-03-13T04:01:15.800Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.802Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 47.363 ms","timestamp":"2024-03-13T04:01:15.852Z"}
+{"level":"error","message":"Error Custom: No refresh token provided","timestamp":"2024-03-13T04:01:15.900Z"}
+{"level":"info","message":"GET /auth/refresh 401 119 - 0.990 ms","timestamp":"2024-03-13T04:01:15.901Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 421.653 ms","timestamp":"2024-03-13T04:03:55.717Z"}
+{"level":"info","message":"GET /users 304 - - 4.836 ms","timestamp":"2024-03-13T04:03:55.781Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T04:03:57.097Z"}
+{"level":"info","message":"GET /users 401 107 - 3.348 ms","timestamp":"2024-03-13T04:03:57.101Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 5.730 ms","timestamp":"2024-03-13T04:03:57.117Z"}
+{"level":"info","message":"GET /users 304 - - 2.750 ms","timestamp":"2024-03-13T04:03:57.125Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T04:03:59.085Z"}
+{"level":"info","message":"GET /users 401 107 - 0.792 ms","timestamp":"2024-03-13T04:03:59.085Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:03:59.089Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.158 ms","timestamp":"2024-03-13T04:03:59.089Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.305 ms","timestamp":"2024-03-13T04:03:59.112Z"}
+{"level":"info","message":"POST /auth/login 200 221 - 430.583 ms","timestamp":"2024-03-13T04:05:03.298Z"}
+{"level":"info","message":"GET /users 304 - - 43.408 ms","timestamp":"2024-03-13T04:05:03.468Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T04:05:05.086Z"}
+{"level":"info","message":"GET /users 401 107 - 0.936 ms","timestamp":"2024-03-13T04:05:05.087Z"}
+{"level":"info","message":"GET /auth/refresh 200 178 - 3.473 ms","timestamp":"2024-03-13T04:05:05.096Z"}
+{"level":"info","message":"GET /users 304 - - 37.776 ms","timestamp":"2024-03-13T04:05:05.155Z"}
+{"level":"error","message":"Error Custom: Invalid token","timestamp":"2024-03-13T04:05:07.085Z"}
+{"level":"info","message":"GET /users 401 107 - 0.865 ms","timestamp":"2024-03-13T04:05:07.086Z"}
+{"level":"error","message":"Error Custom: Invalid refresh token","timestamp":"2024-03-13T04:05:07.090Z"}
+{"level":"info","message":"GET /auth/refresh 401 115 - 1.204 ms","timestamp":"2024-03-13T04:05:07.091Z"}
+{"level":"info","message":"POST /auth/logout 200 24 - 0.237 ms","timestamp":"2024-03-13T04:05:07.115Z"}

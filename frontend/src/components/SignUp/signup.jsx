@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LogoAppName from "../LogoAppName/logoappname";
+import { useRegisterUserMutation } from "../../store/authSlice";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 const darkTheme = createTheme({
@@ -17,32 +18,16 @@ const SignUp = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+  const [registerUser] = useRegisterUserMutation();
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
+  const handleSignup = async (event) => {
     setError(""); // Reset error message
-    console.log(email, password, fullName);
-    navigate("/signup");
-
-    try {
-      const response = await fetch("http://localhost:3000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password, fullName }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`); // Throw error for bad response
-      }
-
-      const data = await response.json();
-      navigate("/login");
-    } catch (err) {
-      console.error(err);
-      setError("Failed to login. Please try again."); // Update error state
+    const { data, error } = await registerUser({ email, password, fullName });
+    if (error) {
+      setError("Failed to login. Please try again.");
+      return;
     }
+    navigate("/login");
   };
 
   return (
@@ -101,7 +86,7 @@ const SignUp = () => {
 
       <Button
         fullWidth
-        onClick={handleLogin}
+        onClick={handleSignup}
         type="submit"
         variant="contained"
         sx={{ mt: 3, mb: 2 }}

@@ -2,13 +2,19 @@ import React from "react";
 import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import AppLogo from "../Logo/logo";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentToken, logout } from "../../store/authSlice";
+import { useSelector } from "react-redux";
+import { selectCurrentToken } from "../../store/authSlice";
+import { usePerformLogoutMutation } from "../../store/authSlice";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const isAuthenticated = useSelector(selectCurrentToken);
+  const [logout] = usePerformLogoutMutation();
+
+  const performLogout = async () => {
+    await logout();
+    navigate("/login");
+  };
 
   return (
     <Box>
@@ -40,10 +46,13 @@ const Navbar = () => {
               </Button>
             )}
             {isAuthenticated && (
-              <Button color="inherit" onClick={() => dispatch(logout())}>
+              <Button color="inherit" onClick={() => performLogout()}>
                 Log Out
               </Button>
             )}
+            <Button color="inherit" onClick={() => navigate("/dashboard2")}>
+              Dashboard2
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

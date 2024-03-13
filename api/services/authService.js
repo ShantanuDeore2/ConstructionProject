@@ -29,12 +29,12 @@ module.exports = class AuthService {
     let payload = { id: user._id, email: user.email };
 
     const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
-      expiresIn: "5s",
+      expiresIn: "2s",
     }); // Adjust expiresIn as needed
 
     payload = { email: user.email };
     const refreshToken = jwt.sign(payload, process.env.JWT_REFRESH_SECRET, {
-      expiresIn: "10d",
+      expiresIn: "4s",
     }); // Adjust expiresIn as needed
 
     return { accessToken, refreshToken };
@@ -68,7 +68,7 @@ module.exports = class AuthService {
         const payload = { id: user._id, email: user.email };
 
         return jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
-          expiresIn: "5s",
+          expiresIn: "2s",
         }); // Adjust expiresIn as needed
       }
     );

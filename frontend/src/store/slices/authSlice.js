@@ -28,22 +28,6 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       invalidatesTags: ["Login"],
     }),
 
-    performLogout: builder.mutation({
-      query: () => ({
-        url: "auth/logout",
-        method: "POST",
-      }),
-      invalidatesTags: ["Login"],
-      async onQueryStarted(_, { dispatch, queryFulfilled }) {
-        try {
-          await queryFulfilled;
-          dispatch(logout());
-        } catch (error) {
-          console.error("Error logging out", error);
-        }
-      },
-    }),
-
     registerUser: builder.mutation({
       query: (body) => ({
         url: "register",
@@ -55,11 +39,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const {
-  usePerformLoginMutation,
-  usePerformLogoutMutation,
-  useRegisterUserMutation,
-} = extendedApiSlice;
+export const { usePerformLoginMutation, useRegisterUserMutation } =
+  extendedApiSlice;
 
 export const { setCredentials, logout } = authSlice.actions;
 
