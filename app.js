@@ -22,7 +22,7 @@ const {
   purchaseOrderRoutes,
   workItemRoutes,
   workTypeRoutes,
-  loginRoutes,
+  authRoutes,
   registerRoutes,
 } = require("./api/routes");
 
@@ -37,7 +37,7 @@ app.use(cookieParser());
 app.use(helmet());
 
 // Enable CORS for all requests
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 // Setup morgan to use winston for logging
 app.use(
   morgan("tiny", {
@@ -45,7 +45,7 @@ app.use(
   })
 );
 
-app.use("/auth", loginRoutes);
+app.use("/auth", authRoutes);
 app.use("/register", registerRoutes);
 app.use("/permissions", permissionRoutes);
 app.use("/departments", departmentRoutes);
