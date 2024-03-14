@@ -11,6 +11,10 @@ const Dashboard = () => {
     <Routes>
       <Route path="/*" element={<DashboardLayout />}>
         <Route index element={isAuthenticated ? <Home /> : <Home />} />
+        <Route
+          path="permission"
+          element={isAuthenticated ? <Home /> : <Home />}
+        />
       </Route>
     </Routes>
   );
