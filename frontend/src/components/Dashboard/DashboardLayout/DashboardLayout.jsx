@@ -1,53 +1,35 @@
+import { Stack, Box } from "@mui/material";
 import React from "react";
-import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import {
-  useGetUsersQuery,
-  selectAllUsers,
-} from "../../../store/slices/userSlice";
+import SideMenu from "../SideMenu/SideMenu";
 import { useSelector } from "react-redux";
-import { usePerformLogoutMutation } from "../../../store/slices/authSlice";
-import { useNavigate } from "react-router-dom";
+import { selectMenuVisible } from "../../../store/slices/appSlice";
 
 const DashboardLayout = () => {
-  let { error, isLoading, isSuccess, isError } = useGetUsersQuery(undefined, {
-    pollingInterval: 1000,
-  });
-
-  const data = useSelector(selectAllUsers);
-  const navigate = useNavigate();
-  const [logout] = usePerformLogoutMutation();
-
-  useEffect(() => {
-    const performLogout = async () => {
-      await logout();
-      navigate("/login");
-    };
-
-    if (isError && error?.status === 401) {
-      performLogout();
-    }
-  }, [isError, error, logout, navigate]);
-
+  const toggleMenuValue = useSelector(selectMenuVisible);
   return (
-    <div>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : isError ? (
-        <div>Error</div>
-      ) : isSuccess ? (
-        data.map((user) => (
-          <div key={user.id}>
-            <h1>{user.fullName}</h1>
-            <p>{user.id}</p>
-            <p>{user.email}</p>
-            <p>{user.password}</p>
-          </div>
-        ))
-      ) : null}
-
-      <Outlet />
-    </div>
+    <Stack
+      spacing={0}
+      justifyContent="flex-start"
+      direction="row"
+      sx={{ height: "100%" }}
+    >
+      <Box
+        sx={{
+          display: { xs: !toggleMenuValue ? "none" : "block", sm: "block" },
+        }}
+      >
+        <SideMenu />
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          opacity: { xs: toggleMenuValue ? 0.33 : 1.0, sm: 1.0 },
+        }}
+      >
+        <Outlet />
+      </Box>
+    </Stack>
   );
 };
 

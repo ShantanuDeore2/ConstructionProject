@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Layout from "./components/Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login/login";
@@ -8,8 +7,6 @@ import { useSelector } from "react-redux";
 import { selectCurrentToken } from "./store/slices/authSlice";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const isAuthenticated = useSelector(selectCurrentToken);
 
   return (
@@ -19,7 +16,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route
-          path="dashboard"
+          path="dashboard/*"
           element={isAuthenticated ? <Dashboard /> : <Login />}
         />
       </Route>
