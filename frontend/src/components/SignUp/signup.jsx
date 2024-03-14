@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LogoAppName from "../LogoAppName/logoappname";
-import { useRegisterUserMutation } from "../../store/authSlice";
+import { useRegisterUserMutation } from "../../store/slices/authSlice";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 const darkTheme = createTheme({

@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for executions.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const executionAdapter = createEntityAdapter({
-  selectId: (execution) => execution._id,
-});
+export const executionAdapter = createEntityAdapter({});
 
 // Create an initial state for the execution adapter
 const initialState = executionAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getExecutions: builder.query({
       query: () => "/executions",
       transformResponse: (response) => {
-        return executionAdapter.setAll(initialState, response);
+        const loadedExecutions = response.map((execution) => {
+          execution.id = execution._id;
+          return execution;
+        });
+        return executionAdapter.setAll(initialState, loadedExecutions);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Execution", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Execution", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Execution", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Execution", id })),
+            ]
+          : [],
     }),
 
     // Define the getExecution query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return executionAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Execution", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Execution", id }] : []),
     }),
 
     // Define the addExecution mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateExecution mutation
     updateExecution: builder.mutation({
       query: (body) => ({
-        url: `/executions/${body._id}`,
+        url: `/executions/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Execution", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Execution", id: args.id }] : [],
     }),
 
     // Define the deleteExecution mutation
@@ -88,6 +92,6 @@ const selectExecutionData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the execution data
 export const { selectAll: selectAllExecutions, selectById: selectExecutionById } =
   executionAdapter.getSelectors((state) => selectExecutionData(state) ?? initialState);

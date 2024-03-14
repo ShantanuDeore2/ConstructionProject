@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for dimensions.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const dimensionAdapter = createEntityAdapter({
-  selectId: (dimension) => dimension._id,
-});
+export const dimensionAdapter = createEntityAdapter({});
 
 // Create an initial state for the dimension adapter
 const initialState = dimensionAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getDimensions: builder.query({
       query: () => "/dimensions",
       transformResponse: (response) => {
-        return dimensionAdapter.setAll(initialState, response);
+        const loadedDimensions = response.map((dimension) => {
+          dimension.id = dimension._id;
+          return dimension;
+        });
+        return dimensionAdapter.setAll(initialState, loadedDimensions);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Dimension", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Dimension", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Dimension", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Dimension", id })),
+            ]
+          : [],
     }),
 
     // Define the getDimension query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return dimensionAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Dimension", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Dimension", id }] : []),
     }),
 
     // Define the addDimension mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateDimension mutation
     updateDimension: builder.mutation({
       query: (body) => ({
-        url: `/dimensions/${body._id}`,
+        url: `/dimensions/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Dimension", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Dimension", id: args.id }] : [],
     }),
 
     // Define the deleteDimension mutation
@@ -88,6 +92,6 @@ const selectDimensionData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the dimension data
 export const { selectAll: selectAllDimensions, selectById: selectDimensionById } =
   dimensionAdapter.getSelectors((state) => selectDimensionData(state) ?? initialState);

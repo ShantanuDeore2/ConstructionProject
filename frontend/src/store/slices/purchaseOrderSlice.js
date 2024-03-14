@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for purchaseOrders.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const purchaseOrderAdapter = createEntityAdapter({
-  selectId: (purchaseOrder) => purchaseOrder._id,
-});
+export const purchaseOrderAdapter = createEntityAdapter({});
 
 // Create an initial state for the purchaseOrder adapter
 const initialState = purchaseOrderAdapter.getInitialState();
@@ -15,29 +13,36 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     // Define the getPurchaseOrders query
     getPurchaseOrders: builder.query({
-      query: () => "/purchaseorders",
+      query: () => "/purchaseOrders",
       transformResponse: (response) => {
-        return purchaseOrderAdapter.setAll(initialState, response);
+        const loadedPurchaseOrders = response.map((purchaseOrder) => {
+          purchaseOrder.id = purchaseOrder._id;
+          return purchaseOrder;
+        });
+        return purchaseOrderAdapter.setAll(initialState, loadedPurchaseOrders);
       },
-      providesTags: (result, err, tags) => [
-        { type: "PurchaseOrder", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "PurchaseOrder", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "PurchaseOrder", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "PurchaseOrder", id })),
+            ]
+          : [],
     }),
 
     // Define the getPurchaseOrder query
     getPurchaseOrder: builder.query({
-      query: (id) => `/purchaseorders/${id}`,
+      query: (id) => `/purchaseOrders/${id}`,
       transformResponse: (response) => {
         return purchaseOrderAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "PurchaseOrder", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "PurchaseOrder", id }] : []),
     }),
 
     // Define the addPurchaseOrder mutation
     addPurchaseOrder: builder.mutation({
       query: (body) => ({
-        url: "/purchaseorders",
+        url: "/purchaseOrders",
         method: "POST",
         body,
       }),
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updatePurchaseOrder mutation
     updatePurchaseOrder: builder.mutation({
       query: (body) => ({
-        url: `/purchaseorders/${body._id}`,
+        url: `/purchaseOrders/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,15 +60,14 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "PurchaseOrder", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "PurchaseOrder", id: args.id }] : [],
     }),
 
     // Define the deletePurchaseOrder mutation
     deletePurchaseOrder: builder.mutation({
       query: (id) => ({
-        url: `/purchaseorders/${id}`,
+        url: `/purchaseOrders/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: [{ type: "PurchaseOrder", id: "LIST" }],
@@ -80,8 +84,7 @@ export const {
 } = extendedApiSlice;
 
 // this selector will return the data from the getPurchaseOrders query
-export const selectPurchaseOrderResult =
-  extendedApiSlice.endpoints.getPurchaseOrders.select();
+export const selectPurchaseOrderResult = extendedApiSlice.endpoints.getPurchaseOrders.select();
 
 // this will create memoized selectors for the purchaseOrder data, helpful for performance
 const selectPurchaseOrderData = createSelector(
@@ -89,10 +92,6 @@ const selectPurchaseOrderData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
-export const {
-  selectAll: selectAllPurchaseOrders,
-  selectById: selectPurchaseOrderById,
-} = purchaseOrderAdapter.getSelectors(
-  (state) => selectPurchaseOrderData(state) ?? initialState
-);
+// these are the memoized selectors for the purchaseOrder data
+export const { selectAll: selectAllPurchaseOrders, selectById: selectPurchaseOrderById } =
+  purchaseOrderAdapter.getSelectors((state) => selectPurchaseOrderData(state) ?? initialState);

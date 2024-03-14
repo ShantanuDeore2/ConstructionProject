@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for plans.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const planAdapter = createEntityAdapter({
-  selectId: (plan) => plan._id,
-});
+export const planAdapter = createEntityAdapter({});
 
 // Create an initial state for the plan adapter
 const initialState = planAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getPlans: builder.query({
       query: () => "/plans",
       transformResponse: (response) => {
-        return planAdapter.setAll(initialState, response);
+        const loadedPlans = response.map((plan) => {
+          plan.id = plan._id;
+          return plan;
+        });
+        return planAdapter.setAll(initialState, loadedPlans);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Plan", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Plan", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Plan", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Plan", id })),
+            ]
+          : [],
     }),
 
     // Define the getPlan query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return planAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Plan", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Plan", id }] : []),
     }),
 
     // Define the addPlan mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updatePlan mutation
     updatePlan: builder.mutation({
       query: (body) => ({
-        url: `/plans/${body._id}`,
+        url: `/plans/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Plan", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Plan", id: args.id }] : [],
     }),
 
     // Define the deletePlan mutation
@@ -88,6 +92,6 @@ const selectPlanData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the plan data
 export const { selectAll: selectAllPlans, selectById: selectPlanById } =
   planAdapter.getSelectors((state) => selectPlanData(state) ?? initialState);

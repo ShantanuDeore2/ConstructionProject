@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for departments.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const departmentAdapter = createEntityAdapter({
-  selectId: (department) => department._id,
-});
+export const departmentAdapter = createEntityAdapter({});
 
 // Create an initial state for the department adapter
 const initialState = departmentAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getDepartments: builder.query({
       query: () => "/departments",
       transformResponse: (response) => {
-        return departmentAdapter.setAll(initialState, response);
+        const loadedDepartments = response.map((department) => {
+          department.id = department._id;
+          return department;
+        });
+        return departmentAdapter.setAll(initialState, loadedDepartments);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Department", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Department", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Department", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Department", id })),
+            ]
+          : [],
     }),
 
     // Define the getDepartment query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return departmentAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Department", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Department", id }] : []),
     }),
 
     // Define the addDepartment mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateDepartment mutation
     updateDepartment: builder.mutation({
       query: (body) => ({
-        url: `/departments/${body._id}`,
+        url: `/departments/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Department", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Department", id: args.id }] : [],
     }),
 
     // Define the deleteDepartment mutation
@@ -88,6 +92,6 @@ const selectDepartmentData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the department data
 export const { selectAll: selectAllDepartments, selectById: selectDepartmentById } =
   departmentAdapter.getSelectors((state) => selectDepartmentData(state) ?? initialState);

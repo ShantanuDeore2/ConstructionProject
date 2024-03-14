@@ -5,7 +5,7 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { store } from "./store/store.js";
 import { Provider } from "react-redux";
-import { apiSlice } from "./store/apiSlice.js";
+import { apiSlice } from "./store/slices/apiSlice";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

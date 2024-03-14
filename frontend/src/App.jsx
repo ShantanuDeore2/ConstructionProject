@@ -5,7 +5,7 @@ import Login from "./components/Login/login";
 import SignUp from "./components/SignUp/signup";
 import Dashboard from "./components/Dashboard/dashboard";
 import { useSelector } from "react-redux";
-import { selectCurrentToken } from "./store/authSlice";
+import { selectCurrentToken } from "./store/slices/authSlice";
 
 function App() {
   const [count, setCount] = useState(0);

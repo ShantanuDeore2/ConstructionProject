@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for workTypes.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const workTypeAdapter = createEntityAdapter({
-  selectId: (workType) => workType._id,
-});
+export const workTypeAdapter = createEntityAdapter({});
 
 // Create an initial state for the workType adapter
 const initialState = workTypeAdapter.getInitialState();
@@ -15,29 +13,36 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     // Define the getWorkTypes query
     getWorkTypes: builder.query({
-      query: () => "/worktypes",
+      query: () => "/workTypes",
       transformResponse: (response) => {
-        return workTypeAdapter.setAll(initialState, response);
+        const loadedWorkTypes = response.map((workType) => {
+          workType.id = workType._id;
+          return workType;
+        });
+        return workTypeAdapter.setAll(initialState, loadedWorkTypes);
       },
-      providesTags: (result, err, tags) => [
-        { type: "WorkType", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "WorkType", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "WorkType", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "WorkType", id })),
+            ]
+          : [],
     }),
 
     // Define the getWorkType query
     getWorkType: builder.query({
-      query: (id) => `/worktypes/${id}`,
+      query: (id) => `/workTypes/${id}`,
       transformResponse: (response) => {
         return workTypeAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "WorkType", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "WorkType", id }] : []),
     }),
 
     // Define the addWorkType mutation
     addWorkType: builder.mutation({
       query: (body) => ({
-        url: "/worktypes",
+        url: "/workTypes",
         method: "POST",
         body,
       }),
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateWorkType mutation
     updateWorkType: builder.mutation({
       query: (body) => ({
-        url: `/worktypes/${body._id}`,
+        url: `/workTypes/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,15 +60,14 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "WorkType", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "WorkType", id: args.id }] : [],
     }),
 
     // Define the deleteWorkType mutation
     deleteWorkType: builder.mutation({
       query: (id) => ({
-        url: `/worktypes/${id}`,
+        url: `/workTypes/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: [{ type: "WorkType", id: "LIST" }],
@@ -80,8 +84,7 @@ export const {
 } = extendedApiSlice;
 
 // this selector will return the data from the getWorkTypes query
-export const selectWorkTypeResult =
-  extendedApiSlice.endpoints.getWorkTypes.select();
+export const selectWorkTypeResult = extendedApiSlice.endpoints.getWorkTypes.select();
 
 // this will create memoized selectors for the workType data, helpful for performance
 const selectWorkTypeData = createSelector(
@@ -89,8 +92,6 @@ const selectWorkTypeData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the workType data
 export const { selectAll: selectAllWorkTypes, selectById: selectWorkTypeById } =
-  workTypeAdapter.getSelectors(
-    (state) => selectWorkTypeData(state) ?? initialState
-  );
+  workTypeAdapter.getSelectors((state) => selectWorkTypeData(state) ?? initialState);

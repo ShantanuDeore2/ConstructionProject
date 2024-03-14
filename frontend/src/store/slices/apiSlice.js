@@ -25,11 +25,9 @@ const baseQueryWithReAuth = async (args, api, extraOptions) => {
       if (refreshResult?.error?.status === 401) {
         refreshResult.error.message = "Session expired, please login again.";
       }
-      console.log("result", refreshResult);
       return refreshResult;
     }
   }
-  console.log("result", result);
   return result;
 };
 

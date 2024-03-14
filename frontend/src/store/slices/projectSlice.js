@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for projects.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const projectAdapter = createEntityAdapter({
-  selectId: (project) => project._id,
-});
+export const projectAdapter = createEntityAdapter({});
 
 // Create an initial state for the project adapter
 const initialState = projectAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getProjects: builder.query({
       query: () => "/projects",
       transformResponse: (response) => {
-        return projectAdapter.setAll(initialState, response);
+        const loadedProjects = response.map((project) => {
+          project.id = project._id;
+          return project;
+        });
+        return projectAdapter.setAll(initialState, loadedProjects);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Project", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Project", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Project", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Project", id })),
+            ]
+          : [],
     }),
 
     // Define the getProject query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return projectAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Project", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Project", id }] : []),
     }),
 
     // Define the addProject mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateProject mutation
     updateProject: builder.mutation({
       query: (body) => ({
-        url: `/projects/${body._id}`,
+        url: `/projects/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Project", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Project", id: args.id }] : [],
     }),
 
     // Define the deleteProject mutation
@@ -88,6 +92,6 @@ const selectProjectData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the project data
 export const { selectAll: selectAllProjects, selectById: selectProjectById } =
   projectAdapter.getSelectors((state) => selectProjectData(state) ?? initialState);

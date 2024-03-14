@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for transactions.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const transactionAdapter = createEntityAdapter({
-  selectId: (transaction) => transaction._id,
-});
+export const transactionAdapter = createEntityAdapter({});
 
 // Create an initial state for the transaction adapter
 const initialState = transactionAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getTransactions: builder.query({
       query: () => "/transactions",
       transformResponse: (response) => {
-        return transactionAdapter.setAll(initialState, response);
+        const loadedTransactions = response.map((transaction) => {
+          transaction.id = transaction._id;
+          return transaction;
+        });
+        return transactionAdapter.setAll(initialState, loadedTransactions);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Transaction", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Transaction", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Transaction", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Transaction", id })),
+            ]
+          : [],
     }),
 
     // Define the getTransaction query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return transactionAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Transaction", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Transaction", id }] : []),
     }),
 
     // Define the addTransaction mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateTransaction mutation
     updateTransaction: builder.mutation({
       query: (body) => ({
-        url: `/transactions/${body._id}`,
+        url: `/transactions/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Transaction", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Transaction", id: args.id }] : [],
     }),
 
     // Define the deleteTransaction mutation
@@ -88,6 +92,6 @@ const selectTransactionData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the transaction data
 export const { selectAll: selectAllTransactions, selectById: selectTransactionById } =
   transactionAdapter.getSelectors((state) => selectTransactionData(state) ?? initialState);

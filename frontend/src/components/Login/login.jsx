@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { TextField, Button, Typography, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LogoAppName from "../LogoAppName/logoappname";
-import { setCredentials } from "../../store/authSlice";
+import {
+  setCredentials,
+  usePerformLoginMutation,
+} from "../../store/slices/authSlice";
 import { useDispatch } from "react-redux";
-import { usePerformLoginMutation } from "../../store/authSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");

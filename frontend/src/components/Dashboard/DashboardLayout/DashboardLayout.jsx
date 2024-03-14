@@ -1,9 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { useGetUsersQuery, selectAllUsers } from "../../../store/userSlice";
+import {
+  useGetUsersQuery,
+  selectAllUsers,
+} from "../../../store/slices/userSlice";
 import { useSelector } from "react-redux";
-import { usePerformLogoutMutation } from "../../../store/authSlice";
+import { usePerformLogoutMutation } from "../../../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const DashboardLayout = () => {
@@ -34,9 +37,9 @@ const DashboardLayout = () => {
         <div>Error</div>
       ) : isSuccess ? (
         data.map((user) => (
-          <div key={user._id}>
+          <div key={user.id}>
             <h1>{user.fullName}</h1>
-            <p>{user._id}</p>
+            <p>{user.id}</p>
             <p>{user.email}</p>
             <p>{user.password}</p>
           </div>

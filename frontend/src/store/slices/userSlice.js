@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for users.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const userAdapter = createEntityAdapter({
-  selectId: (user) => user._id,
-});
+export const userAdapter = createEntityAdapter({});
 
 // Create an initial state for the user adapter
 const initialState = userAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getUsers: builder.query({
       query: () => "/users",
       transformResponse: (response) => {
-        return userAdapter.setAll(initialState, response);
+        const loadedUsers = response.map((user) => {
+          user.id = user._id;
+          return user;
+        });
+        return userAdapter.setAll(initialState, loadedUsers);
       },
-      providesTags: (result, err, tags) => [
-        { type: "User", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "User", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "User", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "User", id })),
+            ]
+          : [],
     }),
 
     // Define the getUser query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return userAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "User", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "User", id }] : []),
     }),
 
     // Define the addUser mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateUser mutation
     updateUser: builder.mutation({
       query: (body) => ({
-        url: `/users/${body._id}`,
+        url: `/users/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "User", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "User", id: args.id }] : [],
     }),
 
     // Define the deleteUser mutation
@@ -88,6 +92,6 @@ const selectUserData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the user data
 export const { selectAll: selectAllUsers, selectById: selectUserById } =
   userAdapter.getSelectors((state) => selectUserData(state) ?? initialState);

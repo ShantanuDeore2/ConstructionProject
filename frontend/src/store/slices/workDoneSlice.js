@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for workDones.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const workDoneAdapter = createEntityAdapter({
-  selectId: (workDone) => workDone._id,
-});
+export const workDoneAdapter = createEntityAdapter({});
 
 // Create an initial state for the workDone adapter
 const initialState = workDoneAdapter.getInitialState();
@@ -15,29 +13,36 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     // Define the getWorkDones query
     getWorkDones: builder.query({
-      query: () => "/workdones",
+      query: () => "/workDones",
       transformResponse: (response) => {
-        return workDoneAdapter.setAll(initialState, response);
+        const loadedWorkDones = response.map((workDone) => {
+          workDone.id = workDone._id;
+          return workDone;
+        });
+        return workDoneAdapter.setAll(initialState, loadedWorkDones);
       },
-      providesTags: (result, err, tags) => [
-        { type: "WorkDone", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "WorkDone", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "WorkDone", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "WorkDone", id })),
+            ]
+          : [],
     }),
 
     // Define the getWorkDone query
     getWorkDone: builder.query({
-      query: (id) => `/workdones/${id}`,
+      query: (id) => `/workDones/${id}`,
       transformResponse: (response) => {
         return workDoneAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "WorkDone", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "WorkDone", id }] : []),
     }),
 
     // Define the addWorkDone mutation
     addWorkDone: builder.mutation({
       query: (body) => ({
-        url: "/workdones",
+        url: "/workDones",
         method: "POST",
         body,
       }),
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateWorkDone mutation
     updateWorkDone: builder.mutation({
       query: (body) => ({
-        url: `/workdones/${body._id}`,
+        url: `/workDones/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,15 +60,14 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "WorkDone", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "WorkDone", id: args.id }] : [],
     }),
 
     // Define the deleteWorkDone mutation
     deleteWorkDone: builder.mutation({
       query: (id) => ({
-        url: `/workdones/${id}`,
+        url: `/workDones/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: [{ type: "WorkDone", id: "LIST" }],
@@ -80,8 +84,7 @@ export const {
 } = extendedApiSlice;
 
 // this selector will return the data from the getWorkDones query
-export const selectWorkDoneResult =
-  extendedApiSlice.endpoints.getWorkDones.select();
+export const selectWorkDoneResult = extendedApiSlice.endpoints.getWorkDones.select();
 
 // this will create memoized selectors for the workDone data, helpful for performance
 const selectWorkDoneData = createSelector(
@@ -89,8 +92,6 @@ const selectWorkDoneData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the workDone data
 export const { selectAll: selectAllWorkDones, selectById: selectWorkDoneById } =
-  workDoneAdapter.getSelectors(
-    (state) => selectWorkDoneData(state) ?? initialState
-  );
+  workDoneAdapter.getSelectors((state) => selectWorkDoneData(state) ?? initialState);

@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for permissions.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const permissionAdapter = createEntityAdapter({
-  selectId: (permission) => permission._id,
-});
+export const permissionAdapter = createEntityAdapter({});
 
 // Create an initial state for the permission adapter
 const initialState = permissionAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getPermissions: builder.query({
       query: () => "/permissions",
       transformResponse: (response) => {
-        return permissionAdapter.setAll(initialState, response);
+        const loadedPermissions = response.map((permission) => {
+          permission.id = permission._id;
+          return permission;
+        });
+        return permissionAdapter.setAll(initialState, loadedPermissions);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Permission", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Permission", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Permission", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Permission", id })),
+            ]
+          : [],
     }),
 
     // Define the getPermission query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return permissionAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Permission", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Permission", id }] : []),
     }),
 
     // Define the addPermission mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updatePermission mutation
     updatePermission: builder.mutation({
       query: (body) => ({
-        url: `/permissions/${body._id}`,
+        url: `/permissions/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Permission", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Permission", id: args.id }] : [],
     }),
 
     // Define the deletePermission mutation
@@ -88,6 +92,6 @@ const selectPermissionData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the permission data
 export const { selectAll: selectAllPermissions, selectById: selectPermissionById } =
   permissionAdapter.getSelectors((state) => selectPermissionData(state) ?? initialState);

@@ -3,9 +3,7 @@ import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
 // Create an entity adapter for materials.
 // Purpose of entity adapter is to manage normalized data. It helps react to track data changes and update the UI.
-export const materialAdapter = createEntityAdapter({
-  selectId: (material) => material._id,
-});
+export const materialAdapter = createEntityAdapter({});
 
 // Create an initial state for the material adapter
 const initialState = materialAdapter.getInitialState();
@@ -17,12 +15,19 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     getMaterials: builder.query({
       query: () => "/materials",
       transformResponse: (response) => {
-        return materialAdapter.setAll(initialState, response);
+        const loadedMaterials = response.map((material) => {
+          material.id = material._id;
+          return material;
+        });
+        return materialAdapter.setAll(initialState, loadedMaterials);
       },
-      providesTags: (result, err, tags) => [
-        { type: "Material", id: "LIST" },
-        ...result.ids.map((id) => ({ type: "Material", id })),
-      ],
+      providesTags: (result, err, tags) =>
+        result
+          ? [
+              { type: "Material", id: "LIST" },
+              ...result.ids.map((id) => ({ type: "Material", id })),
+            ]
+          : [],
     }),
 
     // Define the getMaterial query
@@ -31,7 +36,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       transformResponse: (response) => {
         return materialAdapter.setAll(initialState, response);
       },
-      providesTags: (result, error, id) => [{ type: "Material", id }],
+      providesTags: (result, error, id) => (id ? [{ type: "Material", id }] : []),
     }),
 
     // Define the addMaterial mutation
@@ -47,7 +52,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     // Define the updateMaterial mutation
     updateMaterial: builder.mutation({
       query: (body) => ({
-        url: `/materials/${body._id}`,
+        url: `/materials/${body.id}`,
         method: "PATCH",
         body: {
           fullName: body.fullName,
@@ -55,9 +60,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           password: body.password,
         },
       }),
-      invalidatesTags: (result, error, args) => [
-        { type: "Material", id: args._id },
-      ],
+      invalidatesTags: (result, error, args) =>
+        args ? [{ type: "Material", id: args.id }] : [],
     }),
 
     // Define the deleteMaterial mutation
@@ -88,6 +92,6 @@ const selectMaterialData = createSelector(
   (result) => result.data
 );
 
-// these are prebuilt selectors from the entity adapter
+// these are the memoized selectors for the material data
 export const { selectAll: selectAllMaterials, selectById: selectMaterialById } =
   materialAdapter.getSelectors((state) => selectMaterialData(state) ?? initialState);

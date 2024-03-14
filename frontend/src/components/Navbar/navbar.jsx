@@ -3,8 +3,10 @@ import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import AppLogo from "../Logo/logo";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectCurrentToken } from "../../store/authSlice";
-import { usePerformLogoutMutation } from "../../store/authSlice";
+import {
+  selectCurrentToken,
+  usePerformLogoutMutation,
+} from "../../store/slices/authSlice";
 
 const Navbar = () => {
   const navigate = useNavigate();
