@@ -2,9 +2,8 @@ import React from "react";
 import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import AppLogo from "../Logo/logo";
 import { toggleMenu } from "../../store/slices/appSlice";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   selectCurrentToken,
   usePerformLogoutMutation,
@@ -16,13 +15,18 @@ const Navbar = () => {
   const isAuthenticated = useSelector(selectCurrentToken);
   const [logout] = usePerformLogoutMutation();
 
+  const location = useLocation();
+  const path = location.pathname;
+
+  const publicPaths = ["/login", "/signup"];
+  const isPublicPath = publicPaths.includes(path);
+
   const performLogout = async () => {
     await logout();
     navigate("/login");
   };
 
   const performToggle = () => {
-    console.log("performToggle");
     dispatch(toggleMenu());
   };
 
@@ -53,12 +57,12 @@ const Navbar = () => {
             )}
           </Box>
           <Box>
-            {!isAuthenticated && (
+            {!isAuthenticated && isPublicPath && (
               <Button color="inherit" onClick={() => navigate("/login")}>
                 Login
               </Button>
             )}
-            {!isAuthenticated && (
+            {!isAuthenticated && isPublicPath && (
               <Button color="inherit" onClick={() => navigate("/signup")}>
                 Sign Up
               </Button>
@@ -74,7 +78,7 @@ const Navbar = () => {
               </Button>
             )}
             <Button color="inherit" onClick={() => navigate("/dashboard2")}>
-              Dashboard2
+              Not Found
             </Button>
           </Box>
         </Toolbar>

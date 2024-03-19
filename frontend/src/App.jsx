@@ -5,22 +5,33 @@ import SignUp from "./components/SignUp/signup";
 import Dashboard from "./components/Dashboard/dashboard";
 import { useSelector } from "react-redux";
 import { selectCurrentToken } from "./store/slices/authSlice";
+import PersistLogin from "./components/PersistLogin/PersistLogin";
+import PersistLoginPublic from "./components/PersistLogin/PersistLoginPublic";
 
 function App() {
   const isAuthenticated = useSelector(selectCurrentToken);
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={isAuthenticated ? <Dashboard /> : <Login />} />
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route
-          path="dashboard/*"
-          element={isAuthenticated ? <Dashboard /> : <Login />}
-        />
+      <Route element={<PersistLoginPublic />}>
+        <Route path="/" element={<Layout />}>
+          {/* <Route path="login" element={<Login />} /> */}
+          <Route path="signup" element={<SignUp />} />
+          <Route path="login" element={<Login />} />
+
+          <Route path="*" element={<h1>Not Found</h1>} />
+        </Route>
       </Route>
-      <Route path="*" element={<h1>Not Found</h1>} />
+      <Route element={<PersistLogin />}>
+        <Route path="/" element={<Layout />}>
+          {/* <Route path="login" element={<Login />} /> */}
+
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard/*" element={<Dashboard />} />
+
+          <Route path="*" element={<h1>Not Found</h1>} />
+        </Route>
+      </Route>
     </Routes>
   );
 }

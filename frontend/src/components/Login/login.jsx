@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { TextField, Button, Typography, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LogoAppName from "../LogoAppName/logoappname";
@@ -7,6 +8,9 @@ import {
   usePerformLoginMutation,
 } from "../../store/slices/authSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { selectCurrentToken } from "../../store/slices/authSlice";
+import { useEffect } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,6 +19,13 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [performLogin] = usePerformLoginMutation();
+  const token = useSelector(selectCurrentToken);
+
+  useEffect(() => {
+    if (token) {
+      navigate("/dashboard");
+    }
+  });
 
   const handleLogin = async (event) => {
     setError("");

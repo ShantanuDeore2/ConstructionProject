@@ -55,6 +55,20 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ["User"],
     }),
+
+    refresh: builder.mutation({
+      query: () => ({
+        url: "auth/refresh",
+        method: "GET",
+      }),
+      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+        try {
+          const result = await queryFulfilled;
+          const { accessToken } = result.data;
+          dispatch(setCredentials({ accessToken }));
+        } catch (error) {}
+      },
+    }),
   }),
 });
 
@@ -62,6 +76,7 @@ export const {
   usePerformLoginMutation,
   usePerformLogoutMutation,
   useRegisterUserMutation,
+  useRefreshMutation,
 } = extendedApiSlice;
 
 export const { setCredentials, logout } = authSlice.actions;

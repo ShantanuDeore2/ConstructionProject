@@ -7,6 +7,7 @@ import Home from "./Home/Home";
 
 const Dashboard = () => {
   const isAuthenticated = useSelector(selectCurrentToken);
+  console.log("isAuthenticated", isAuthenticated);
   return (
     <Routes>
       <Route path="/*" element={<DashboardLayout />}>
